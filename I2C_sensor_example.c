@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "lsm303agr.h"
+#include "I2C_sensor_example.h"
 #include "nrf_delay.h"
 
 // Pointer to an initialized I2C instance to use for transactions

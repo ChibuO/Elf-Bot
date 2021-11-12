@@ -12,7 +12,7 @@
 #include "nrf_twi_mngr.h"
 
 #include "microbit_v2.h"
-#include "lsm303agr.h"
+#include "I2C_sensor_example.h"
 
 // Global variables
 NRF_TWI_MNGR_DEF(twi_mngr_instance, 1, 0);
