@@ -23,7 +23,6 @@ static const nrf_twi_mngr_t* i2c_manager = NULL;
 static uint8_t i2c_reg_read(uint8_t i2c_addr, uint8_t reg_addr) {
   uint8_t rx_buf = 0;
   nrf_twi_mngr_transfer_t const read_transfer[] = {
-    //TODO: implement me
     NRF_TWI_MNGR_WRITE(i2c_addr, &reg_addr, 1, NRF_TWI_MNGR_NO_STOP),
     NRF_TWI_MNGR_READ(i2c_addr, &rx_buf, 1, 0)
   };
@@ -47,6 +46,10 @@ static void i2c_reg_write(uint8_t i2c_addr, uint8_t reg_addr, uint8_t data) {
   nrf_twi_mngr_perform(i2c_manager, NULL, read_transfer, 1, NULL);
 }
 
+void invert() {
+  i2c_reg_write(0x59, 0x12, 1);
+}
+
 void down() {
   //left 8448 : 0x2100
   //i2c address 89 : 0x59
@@ -55,17 +58,21 @@ void down() {
   //reverse: 1 : 0x0000
   //power on: 28673 : 0x70
   //power off: 28672 
-  //i2c_reg_write(89, 8448, 1); //make left motor mowve forward
-  double speed = floor(100 * 127 / 100);
-  printf("speed: %f\n", speed);
-  uint16_t pwr = (uint16_t)speed;
+  //left_invert: 0x13
+  //right_invert : 0x12
+  //make left motor mowve forward
+  uint16_t pwr = (uint16_t)floor(30 * 127 / 100);
+  uint16_t pwr2 = (uint16_t)floor(29 * 127 / 100);
   printf("pwr: %u\n", pwr);
   uint16_t dir = pwr | 0x80;
+  uint16_t dir2 = pwr2 | 0x80;
+  uint16_t rev_dir = 127 - pwr;
+  printf("rev_dir: %u\n", rev_dir);
   printf("dir: %u\n", dir);
-  i2c_reg_write(0x59, 0x2100, dir); //make left motor move forward
-  printf("read: %u\n", i2c_reg_read(0x59, 0x7001));
-  i2c_reg_write(0x59, 0x2000, dir); //make right motor move forward
-
+  i2c_reg_write(0x59, 0x21, dir2); //make left motor move forward
+  printf("read: %u\n", i2c_reg_read(0x59, 0x21));
+  i2c_reg_write(0x59, 0x20, dir); //make right motor move forward
+  invert();
 }
 
 // Initialize and configure the LSM303AGR accelerometer/magnetometer
@@ -73,8 +80,10 @@ void down() {
 // i2c - pointer to already initialized and enabled twim instance
 void lsm303agr_init(const nrf_twi_mngr_t* i2c) {
   i2c_manager = i2c;
-  
-  i2c_reg_write(0x59, 0x7001, 1); //power on motors
+
+  i2c_reg_write(0x59, 0x70, 1); //power on motors
   down();
+  nrf_delay_ms(5000);
+  i2c_reg_write(0x59, 0x70, 0); //power off motors
 }
 
