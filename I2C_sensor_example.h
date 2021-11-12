@@ -91,13 +91,3 @@ void lsm303agr_init(const nrf_twi_mngr_t* i2c);
 //
 // Return measurement as floating point value in degrees C
 float lsm303agr_read_temperature(void);
-
-// Read all three axes on the accelerometer
-//
-// Return measurements as floating point values in g's
-lsm303agr_measurement_t lsm303agr_read_accelerometer(void);
-
-// Read all three axes on the magnetometer
-//
-// Return measurements as floating point values in uT
-lsm303agr_measurement_t lsm303agr_read_magnetometer(void);
