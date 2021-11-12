@@ -1,0 +1,3 @@
+[submodule "pxt-moto-bit"]
+	path = pxt-moto-bit
+	url = https://github.com/sparkfun/pxt-moto-bit.git
