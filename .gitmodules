@@ -1,3 +1,6 @@
 [submodule "pxt-moto-bit"]
 	path = pxt-moto-bit
 	url = https://github.com/sparkfun/pxt-moto-bit.git
+[submodule "nrf52x-base"]
+	path = nrf52x-base
+	url = https://github.com/lab11/nrf52x-base
