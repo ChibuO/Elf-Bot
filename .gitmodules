@@ -4,3 +4,6 @@
 [submodule "nrf52x-base"]
 	path = nrf52x-base
 	url = https://github.com/lab11/nrf52x-base
+[submodule "micropython-microbit-mylib"]
+	path = micropython-microbit-mylib
+	url = https://github.com/MinoruInachi/micropython-microbit-mylib.git
