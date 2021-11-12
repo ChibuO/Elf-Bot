@@ -69,7 +69,7 @@ void down() {
   uint16_t rev_dir = 127 - pwr;
   printf("rev_dir: %u\n", rev_dir);
   printf("dir: %u\n", dir);
-  i2c_reg_write(0x59, 0x21, dir2); //make left motor move forward
+  i2c_reg_write(0x59, 0x21, dir); //make left motor move forward
   printf("read: %u\n", i2c_reg_read(0x59, 0x21));
   i2c_reg_write(0x59, 0x20, dir); //make right motor move forward
   invert();
