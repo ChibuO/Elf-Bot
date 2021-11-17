@@ -1,5 +1,3 @@
-// LSM303AGR accelerometer and magnetometer
-
 #pragma once
 
 #include "nrf_twi_mngr.h"

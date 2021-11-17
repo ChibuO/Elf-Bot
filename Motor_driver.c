@@ -7,6 +7,7 @@
 #include <stdint.h>
 
 #include "Motor_driver.h"
+#include "I2C_functions.h"
 #include "nrf_delay.h"
 #include "math.h"
 
@@ -31,6 +32,7 @@
 // Pointer to an initialized I2C instance to use for transactions
 static const nrf_twi_mngr_t* i2c_manager = NULL;
 
+/*
 // Helper function to perform a 1-byte I2C read of a given register
 //
 // i2c_addr - address of the device to read from
@@ -60,6 +62,7 @@ static void i2c_reg_write(uint8_t i2c_addr, uint8_t reg_addr, uint8_t data) {
   };
   nrf_twi_mngr_perform(i2c_manager, NULL, read_transfer, 1, NULL);
 }
+*/
 
 
 void actuate_servos(int l_speed, int r_speed, bool l_forward, bool r_forward) {
@@ -68,19 +71,19 @@ void actuate_servos(int l_speed, int r_speed, bool l_forward, bool r_forward) {
   uint16_t l_dir = l_pwr | mc_fwd;
   uint16_t r_dir = r_pwr | mc_fwd;
   
-  i2c_reg_write(mc_i2c_addr, mc_inv_left, !l_forward); // left = 0 forwards, 1 backwards
-  i2c_reg_write(mc_i2c_addr, mc_inv_right, r_forward); // right = 0 backwards, 1 forwards
+  i2c_reg_write(mc_i2c_addr, mc_inv_left, !l_forward, i2c_manager); // left = 0 forwards, 1 backwards
+  i2c_reg_write(mc_i2c_addr, mc_inv_right, r_forward, i2c_manager); // right = 0 backwards, 1 forwards
 
-  i2c_reg_write(mc_i2c_addr, mc_left, l_dir); //make left motor move forward
-  i2c_reg_write(mc_i2c_addr, mc_right,r_dir); //make right motor move forward
+  i2c_reg_write(mc_i2c_addr, mc_left, l_dir, i2c_manager); //make left motor move forward
+  i2c_reg_write(mc_i2c_addr, mc_right,r_dir, i2c_manager); //make right motor move forward
 }
 
 void activate_servos(){
-  i2c_reg_write(mc_i2c_addr, mc_pwr_on, 1);
+  i2c_reg_write(mc_i2c_addr, mc_pwr_on, 1, i2c_manager);
 }
 
 void deactivate_servos(){
-  i2c_reg_write(mc_i2c_addr, mc_pwr_on, 0);
+  i2c_reg_write(mc_i2c_addr, mc_pwr_on, 0, i2c_manager);
 }
 
 // Initialize and configure the LSM303AGR accelerometer/magnetometer
@@ -99,4 +102,3 @@ void motor_init(const nrf_twi_mngr_t* i2c) {
   nrf_delay_ms(500);
   deactivate_servos();
 }
-
