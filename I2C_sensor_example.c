@@ -62,7 +62,7 @@ static void i2c_reg_write(uint8_t i2c_addr, uint8_t reg_addr, uint8_t data) {
 }
 
 
-void activate_servos(int l_speed, int r_speed, bool l_forward, bool r_forward) {
+void actuate_servos(int l_speed, int r_speed, bool l_forward, bool r_forward) {
   uint16_t l_pwr = (uint16_t)floor(l_speed * 127 / 100);
   uint16_t r_pwr = (uint16_t)floor(r_speed * 127 / 100);
   uint16_t l_dir = l_pwr | mc_fwd;
@@ -73,8 +73,14 @@ void activate_servos(int l_speed, int r_speed, bool l_forward, bool r_forward) {
 
   i2c_reg_write(mc_i2c_addr, mc_left, l_dir); //make left motor move forward
   i2c_reg_write(mc_i2c_addr, mc_right,r_dir); //make right motor move forward
-  
+}
 
+void activate_servos(){
+  i2c_reg_write(mc_i2c_addr, mc_pwr_on, 1);
+}
+
+void deactivate_servos(){
+  i2c_reg_write(mc_i2c_addr, mc_pwr_on, 0);
 }
 
 // Initialize and configure the LSM303AGR accelerometer/magnetometer
@@ -82,16 +88,15 @@ void activate_servos(int l_speed, int r_speed, bool l_forward, bool r_forward) {
 // i2c - pointer to already initialized and enabled twim instance
 void lsm303agr_init(const nrf_twi_mngr_t* i2c) {
   i2c_manager = i2c;
-
-  i2c_reg_write(0x59, 0x70, 1); //power on motors
-  activate_servos(30, 30, false, false);
+  activate_servos();
+  actuate_servos(30, 30, false, false);
   nrf_delay_ms(500);
-  activate_servos(30, 30, true, true);
+  actuate_servos(30, 30, true, true);
   nrf_delay_ms(500);
-  activate_servos(30, 30, true, false);
+  actuate_servos(30, 30, true, false);
   nrf_delay_ms(500);
-  activate_servos(30, 30, false, true);
+  actuate_servos(30, 30, false, true);
   nrf_delay_ms(500);
-  i2c_reg_write(0x59, 0x70, 0); //power off motors
+  deactivate_servos();
 }
 
