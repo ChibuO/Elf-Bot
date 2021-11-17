@@ -1,3 +1,3 @@
 # Elf-Bot
 
-  miniterm /dev/ttyACM0 38400
+  'miniterm /dev/ttyACM0 38400'
