@@ -12,7 +12,7 @@
 #include "nrf_twi_mngr.h"
 
 #include "microbit_v2.h"
-#include "I2C_sensor_example.h"
+#include "Motor_driver.h"
 
 // Global variables
 NRF_TWI_MNGR_DEF(twi_mngr_instance, 1, 0);
@@ -30,7 +30,7 @@ int main(void) {
   i2c_config.interrupt_priority = 0;
   nrf_twi_mngr_init(&twi_mngr_instance, &i2c_config);
   // Initialize the LSM303AGR accelerometer/magnetometer sensor
-  lsm303agr_init(&twi_mngr_instance);
+  motor_init(&twi_mngr_instance);
 
   /*
   app_timer_init();
