@@ -14,6 +14,7 @@
 #include "microbit_v2.h"
 #include "Motor_driver.h"
 #include "Sonic_sensor_driver.h"
+#include "Thermal_sensor_driver.h"
 
 // Global variables
 NRF_TWI_MNGR_DEF(twi_mngr_instance, 1, 0);
@@ -31,7 +32,8 @@ int main(void) {
   i2c_config.interrupt_priority = 0;
   nrf_twi_mngr_init(&twi_mngr_instance, &i2c_config);
   // Initialize the LSM303AGR accelerometer/magnetometer sensor
-  sonic_init(&twi_mngr_instance);
+  //sonic_init(&twi_mngr_instance);
+  thermal_init(&twi_mngr_instance);
   motor_init(&twi_mngr_instance);
   
 
