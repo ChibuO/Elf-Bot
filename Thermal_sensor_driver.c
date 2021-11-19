@@ -6,6 +6,10 @@
 #include "nrf_delay.h"
 #include "math.h"
 
+// Use these values (in degrees C) to adjust the contrast
+#define HOT 40
+#define COLD 20
+
 // Pointer to an initialized I2C instance to use for transactions
 static const nrf_twi_mngr_t* i2c_manager = NULL;
 
@@ -59,47 +63,48 @@ float get_pixel_temp(uint8_t pixelAddr) {
 
 }
 
-void grid_eye(uint8_t pixel_table) {
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+void grid_eye(uint8_t pixel_table[]) {
 
     // loop through all 64 pixels on the device and map each float value to a number
     // between 0 and 3 using the HOT and COLD values we set at the top of the sketch
     for(uint8_t i = 0; i < 64; i++){
-        pixelTable[i] = map(grideye.getPixelTemperature(i), COLD, HOT, 0, 3);
+        //map scales the given value
+        //value, min and max that we could get, min and max that we want
+        uint8_t orig_temp = get_pixel_temp(i);
+        pixel_table[i] = map(orig_temp, COLD, HOT, 0, 3);
+        //printf("orig: %u mapped: %u\n", orig_temp, pixel_table[i]);
     }
 
+    //printf("\n");
 
     // loop through the table of mapped values and print a character corresponding to each
     // pixel's temperature. Add a space between each. Start a new line every 8 in order to 
     // create an 8x8 grid
-    for(uint8_t i = 0; i < 64; i++){
-        if(pixelTable[i]==0){Serial.print(".");}
-        else if(pixelTable[i]==1){Serial.print("o");}
-        else if(pixelTable[i]==2){Serial.print("0");}
-        else if(pixelTable[i]==3){Serial.print("O");}
-        Serial.print(" ");
-        if((i+1)%8==0){
-        Serial.println();
+    for(uint8_t i = 0; i < 64; i++) {
+        if (pixel_table[i] == 0) {printf(".");}
+        else if (pixel_table[i] == 1) {printf("o");}
+        else if (pixel_table[i] == 2) {printf("0");}
+        else if (pixel_table[i] == 3) {printf("O");}
+        printf(" ");
+
+        if ((i+1) % 8 == 0) {
+            printf("\n");
         }
     }
-
-    // in between updates, throw a few linefeeds to visually separate the grids. If you're using
-    // a serial terminal outside the Arduino IDE, you can replace these linefeeds with a clearscreen
-    // command
-    printf("\n");
-    printf("\n");
-
-    // toss in a delay because we don't need to run all out
-    delay(100);
-
 }
 
 void thermal_init(const nrf_twi_mngr_t* i2c){
     i2c_manager = i2c;
-    uint8_t pixelTable[64];
+    uint8_t pixel_table[64];
     while(1){
-        printf("Temperature: %f\n", getDeviceTemp());
+        //printf("Temperature: %f\n", getDeviceTemp());
+        grid_eye(pixel_table);
+        printf("\n");
         nrf_delay_ms(1000);
     }
-    //getDeviceTemp();
 }
 
