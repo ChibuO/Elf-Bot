@@ -96,9 +96,9 @@ void grid_eye(float pixel_table[8][8]) {
     // loop through the table of mapped values and print a character corresponding to each
     // pixel's temperature. Add a space between each. Start a new line every 8 in order to 
     // create an 8x8 grid
-    for (uint8_t j = 0; j < 8; j++) {
-        for(uint8_t i = 0; i < 8; i++) {
-            printf("orig: %f\n", pixel_table[j][i]);
+    for (uint8_t j = 0; i < 8; i++) {
+        for(uint8_t i = 0; j < 8; j++) {
+            printf("%f  ", pixel_table[i][j]);
             /*
             uint8_t pixel_num = (j * 8) + i;
             if (pixel_table[pixel_num] == 0) {printf("0");}
@@ -110,7 +110,7 @@ void grid_eye(float pixel_table[8][8]) {
             printf(" ");
 
             */
-            if ((i+1) % 8 == 0) {
+            if ((j+1) % 8 == 0) {
                 printf("\n");
             }
         }
