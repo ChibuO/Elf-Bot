@@ -55,9 +55,9 @@ float get_pixel_temp(uint8_t pixelAddr) {
     }
 
     //celsius
-    float float_temp = (float)temp *.25;
+    //float float_temp = (float)temp *.25;
     //fahrenheit
-    //float float_temp = ((float)temp *.0625) * 1.8 + 32;
+    float float_temp = ((float)temp *.25) * 1.8 + 32;
 
     return float_temp;
 
@@ -72,7 +72,7 @@ void grid_eye(float pixel_table[8][8]) {
     // loop through all 64 pixels on the device and map each float value to a number
     // between 0 and 3 using the HOT and COLD values we set at the top of the sketch
     for (uint8_t i = 0; i < 8; i++){
-        for(uint8_t j = 0; i < 8; i++){
+        for(uint8_t j = 0; j < 8; j++){
             //map scales the given value
             //value, min and max that we could get, min and max that we want
             uint8_t pixel_num = (i * 8) + j;
@@ -85,7 +85,7 @@ void grid_eye(float pixel_table[8][8]) {
             }*/
 
             pixel_table[i][j] = orig_temp;
-            printf("i: %u j: %u orig: %f\n", i, j, orig_temp);
+           // printf("i: %u j: %u orig: %f\n", i, j, orig_temp);
             //pixel_table[j] = map(orig_temp, COLD, HOT, 0, 5);
             //    printf("i: %u orig: %f mapped: %f\n", pixel_num, orig_temp, pixel_table[pixel_num]);
         }
@@ -96,8 +96,8 @@ void grid_eye(float pixel_table[8][8]) {
     // loop through the table of mapped values and print a character corresponding to each
     // pixel's temperature. Add a space between each. Start a new line every 8 in order to 
     // create an 8x8 grid
-    for (uint8_t j = 0; i < 8; i++) {
-        for(uint8_t i = 0; j < 8; j++) {
+    for (uint8_t i = 0; i < 8; i++) {
+        for(uint8_t j = 0; j < 8; j++) {
             printf("%f  ", pixel_table[i][j]);
             /*
             uint8_t pixel_num = (j * 8) + i;
@@ -124,7 +124,7 @@ void thermal_init(const nrf_twi_mngr_t* i2c){
         //printf("Temperature: %f\n", getDeviceTemp());
         grid_eye(pixel_table);
         printf("\n");
-        nrf_delay_ms(2000);
+        nrf_delay_ms(100);
     }
 }
 

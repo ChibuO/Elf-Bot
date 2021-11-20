@@ -26,6 +26,7 @@ void print_data(){
             for (int k = 0; k<= 255; k++)
             {
                 i2c_reg_write(i, j, 1, i2c_manager);
+                nrf_delay_ms(6);
                 uint8_t data = i2c_reg_read(i, k, i2c_manager);
                 if (data != 0)
                 {
