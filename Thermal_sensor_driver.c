@@ -35,6 +35,7 @@ float getDeviceTemp() {
     return float_temp;
 }
 
+
 float get_pixel_temp(uint8_t pixelAddr) {
     // Temperature registers are numbered 128-255
     // Each pixel has a lower and higher register
@@ -92,29 +93,31 @@ void grid_eye(float pixel_table[8][8]) {
     }
 
     printf("\n");
+    /*
+    // Calculate the averages of each column and print them out in the respective positions
+    float holder = 0;
+    for (uint8_t i = 0; i < 8; i++){
+        for (uint8_t j = 0; j < 8; j++){
+            holder += pixel_table[j][i];
+        }
+        printf("%.1f  ", holder/8);
+        holder = 0;
+    }
+    */ 
 
+    
     // loop through the table of mapped values and print a character corresponding to each
     // pixel's temperature. Add a space between each. Start a new line every 8 in order to 
     // create an 8x8 grid
     for (uint8_t i = 0; i < 8; i++) {
         for(uint8_t j = 0; j < 8; j++) {
             printf("%f  ", pixel_table[i][j]);
-            /*
-            uint8_t pixel_num = (j * 8) + i;
-            if (pixel_table[pixel_num] == 0) {printf("0");}
-            else if (pixel_table[pixel_num] == 1) {printf("1");}
-            else if (pixel_table[pixel_num] == 2) {printf("2");}
-            else if (pixel_table[pixel_num] == 3) {printf("3");}
-            else if (pixel_table[pixel_num] == 4) {printf("4");}
-            else if (pixel_table[pixel_num] == 5) {printf("5");}
-            printf(" ");
-
-            */
             if ((j+1) % 8 == 0) {
                 printf("\n");
             }
         }
     }
+    
 }
 
 void thermal_init(const nrf_twi_mngr_t* i2c){
@@ -124,7 +127,7 @@ void thermal_init(const nrf_twi_mngr_t* i2c){
         //printf("Temperature: %f\n", getDeviceTemp());
         grid_eye(pixel_table);
         printf("\n");
-        nrf_delay_ms(100);
+        nrf_delay_ms(1000);
     }
 }
 
