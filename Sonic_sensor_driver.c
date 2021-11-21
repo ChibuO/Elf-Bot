@@ -15,6 +15,7 @@
 
 // Log of possible hits:
 // - sonic_addr = 0; trig = 0; echo = 1
+// - sonic_addr = 0; trig = 0; echo = 1
 // - sonic_addr = 2; trig = 0; echo = 0
 
 // Pointer to an initialized I2C instance to use for transactions
@@ -33,14 +34,17 @@ void print_data(){
             {
                 i2c_reg_write(i, j, 1, i2c_manager);
                 //nrf_delay_ms(6);
-                uint8_t data = i2c_reg_read(i, k, i2c_manager);
-                if (data != 0)
+                uint8_t data_msb = i2c_reg_read(i, k, i2c_manager);
+                if (data_msb != 0)
                 {
+                    // Upon a data hit, print out that we found data, find the LSB of data, and combine the two bytes to get the full data
                     printf("hit\n");
-                   // printf("i: %u\n", i);
+                    uint8_t data_lsb = i2c_reg_read(i, k+1, i2c_manager);
+                    uint16_t most_shifted = data_msb << 8;
+                    uint16_t distance = most_shifted | data_lsb;
                     printf("j: %u\n", j);
                     printf("k: %u\n", k);
-                    printf("data: %u\n", data);
+                    printf("Distance: %u mm\n", distance);
                 }   
             }
         }

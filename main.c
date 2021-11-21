@@ -31,9 +31,9 @@ int main(void) {
   i2c_config.frequency = NRF_TWIM_FREQ_100K;
   i2c_config.interrupt_priority = 0;
   nrf_twi_mngr_init(&twi_mngr_instance, &i2c_config);
-  // Initialize the LSM303AGR accelerometer/magnetometer sensor
-  //sonic_init(&twi_mngr_instance);
-  thermal_init(&twi_mngr_instance);
+  // Initialize drivers
+  sonic_init(&twi_mngr_instance);
+  // thermal_init(&twi_mngr_instance);
   // motor_init(&twi_mngr_instance);
   
 

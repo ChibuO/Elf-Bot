@@ -6,12 +6,6 @@
 #include "nrf_delay.h"
 #include "math.h"
 
-// Use these values (in degrees C) to adjust the contrast
-#define HOT 30
-#define COLD 10
-
-
-
 // Pointer to an initialized I2C instance to use for transactions
 static const nrf_twi_mngr_t* i2c_manager = NULL;
 
@@ -88,48 +82,6 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
         }
     }
  }
-    /*
-    printf("\n");
-    printf("Averages:\n");
-    // Calculate the averages of each column and print them out in the respective positions
-    float holder = 0;
-    for (uint8_t i = 0; i < 8; i++){
-        for (uint8_t j = 0; j < 8; j++){
-            holder += pixel_table[j][i];
-        }
-        printf("%.1f  ", holder/8);
-        holder = 0;
-    }
-
-    printf("\n");
-    printf("Maxes:\n");
-
-    // Calculate the maxes of each column and print them out in the respective positions
-    float max = 0;
-    for (uint8_t i = 0; i < 8; i++){
-        for (uint8_t j = 0; j < 8; j++){
-            if (pixel_table[j][i] > max){
-                max = pixel_table[j][i];
-            }
-        }
-        printf("%.1f  ", max);
-        max = 0;
-    }
-
-    
-    // loop through the table of mapped values and print a character corresponding to each
-    // pixel's temperature. Add a space between each. Start a new line every 8 in order to 
-    // create an 8x8 grid
-    
-    for (uint8_t i = 0; i < 8; i++) {
-        for(uint8_t j = 0; j < 8; j++) {
-            printf("%f  ", pixel_table[i][j]);
-            if ((j+1) % 8 == 0) {
-                printf("\n");
-            }
-        }
-    }
-    */
     
 void temp_averages(float averages[8], float pixel_table[8][8]){
     // Calculate the averages of each column and print them out in the respective positions

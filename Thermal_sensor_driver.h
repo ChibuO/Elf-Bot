@@ -23,4 +23,7 @@
 #define TEMPERATURE_REGISTER_START    0x80
 
 // Prototypes
+void grid_eye(float pixel_table[8][8]);
+void temp_averages(float averages[8], float pixel_table[8][8]);
+void temp_maxes(float maxes[8], float pixel_table[8][8]);
 void thermal_init(const nrf_twi_mngr_t* i2c);
