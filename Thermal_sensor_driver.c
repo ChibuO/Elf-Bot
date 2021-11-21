@@ -10,10 +10,13 @@
 #define HOT 30
 #define COLD 10
 
+
+
 // Pointer to an initialized I2C instance to use for transactions
 static const nrf_twi_mngr_t* i2c_manager = NULL;
 
 float getDeviceTemp() {
+    // Sample function to familiarize with I2C of device. Not used in our project though
     uint8_t temp_lsb = i2c_reg_read(THERM_ADDR, THERMISTOR_REGISTER_LSB, i2c_manager);
     uint8_t temp_msb = i2c_reg_read(THERM_ADDR, THERMISTOR_REGISTER_MSB, i2c_manager);
 
@@ -37,6 +40,9 @@ float getDeviceTemp() {
 
 
 float get_pixel_temp(uint8_t pixelAddr) {
+    // Helper function for grid_eye,
+    // Acquires the temperature of a specified pixel from the GridEye
+    
     // Temperature registers are numbered 128-255
     // Each pixel has a lower and higher register
     uint8_t pixelLowRegister = TEMPERATURE_REGISTER_START + (2 * pixelAddr);
@@ -68,32 +74,23 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
-void grid_eye(float pixel_table[8][8]) {
+
+ void grid_eye(float pixel_table[8][8]) {
+    // Update the global pixel grid with the latest temperatures
 
     // loop through all 64 pixels on the device and map each float value to a number
     // between 0 and 3 using the HOT and COLD values we set at the top of the sketch
     for (uint8_t i = 0; i < 8; i++){
         for(uint8_t j = 0; j < 8; j++){
-            //map scales the given value
-            //value, min and max that we could get, min and max that we want
             uint8_t pixel_num = (i * 8) + j;
             float orig_temp = get_pixel_temp(pixel_num);
-
-            /*if ( orig_temp < COLD ) {
-                orig_temp = COLD;
-            } else if ( orig_temp > HOT ) {
-                orig_temp = HOT;
-            }*/
-
             pixel_table[i][j] = orig_temp;
-           // printf("i: %u j: %u orig: %f\n", i, j, orig_temp);
-            //pixel_table[j] = map(orig_temp, COLD, HOT, 0, 5);
-            //    printf("i: %u orig: %f mapped: %f\n", pixel_num, orig_temp, pixel_table[pixel_num]);
         }
     }
-
-    printf("\n");
+ }
     /*
+    printf("\n");
+    printf("Averages:\n");
     // Calculate the averages of each column and print them out in the respective positions
     float holder = 0;
     for (uint8_t i = 0; i < 8; i++){
@@ -103,12 +100,27 @@ void grid_eye(float pixel_table[8][8]) {
         printf("%.1f  ", holder/8);
         holder = 0;
     }
-    */ 
+
+    printf("\n");
+    printf("Maxes:\n");
+
+    // Calculate the maxes of each column and print them out in the respective positions
+    float max = 0;
+    for (uint8_t i = 0; i < 8; i++){
+        for (uint8_t j = 0; j < 8; j++){
+            if (pixel_table[j][i] > max){
+                max = pixel_table[j][i];
+            }
+        }
+        printf("%.1f  ", max);
+        max = 0;
+    }
 
     
     // loop through the table of mapped values and print a character corresponding to each
     // pixel's temperature. Add a space between each. Start a new line every 8 in order to 
     // create an 8x8 grid
+    
     for (uint8_t i = 0; i < 8; i++) {
         for(uint8_t j = 0; j < 8; j++) {
             printf("%f  ", pixel_table[i][j]);
@@ -117,15 +129,63 @@ void grid_eye(float pixel_table[8][8]) {
             }
         }
     }
+    */
     
+void temp_averages(float averages[8], float pixel_table[8][8]){
+    // Calculate the averages of each column and print them out in the respective positions
+    // Function will update the passed in averages array
+    float holder = 0;
+    for (uint8_t i = 0; i < 8; i++){
+        for (uint8_t j = 0; j < 8; j++){
+            holder += pixel_table[j][i];
+        }
+        float avg = holder/8.0;
+        averages[i] = avg;
+        // printf("%.1f  ", avg);
+        holder = 0;
+    } 
+    // printf("\n");
+}
+
+void temp_maxes(float maxes[8], float pixel_table[8][8]){
+    // Calculate the maxes of each column and print them out in the respective positions
+    // Function will update the passed in maxes array
+    float max = 0;
+    for (uint8_t i = 0; i < 8; i++){
+        for (uint8_t j = 0; j < 8; j++){
+            if (pixel_table[j][i] > max){
+                max = pixel_table[j][i];
+            }
+        }
+        maxes[i] = max;
+        // printf("%.1f  ", max);
+        max = 0;
+    }
+    // printf("\n");
+}
+
+void print_temp_grid(float pixel_table[8][8]){
+    for (uint8_t i = 0; i < 8; i++) {
+        for(uint8_t j = 0; j < 8; j++) {
+            printf("%.1f  ", pixel_table[i][j]);
+            if ((j+1) % 8 == 0) {
+                printf("\n");
+            }
+        }
+    }
 }
 
 void thermal_init(const nrf_twi_mngr_t* i2c){
     i2c_manager = i2c;
+    float averages[8];
+    float maxes[8];
     float pixel_table[8][8];
     while(1){
         //printf("Temperature: %f\n", getDeviceTemp());
         grid_eye(pixel_table);
+        temp_averages(averages, pixel_table);
+        temp_maxes(maxes, pixel_table);
+        //print_temp_grid(pixel_table);
         printf("\n");
         nrf_delay_ms(1000);
     }
