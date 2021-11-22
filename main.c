@@ -20,7 +20,7 @@
 // Global variables
 NRF_TWI_MNGR_DEF(twi_mngr_instance, 1, 0);
 
-APP_TIMER_DEF(APP_TIM);
+// APP_TIMER_DEF(APP_TIM);
 
 int main(void) {
   printf("\nBoard started!\n");
@@ -39,17 +39,21 @@ int main(void) {
   // deactivate_servos();
 
   
-  app_timer_init();
-  app_timer_create(&APP_TIM, APP_TIMER_MODE_REPEATED, deactivate_servos);
-  app_timer_start(APP_TIM, 30000, NULL);
+  // app_timer_init();
+  // app_timer_create(&APP_TIM, APP_TIMER_MODE_REPEATED, deactivate_servos);
+  // app_timer_start(APP_TIM, 30000, NULL);
   
 
   // Intialize arrays used by thermal sensing driver
   float heat_grid[8][8];
   float average_vals[8];
+  follow_heat(heat_grid, average_vals, &twi_mngr_instance);
+  // nrf_delay_ms(5000);
+  // deactivate_servos();
   // Loop forever
   while (1) {
-    follow_heat(heat_grid, average_vals, &twi_mngr_instance);
+    // follow_heat(heat_grid, average_vals, &twi_mngr_instance);
+    nrf_delay_ms(5000);
   }
 }
 

@@ -88,4 +88,5 @@ _build/Thermal_sensing_driver.o: Thermal_sensing_driver.c \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries//log/nrf_log_instance.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/experimental_section_vars/nrf_section.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries//log/nrf_log_types.h \
- Motor_driver.h
+ Motor_driver.h \
+ nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/delay/nrf_delay.h
