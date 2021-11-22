@@ -40,6 +40,7 @@ float get_pixel_temp(uint8_t pixelAddr) {
     // Temperature registers are numbered 128-255
     // Each pixel has a lower and higher register
     uint8_t pixelLowRegister = TEMPERATURE_REGISTER_START + (2 * pixelAddr);
+
     uint8_t temp_lsb = i2c_reg_read(THERM_ADDR, pixelLowRegister, i2c_manager);
     uint8_t temp_msb = i2c_reg_read(THERM_ADDR, pixelLowRegister + 1, i2c_manager);
 
@@ -64,9 +65,9 @@ float get_pixel_temp(uint8_t pixelAddr) {
 
 }
 
-long map(long x, long in_min, long in_max, long out_min, long out_max) {
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
+// long map(long x, long in_min, long in_max, long out_min, long out_max) {
+//   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+// }
 
 
  void grid_eye(float pixel_table[8][8]) {
@@ -129,17 +130,17 @@ void print_temp_grid(float pixel_table[8][8]){
 
 void thermal_init(const nrf_twi_mngr_t* i2c){
     i2c_manager = i2c;
-    float averages[8];
-    float maxes[8];
-    float pixel_table[8][8];
-    while(1){
-        //printf("Temperature: %f\n", getDeviceTemp());
-        grid_eye(pixel_table);
-        temp_averages(averages, pixel_table);
-        // temp_maxes(maxes, pixel_table);
-        // print_temp_grid(pixel_table);
-        printf("\n");
-        nrf_delay_ms(1000);
-    }
+    // float averages[8];
+    // float maxes[8];
+    // float pixel_table[8][8];
+    // while(1){
+    //     //printf("Temperature: %f\n", getDeviceTemp());
+    //     grid_eye(pixel_table);
+    //     temp_averages(averages, pixel_table);
+    //     // temp_maxes(maxes, pixel_table);
+    //     // print_temp_grid(pixel_table);
+    //     printf("\n");
+    //     nrf_delay_ms(1000);
+    // }
 }
 

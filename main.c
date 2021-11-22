@@ -20,7 +20,7 @@
 // Global variables
 NRF_TWI_MNGR_DEF(twi_mngr_instance, 1, 0);
 
-//APP_TIMER_DEF(APP_TIM);
+APP_TIMER_DEF(APP_TIM);
 
 int main(void) {
   printf("\nBoard started!\n");
@@ -34,24 +34,22 @@ int main(void) {
   nrf_twi_mngr_init(&twi_mngr_instance, &i2c_config);
   // Initialize drivers
   // sonic_init(&twi_mngr_instance);
-  // thermal_init(&twi_mngr_instance);
+  thermal_init(&twi_mngr_instance);
   motor_init(&twi_mngr_instance);
-  deactivate_servos();
+  // deactivate_servos();
 
   
-
-  /*
   app_timer_init();
-  app_timer_create(&APP_TIM, APP_TIMER_MODE_REPEATED, app_tim_callback);
-  app_timer_start(APP_TIM, 10000, NULL);
-  */
+  app_timer_create(&APP_TIM, APP_TIMER_MODE_REPEATED, deactivate_servos);
+  app_timer_start(APP_TIM, 30000, NULL);
+  
 
   // Intialize arrays used by thermal sensing driver
   float heat_grid[8][8];
   float average_vals[8];
   // Loop forever
   while (1) {
-    follow_heat(heat_grid, average_vals);
+    follow_heat(heat_grid, average_vals, &twi_mngr_instance);
   }
 }
 

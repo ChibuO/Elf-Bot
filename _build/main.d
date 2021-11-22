@@ -93,4 +93,5 @@ _build/main.o: main.c \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries//log/nrf_log_types.h \
  /home/ce346/Elf-Bot/boards/microbit_v2/./microbit_v2.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/hal/nrf_gpio.h \
- Motor_driver.h Sonic_sensor_driver.h Thermal_sensor_driver.h
+ Motor_driver.h Sonic_sensor_driver.h Thermal_sensor_driver.h \
+ Thermal_sensing_driver.h
