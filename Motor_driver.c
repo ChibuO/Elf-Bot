@@ -100,5 +100,5 @@ void motor_init(const nrf_twi_mngr_t* i2c) {
   nrf_delay_ms(500);
   actuate_servos(30, 30, false, true);
   nrf_delay_ms(500);
-  deactivate_servos();
+  // deactivate_servos();
 }

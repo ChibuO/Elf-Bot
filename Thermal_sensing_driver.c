@@ -3,22 +3,23 @@
 
 uint8_t find_max_index(float average_array[8]) {
     uint8_t holder = 0;
-    for (i = 0; i < 8; i++) {
+    for (uint8_t i = 0; i < 8; i++) {
         if (average_array[i] > holder) {
             holder = i;
         }
     }
     return holder + 1;
 }
-void follow_heat() {
+void follow_heat(float heat_grid[8][8], float average_vals[8]) {
+    // Function that updates an inputted pixel grid, finds the averages of each column
+    // and moves the robot accordingly to follow a heat source
+    
     // First update the pixel grid
     // The pixel grid for the GridEye is always an 8x8 array
-    float heat_grid[8][8];
     grid_eye(heat_grid);
 
     // Find the averages of the columns
     // The average array will consist of 8 values, each corresponding to the average of each column from the GridEye
-    float average_vals[8];
     temp_averages(average_vals, heat_grid);
 
     // Two conditions:
@@ -29,15 +30,19 @@ void follow_heat() {
     // If the max average is in columns 2-5, the robot should keep going forward
     // If the max average is in columns 0-1, the robot should  turn left
     // If the max average is in clumns 6-7, the robot should turn right
-
+    int wheel_speed = 10;
+    int turning_wheel_speed = wheel_speed + 10;
     max_index = find_max_index(average_vals);
-    if (max_index == 0 || max_index == 1) {
-
+    if (max_index == 0 || max_index == 1) {     
+        // Target is to the left            
+        activate_servos(wheel_speed, turning_wheel_speed, true, true);
     }
-    else if (max_index == 6 || max_index == 7) {
-
+    else if (max_index == 6 || max_index == 7) {    
+        // Target is to the right        
+        activate_servos(turning_wheel_speed, wheel_speed, true, true);
     }
-    else {
-        
+    else {                                                  
+        // Target is in the center
+        activate_servos(wheel_speed, wheel_speed, true, true);
     }
 }

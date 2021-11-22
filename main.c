@@ -15,6 +15,7 @@
 #include "Motor_driver.h"
 #include "Sonic_sensor_driver.h"
 #include "Thermal_sensor_driver.h"
+#include "Thermal_sensing_driver.h"
 
 // Global variables
 NRF_TWI_MNGR_DEF(twi_mngr_instance, 1, 0);
@@ -33,8 +34,10 @@ int main(void) {
   nrf_twi_mngr_init(&twi_mngr_instance, &i2c_config);
   // Initialize drivers
   // sonic_init(&twi_mngr_instance);
-  thermal_init(&twi_mngr_instance);
-  // motor_init(&twi_mngr_instance);
+  // thermal_init(&twi_mngr_instance);
+  motor_init(&twi_mngr_instance);
+  deactivate_servos();
+
   
 
   /*
@@ -43,10 +46,12 @@ int main(void) {
   app_timer_start(APP_TIM, 10000, NULL);
   */
 
+  // Intialize arrays used by thermal sensing driver
+  float heat_grid[8][8];
+  float average_vals[8];
   // Loop forever
   while (1) {
-    // Don't put any code in here. Instead put periodic code in a callback using a timer.
-    nrf_delay_ms(1000);
+    follow_heat(heat_grid, average_vals);
   }
 }
 
