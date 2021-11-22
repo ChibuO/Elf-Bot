@@ -59,7 +59,7 @@ void deactivate_servos(){
 // i2c - pointer to already initialized and enabled twim instance
 void motor_init(const nrf_twi_mngr_t* i2c) {
   i2c_manager = i2c;
-  activate_servos();
+  // activate_servos();
   // actuate_servos(30, 30, false, false);
   // nrf_delay_ms(500);
   // actuate_servos(30, 30, true, true);
