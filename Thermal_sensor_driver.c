@@ -93,10 +93,10 @@ void temp_averages(float averages[8], float pixel_table[8][8]){
         }
         float avg = holder/8.0;
         averages[i] = avg;
-        // printf("%.1f  ", avg);
+        printf("%.1f  ", avg);
         holder = 0;
     } 
-    // printf("\n");
+    printf("\n");
 }
 
 void temp_maxes(float maxes[8], float pixel_table[8][8]){
@@ -136,8 +136,8 @@ void thermal_init(const nrf_twi_mngr_t* i2c){
         //printf("Temperature: %f\n", getDeviceTemp());
         grid_eye(pixel_table);
         temp_averages(averages, pixel_table);
-        temp_maxes(maxes, pixel_table);
-        //print_temp_grid(pixel_table);
+        // temp_maxes(maxes, pixel_table);
+        // print_temp_grid(pixel_table);
         printf("\n");
         nrf_delay_ms(1000);
     }
