@@ -47,12 +47,12 @@ int main(void) {
   // Intialize arrays used by thermal sensing driver
   float heat_grid[8][8];
   float average_vals[8];
-  follow_heat(heat_grid, average_vals, &twi_mngr_instance);
+  // follow_heat(heat_grid, average_vals, &twi_mngr_instance);
   // nrf_delay_ms(5000);
   // deactivate_servos();
   // Loop forever
   while (1) {
-    // follow_heat(heat_grid, average_vals, &twi_mngr_instance);
+    follow_heat(heat_grid, average_vals, &twi_mngr_instance);
     nrf_delay_ms(5000);
   }
 }

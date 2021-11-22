@@ -35,50 +35,86 @@ void follow_heat(float heat_grid[8][8], float average_vals[8], const nrf_twi_mng
     // If the max average is in columns 2-5, the robot should keep going forward
     // If the max average is in columns 0-1, the robot should  turn left
     // If the max average is in clumns 6-7, the robot should turn right
-    int wheel_speed = 30;
-    int turning_wheel_speed = wheel_speed + 10;
+    // int 30 = 30;
+    // int 40 = 30 + 10;
     uint8_t max_index = find_max_index(average_vals);
     if (max_index == 0 || max_index == 1) {     
         // Target is to the left    
         printf("Turning left...\n");        
-        actuate_servos(wheel_speed, turning_wheel_speed, true, true);
+        actuate_servos(30, 40, false, false);
         printf("Thermal sensing servos actuated\n");
         nrf_delay_ms(500);
+        // actuate_servos(30, 30, false, false);
+        // nrf_delay_ms(500);
+        // actuate_servos(30, 30, true, true);
+        // nrf_delay_ms(500);
+        // actuate_servos(30, 30, true, false);
+        // nrf_delay_ms(500);
+        // actuate_servos(30, 30, false, true);
+        // nrf_delay_ms(500);
+        // deactivate_servos();
     }
     else if (max_index == 6 || max_index == 7) {    
         // Target is to the right        
         printf("Turning right...\n");
-        actuate_servos(turning_wheel_speed, wheel_speed, true, true);
+        actuate_servos(40, 30, false, false);
         printf("Thermal sensing servos actuated\n");
         nrf_delay_ms(500);
-    }
+        // actuate_servos(30, 30, false, false);
+        // nrf_delay_ms(500);
+        // actuate_servos(30, 30, true, true);
+        // nrf_delay_ms(500);
+        // actuate_servos(30, 30, true, false);
+        // nrf_delay_ms(500);
+        // actuate_servos(30, 30, false, true);
+        // nrf_delay_ms(500);
+        // deactivate_servos();
+        }
     else {                                                  
         // Target is in the center
         printf("Going forward...\n");
-        actuate_servos(wheel_speed, wheel_speed, true, true);
+        actuate_servos(30, 30, false, false);
         printf("Thermal sensing servos actuated\n");
         nrf_delay_ms(500);
+        // actuate_servos(30, 30, false, false);
+        // nrf_delay_ms(500);
+        // actuate_servos(30, 30, true, true);
+        // nrf_delay_ms(500);
+        // actuate_servos(30, 30, true, false);
+        // nrf_delay_ms(500);
+        // actuate_servos(30, 30, false, true);
+        // nrf_delay_ms(500);
+        // deactivate_servos();
     }
     printf("done moving!\n");
+}
 
     // if (max_index == 0 || max_index == 1) {     
     //     // Target is to the left    
     //     printf("Turning left...\n");        
-    //     actuate_servos(wheel_speed-5, wheel_speed-5, true, true);
+    //     actuate_servos(30-5, 30-5, true, true);
     //     nrf_delay_ms(2000);
     // }
     // else if (max_index == 6 || max_index == 7) {    
     //     // Target is to the right        
     //     printf("Turning right...\n");
-    //     actuate_servos(wheel_speed+5, wheel_speed+5, true, true);
+    //     actuate_servos(30+5, 30+5, true, true);
     //     nrf_delay_ms(2000);
     // }
     // else {                                                  
     //     // Target is in the center
     //     printf("Going forward...\n");
-    //     actuate_servos(wheel_speed, wheel_speed, true, true);
+    //     actuate_servos(30, 30, true, true);
     //     nrf_delay_ms(2000);
     // }
 
-    
-}
+//     actuate_servos(30, 30, false, false);
+//     nrf_delay_ms(500);
+//     actuate_servos(30, 30, true, true);
+//     nrf_delay_ms(500);
+//     actuate_servos(30, 30, true, false);
+//     nrf_delay_ms(500);
+//     actuate_servos(30, 30, false, true);
+//     nrf_delay_ms(500);
+//     deactivate_servos();
+// }
