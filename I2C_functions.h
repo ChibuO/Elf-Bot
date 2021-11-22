@@ -15,3 +15,7 @@ uint8_t i2c_reg_read(uint8_t i2c_addr, uint8_t reg_addr, const nrf_twi_mngr_t* i
 // i2c_addr - address of the device to write to
 // reg_addr - address of the register within the device to write
 void i2c_reg_write(uint8_t i2c_addr, uint8_t reg_addr, uint8_t data, const nrf_twi_mngr_t* i2c_manager);
+
+
+void experimental_write(uint8_t i2c_addr, uint8_t data, const nrf_twi_mngr_t* i2c_manager);
+uint8_t experimental_read(uint8_t i2c_addr, const nrf_twi_mngr_t* i2c_manager);

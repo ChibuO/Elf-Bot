@@ -24,37 +24,41 @@ static const nrf_twi_mngr_t* i2c_manager = NULL;
 
 void print_data(){
     
+    // CODE FOR TRYING TO FIND THE REG ADDRESS //
+    // for (int i = 0; i <= 255; i++)
+    // {
+    //     printf("i: %u\n", i);
+    //     for (int j = 0; j <= 255; j++)
+    //     {
+    //         for (int k = 0; k<= 255; k++)
+    //         {
+    //             i2c_reg_write(i, j, 1, i2c_manager);
+    //             //nrf_delay_ms(6);
+    //             uint8_t data_msb = i2c_reg_read(i, k, i2c_manager);
+    //             if (data_msb != 0)
+    //             {
+    //                 // Upon a data hit, print out that we found data, find the LSB of data, and combine the two bytes to get the full data
+    //                 printf("hit\n");
+    //                 uint8_t data_lsb = i2c_reg_read(i, k+1, i2c_manager);
+    //                 uint16_t most_shifted = data_msb << 8;
+    //                 uint16_t distance = most_shifted | data_lsb;
+    //                 printf("j: %u\n", j);
+    //                 printf("k: %u\n", k);
+    //                 printf("Distance: %u mm\n", distance);
+    //             }   
+    //         }
+    //     }
+    // }
+    // printf("Function done\n");
     
-    for (int i = 0; i <= 255; i++)
-    {
-        printf("i: %u\n", i);
-        for (int j = 0; j <= 255; j++)
-        {
-            for (int k = 0; k<= 255; k++)
-            {
-                i2c_reg_write(i, j, 1, i2c_manager);
-                //nrf_delay_ms(6);
-                uint8_t data_msb = i2c_reg_read(i, k, i2c_manager);
-                if (data_msb != 0)
-                {
-                    // Upon a data hit, print out that we found data, find the LSB of data, and combine the two bytes to get the full data
-                    printf("hit\n");
-                    uint8_t data_lsb = i2c_reg_read(i, k+1, i2c_manager);
-                    uint16_t most_shifted = data_msb << 8;
-                    uint16_t distance = most_shifted | data_lsb;
-                    printf("j: %u\n", j);
-                    printf("k: %u\n", k);
-                    printf("Distance: %u mm\n", distance);
-                }   
-            }
-        }
-    }
-    printf("Function done\n");
-    
-    
-    /*
+    // DATA FINDING USING EXPERIMENTAL READ AND WRITES //
+    // experimental_write(sonic_addr, 1, i2c_manager);
+    // nrf_delay_ms(1000);
+    // uint8_t distance_msb = experimental_read(sonic_addr, i2c_manager);
+    // printf("Data: %u\n", distance_msb);
+
+    // DEFAULT DATA FINDING //
     i2c_reg_write(sonic_addr, trig, 1, i2c_manager);
-    nrf_delay_ms(1000);
     uint8_t distance_msb = i2c_reg_read(sonic_addr, echo, i2c_manager);
     uint8_t distance_lsb = i2c_reg_read(sonic_addr, echo+1, i2c_manager);
     printf("Dist_MSB: %u\n", distance_msb);
@@ -63,17 +67,7 @@ void print_data(){
     uint16_t distance = most_shifted | distance_lsb;
     
     printf("sonic data: %u\n", distance);
-    */
-    
 }
-
-/*  
-void beep(){
-    i2c_reg_write(sonic_addr, beep_reg, 1, i2c_manager);
-    nrf_delay_ms(1000);
-    i2c_reg_write(sonic_addr, beep_reg, 0, i2c_manager);
-}
-*/
 
 void sonic_init(const nrf_twi_mngr_t* i2c){
     
