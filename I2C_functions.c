@@ -37,10 +37,11 @@ uint8_t experimental_read(uint8_t i2c_addr, const nrf_twi_mngr_t* i2c_manager) {
     NRF_TWI_MNGR_WRITE(i2c_addr,(int)&i2c_addr, 1, 0)
   };
   nrf_twi_mngr_transfer_t const read_transfer[] = {
-    NRF_TWI_MNGR_READ(i2c_addr, &rx_buf, 2, 0)
+    NRF_TWI_MNGR_READ(i2c_addr, (int)&rx_buf, 2, 0)
   };
   nrf_twi_mngr_perform(i2c_manager, NULL, write_transfer, 1, NULL);
-  nrf_twi_mngr_perform(i2c_manager, NULL, read_transfer, 1, NULL);
+  nrf_delay_ms(5);
+  nrf_twi_mngr_perform(i2c_manager, NULL, read_transfer, 2, NULL);
 
   return rx_buf;
 }
