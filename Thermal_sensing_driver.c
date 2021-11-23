@@ -56,7 +56,7 @@ void follow_heat(float heat_grid[8][8], float average_vals[8], const nrf_twi_mng
         // Target is in the center
         //deactivate_servos();
         printf("Going forward...\n");
-        actuate_servos(25, 25, true, true);
+        actuate_servos(38, 40, true, true);
         printf("Thermal sensing servos actuated\n");
     }
     printf("done moving!\n");
