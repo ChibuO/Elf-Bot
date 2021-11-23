@@ -3,7 +3,7 @@
 #include "nrf_delay.h"
 
 
-#define sonic_addr     2
+#define sonic_addr     0
 #define sonic_reg      0x57
 #define trig           0
 #define echo           0
@@ -52,21 +52,25 @@ void print_data(){
     // printf("Function done\n");
     
     // DATA FINDING USING EXPERIMENTAL READ AND WRITES //
-    // experimental_write(sonic_addr, 1, i2c_manager);
-    // nrf_delay_ms(1000);
-    // uint8_t distance_msb = experimental_read(sonic_addr, i2c_manager);
-    // printf("Data: %u\n", distance_msb);
-
-    // DEFAULT DATA FINDING //
-    i2c_reg_write(sonic_addr, trig, 1, i2c_manager);
-    uint8_t distance_msb = i2c_reg_read(sonic_addr, echo, i2c_manager);
-    uint8_t distance_lsb = i2c_reg_read(sonic_addr, echo+1, i2c_manager);
-    printf("Dist_MSB: %u\n", distance_msb);
-    printf("Dist_LSB: %u\n", distance_lsb);
+    experimental_write(sonic_addr, 1, i2c_manager);
+    uint8_t distance_msb = experimental_read(0, i2c_manager);
+    uint8_t distance_lsb = experimental_read(0, i2c_manager);
+    printf("MSB: %u\n", distance_msb);
+    printf("LSB: %u\n", distance_lsb);
     uint16_t most_shifted = distance_msb << 8;
     uint16_t distance = most_shifted | distance_lsb;
-    
     printf("sonic data: %u\n", distance);
+    
+
+    // DEFAULT DATA FINDING //
+    // i2c_reg_write(sonic_addr, trig, 1, i2c_manager);
+    // uint8_t distance_msb = i2c_reg_read(sonic_addr, echo, i2c_manager);
+    // uint8_t distance_lsb = i2c_reg_read(sonic_addr, echo+1, i2c_manager);
+    // printf("Dist_MSB: %u\n", distance_msb);
+    // printf("Dist_LSB: %u\n", distance_lsb);
+    // uint16_t most_shifted = distance_msb << 8;
+    // uint16_t distance = most_shifted | distance_lsb;
+    // printf("sonic data: %u\n", distance);
 }
 
 void sonic_init(const nrf_twi_mngr_t* i2c){
@@ -76,7 +80,7 @@ void sonic_init(const nrf_twi_mngr_t* i2c){
         printf("\n");
         printf("sonic_init called!\n");
         print_data();
-        nrf_delay_ms(2000);
+        nrf_delay_ms(1000);
     } 
     /*
     i2c_manager = i2c;

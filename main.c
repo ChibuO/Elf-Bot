@@ -33,11 +33,9 @@ int main(void) {
   i2c_config.interrupt_priority = 0;
   nrf_twi_mngr_init(&twi_mngr_instance, &i2c_config);
   // Initialize drivers
-  // sonic_init(&twi_mngr_instance);
-  thermal_init(&twi_mngr_instance);
-  motor_init(&twi_mngr_instance);
-  // deactivate_servos();
-
+  sonic_init(&twi_mngr_instance);
+  // thermal_init(&twi_mngr_instance);
+  // motor_init(&twi_mngr_instance);
   
   // app_timer_init();
   // app_timer_create(&APP_TIM, APP_TIMER_MODE_REPEATED, deactivate_servos);
@@ -45,16 +43,14 @@ int main(void) {
   
 
   // Intialize arrays used by thermal sensing driver
-  float heat_grid[8][8];
-  float average_vals[8];
-  // follow_heat(heat_grid, average_vals, &twi_mngr_instance);
-  // nrf_delay_ms(5000);
-  // deactivate_servos();
+  // float heat_grid[8][8];
+  // float average_vals[8];
+
   // Loop forever
   while (1) {
-    follow_heat(heat_grid, average_vals, &twi_mngr_instance);
-    nrf_delay_ms(50);
-    // nrf_delay_ms(1000);
+    // follow_heat(heat_grid, average_vals, &twi_mngr_instance);
+    // nrf_delay_ms(50);
+    nrf_delay_ms(1000);
   }
 }
 

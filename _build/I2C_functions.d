@@ -86,4 +86,5 @@ _build/I2C_functions.o: I2C_functions.c I2C_functions.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/string.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries//log/nrf_log_instance.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/experimental_section_vars/nrf_section.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries//log/nrf_log_types.h
+ nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries//log/nrf_log_types.h \
+ nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/delay/nrf_delay.h
