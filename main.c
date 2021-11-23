@@ -53,7 +53,8 @@ int main(void) {
   // Loop forever
   while (1) {
     follow_heat(heat_grid, average_vals, &twi_mngr_instance);
-    nrf_delay_ms(500);
+    nrf_delay_ms(50);
+    // nrf_delay_ms(1000);
   }
 }
 

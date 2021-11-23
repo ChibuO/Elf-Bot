@@ -3,7 +3,7 @@ _build/nrfx_prs.o: \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/nrfx.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/integration/nrfx/nrfx_config.h \
  nrf52x-base//make/config/nrf52833/config/sdk_config.h \
- /home/caelan/Documents/Elf-Bot/boards/microbit_v2/./app_config.h \
+ /home/ce346/Elf-Bot/boards/microbit_v2/./app_config.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/drivers/nrfx_common.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdint.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h \

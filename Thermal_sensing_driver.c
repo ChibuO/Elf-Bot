@@ -44,7 +44,6 @@ void follow_heat(float heat_grid[8][8], float average_vals[8], const nrf_twi_mng
         printf("Turning left...\n");        
         actuate_servos(25, 25, false, true);
         printf("Thermal sensing servos actuated\n");
-        nrf_delay_ms(500);
     }
     else if (max_index == 6 || max_index == 7) {    
         // Target is to the right    
@@ -52,7 +51,6 @@ void follow_heat(float heat_grid[8][8], float average_vals[8], const nrf_twi_mng
         printf("Turning right...\n");
         actuate_servos(25, 25, true, false);
         printf("Thermal sensing servos actuated\n");
-        nrf_delay_ms(500);
         }
     else {                                                  
         // Target is in the center
@@ -60,7 +58,6 @@ void follow_heat(float heat_grid[8][8], float average_vals[8], const nrf_twi_mng
         printf("Going forward...\n");
         // actuate_servos(30, 30, false, false);
         printf("Thermal sensing servos actuated\n");
-        nrf_delay_ms(500);
     }
     printf("done moving!\n");
 }
