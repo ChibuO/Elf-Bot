@@ -1254,7 +1254,7 @@ Linker script and memory map
                 0x000000000007b000                __start_ot_flash_data = (__stop_ot_flash_data - (FLASH_PAGE_SIZE * FLASH_DATA_PAGES_USED))
                 0x0000000000000001                ASSERT ((__start_ot_flash_data >= (__etext + SIZEOF (.data))), Error: Code overlaps flash data area.)
 
-.text           0x0000000000000000     0xcfd8
+.text           0x0000000000000000     0xcff8
  *(.isr_vector)
  .isr_vector    0x0000000000000000      0x200 _build/gcc_startup_nrf52833.os
                 0x0000000000000000                __isr_vector
@@ -2094,321 +2094,321 @@ Linker script and memory map
  .rodata.delay_machine_code.8602
                 0x000000000000ba90        0x6 _build/better_error_handling.o
  .rodata.uart_init.constprop.0.str1.1
-                0x000000000000ba96       0x49 _build/microbit_nrf_log_backend_uart.o
- *fill*         0x000000000000badf        0x1 
- .rodata        0x000000000000bae0       0x20 _build/microbit_nrf_log_backend_uart.o
+                0x000000000000ba96       0x54 _build/microbit_nrf_log_backend_uart.o
+ *fill*         0x000000000000baea        0x2 
+ .rodata        0x000000000000baec       0x20 _build/microbit_nrf_log_backend_uart.o
  .rodata.nrf_log_backend_uart_api
-                0x000000000000bb00        0xc _build/microbit_nrf_log_backend_uart.o
-                0x000000000000bb00                nrf_log_backend_uart_api
+                0x000000000000bb0c        0xc _build/microbit_nrf_log_backend_uart.o
+                0x000000000000bb0c                nrf_log_backend_uart_api
  .rodata.called_first.str1.1
-                0x000000000000bb0c       0x43 _build/microbit_before_startup.o
- *fill*         0x000000000000bb4f        0x1 
+                0x000000000000bb18       0x4e _build/microbit_before_startup.o
+ *fill*         0x000000000000bb66        0xa 
  .rodata.delay_machine_code.8590
-                0x000000000000bb50        0x6 _build/microbit_before_startup.o
- *fill*         0x000000000000bb56        0xa 
+                0x000000000000bb70        0x6 _build/microbit_before_startup.o
+ *fill*         0x000000000000bb76        0xa 
  .rodata.delay_machine_code.9248
-                0x000000000000bb60        0x6 _build/app_timer.o
+                0x000000000000bb80        0x6 _build/app_timer.o
  .rodata.app_util_critical_region_enter.str1.1
-                0x000000000000bb66       0x4f _build/app_util_platform.o
+                0x000000000000bb86       0x4f _build/app_util_platform.o
  .rodata.HardFault_c_handler.str1.1
-                0x000000000000bbb5      0x12e _build/hardfault_implementation.o
+                0x000000000000bbd5      0x12e _build/hardfault_implementation.o
  .rodata.str1.1
-                0x000000000000bce3      0x4c0 _build/hardfault_implementation.o
- *fill*         0x000000000000c1a3        0x1 
+                0x000000000000bd03      0x4c0 _build/hardfault_implementation.o
+ *fill*         0x000000000000c1c3        0x1 
  .rodata.cfsr_msgs.9441
-                0x000000000000c1a4       0x68 _build/hardfault_implementation.o
+                0x000000000000c1c4       0x68 _build/hardfault_implementation.o
  .rodata.nrf_balloc_init.str1.1
-                0x000000000000c20c       0x4a _build/nrf_balloc.o
+                0x000000000000c22c       0x4a _build/nrf_balloc.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000c256       0x3d _build/nrf_drv_twi.o
- *fill*         0x000000000000c256        0xa 
+                0x000000000000c276       0x3d _build/nrf_drv_twi.o
+ *fill*         0x000000000000c276        0xa 
  .rodata.delay_machine_code.8590
-                0x000000000000c260        0x6 _build/nrf_drv_twi.o
+                0x000000000000c280        0x6 _build/nrf_drv_twi.o
  .rodata.nrf_fprintf_buffer_flush.str1.1
-                0x000000000000c266       0x40 _build/nrf_fprintf.o
+                0x000000000000c286       0x40 _build/nrf_fprintf.o
  .rodata.nrf_fprintf_fmt.str1.1
-                0x000000000000c2a6       0x47 _build/nrf_fprintf_format.o
+                0x000000000000c2c6       0x47 _build/nrf_fprintf_format.o
  .rodata._aV2C.7922
-                0x000000000000c2ed       0x10 _build/nrf_fprintf_format.o
+                0x000000000000c30d       0x10 _build/nrf_fprintf_format.o
  .rodata.nrf_log_default_backends_init.str1.1
-                0x000000000000c2fd       0x59 _build/nrf_log_default_backends.o
+                0x000000000000c31d       0x59 _build/nrf_log_default_backends.o
  .rodata.str1.1
-                0x000000000000c356       0x11 _build/nrf_log_default_backends.o
+                0x000000000000c376       0x11 _build/nrf_log_default_backends.o
  .rodata.buf_prealloc.str1.1
-                0x000000000000c367       0x51 _build/nrf_log_frontend.o
+                0x000000000000c387       0x51 _build/nrf_log_frontend.o
  .rodata.nrf_log_frontend_dequeue.str1.1
-                0x000000000000c3b8       0x11 _build/nrf_log_frontend.o
+                0x000000000000c3d8       0x11 _build/nrf_log_frontend.o
  .rodata.str1.1
-                0x000000000000c3c9        0x4 _build/nrf_log_frontend.o
- *fill*         0x000000000000c3cd        0x3 
+                0x000000000000c3e9        0x4 _build/nrf_log_frontend.o
+ *fill*         0x000000000000c3ed        0x3 
  .rodata.m_log_push_ringbuf
-                0x000000000000c3d0        0xc _build/nrf_log_frontend.o
+                0x000000000000c3f0        0xc _build/nrf_log_frontend.o
  .rodata.postfix_process.str1.1
-                0x000000000000c3dc        0x8 _build/nrf_log_str_formatter.o
+                0x000000000000c3fc        0x8 _build/nrf_log_str_formatter.o
                                           0xb (size before relaxing)
  .rodata.prefix_process.str1.1
-                0x000000000000c3e4       0x2a _build/nrf_log_str_formatter.o
+                0x000000000000c404       0x2a _build/nrf_log_str_formatter.o
  .rodata.nrf_log_hexdump_entry_process.str1.1
-                0x000000000000c40e        0xf _build/nrf_log_str_formatter.o
+                0x000000000000c42e        0xf _build/nrf_log_str_formatter.o
                                          0x11 (size before relaxing)
  .rodata.str1.1
-                0x000000000000c41d       0x4b _build/nrf_log_str_formatter.o
+                0x000000000000c43d       0x4b _build/nrf_log_str_formatter.o
                                          0x51 (size before relaxing)
  .rodata.m_colors
-                0x000000000000c468       0x24 _build/nrf_log_str_formatter.o
+                0x000000000000c488       0x24 _build/nrf_log_str_formatter.o
  .rodata.severity_names
-                0x000000000000c48c       0x14 _build/nrf_log_str_formatter.o
+                0x000000000000c4ac       0x14 _build/nrf_log_str_formatter.o
  .rodata.str1.1
-                0x000000000000c4a0        0x9 _build/nrf_pwr_mgmt.o
+                0x000000000000c4c0        0x9 _build/nrf_pwr_mgmt.o
  .rodata.memobj_op.str1.1
-                0x000000000000c4a9       0x4a _build/nrf_memobj.o
+                0x000000000000c4c9       0x4a _build/nrf_memobj.o
  .rodata.str1.1
-                0x000000000000c4f3      0x391 _build/nrf_strerror.o
+                0x000000000000c513      0x391 _build/nrf_strerror.o
  .rodata.m_unknown_str
-                0x000000000000c884       0x13 _build/nrf_strerror.o
- *fill*         0x000000000000c897        0x1 
+                0x000000000000c8a4       0x13 _build/nrf_strerror.o
+ *fill*         0x000000000000c8b7        0x1 
  .rodata.nrf_strerror_array
-                0x000000000000c898      0x118 _build/nrf_strerror.o
+                0x000000000000c8b8      0x118 _build/nrf_strerror.o
  .rodata.nrf_queue_next_idx.str1.1
-                0x000000000000c9b0       0x48 _build/nrf_queue.o
+                0x000000000000c9d0       0x48 _build/nrf_queue.o
  .rodata.str1.1
-                0x000000000000c9f8        0x6 _build/nrf_drv_clock.o
+                0x000000000000ca18        0x6 _build/nrf_drv_clock.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000c9fe       0x3d _build/nrfx_gpiote.o
+                0x000000000000ca1e       0x3d _build/nrfx_gpiote.o
  .rodata.str1.1
-                0x000000000000c9fe        0x7 _build/nrfx_gpiote.o
+                0x000000000000ca1e        0x7 _build/nrfx_gpiote.o
  .rodata.UARTE0_UART0_IRQHandler.str1.1
-                0x000000000000ca05       0x49 _build/nrfx_prs.o
+                0x000000000000ca25       0x49 _build/nrfx_prs.o
  .rodata.str1.1
-                0x000000000000ca4e        0x4 _build/nrfx_prs.o
+                0x000000000000ca6e        0x4 _build/nrfx_prs.o
  .rodata.str1.1
-                0x000000000000ca52        0x6 _build/nrfx_saadc.o
+                0x000000000000ca72        0x6 _build/nrfx_saadc.o
  .rodata.str1.1
-                0x000000000000ca58        0x6 _build/nrfx_timer.o
+                0x000000000000ca78        0x6 _build/nrfx_timer.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000ca5e       0x3d _build/nrfx_twim.o
+                0x000000000000ca7e       0x3d _build/nrfx_twim.o
  .rodata.SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler.str1.1
-                0x000000000000ca5e       0x46 _build/nrfx_twim.o
+                0x000000000000ca7e       0x46 _build/nrfx_twim.o
  .rodata.nrfx_twim_init.str1.1
-                0x000000000000caa4       0x3e _build/nrfx_twim.o
+                0x000000000000cac4       0x3e _build/nrfx_twim.o
  .rodata.str1.1
-                0x000000000000cae2        0x5 _build/nrfx_twim.o
+                0x000000000000cb02        0x5 _build/nrfx_twim.o
  .rodata.str1.1
-                0x000000000000cae7        0x6 _build/nrfx_clock.o
+                0x000000000000cb07        0x6 _build/nrfx_clock.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000caed       0x3d _build/nrfx_uart.o
+                0x000000000000cb0d       0x3d _build/nrfx_uart.o
  .rodata.nrfx_uart_init.str1.1
-                0x000000000000caed       0x46 _build/nrfx_uart.o
+                0x000000000000cb0d       0x46 _build/nrfx_uart.o
                                          0x84 (size before relaxing)
  .rodata.str1.1
-                0x000000000000cb33        0x5 _build/nrfx_uart.o
+                0x000000000000cb53        0x5 _build/nrfx_uart.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000cb38       0x3d _build/nrfx_uarte.o
+                0x000000000000cb58       0x3d _build/nrfx_uarte.o
  .rodata.nrfx_uarte_init.str1.1
-                0x000000000000cb38       0x47 _build/nrfx_uarte.o
+                0x000000000000cb58       0x47 _build/nrfx_uarte.o
                                          0x85 (size before relaxing)
  .rodata.str1.1
-                0x000000000000cb7f        0x6 _build/nrfx_uarte.o
+                0x000000000000cb9f        0x6 _build/nrfx_uarte.o
  .rodata.transaction_end_signal.str1.1
-                0x000000000000cb85       0x4e _build/nrf_twi_mngr.o
+                0x000000000000cba5       0x4e _build/nrf_twi_mngr.o
  .rodata.str1.1
-                0x000000000000cbd3        0x4 _build/nrfx_pwm.o
- *fill*         0x000000000000cbd7        0x1 
+                0x000000000000cbf3        0x4 _build/nrfx_pwm.o
+ *fill*         0x000000000000cbf7        0x1 
  .rodata._ctype_
-                0x000000000000cbd8      0x101 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-ctype_.o)
-                0x000000000000cbd8                _ctype_
- *fill*         0x000000000000ccd9        0x3 
+                0x000000000000cbf8      0x101 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-ctype_.o)
+                0x000000000000cbf8                _ctype_
+ *fill*         0x000000000000ccf9        0x3 
  .rodata._global_impure_ptr
-                0x000000000000ccdc        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-impure.o)
-                0x000000000000ccdc                _global_impure_ptr
+                0x000000000000ccfc        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-impure.o)
+                0x000000000000ccfc                _global_impure_ptr
  .rodata._vfprintf_r.str1.4
-                0x000000000000cce0       0x42 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
- *fill*         0x000000000000cd22        0x2 
+                0x000000000000cd00       0x42 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
+ *fill*         0x000000000000cd42        0x2 
  .rodata.blanks.8713
-                0x000000000000cd24       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
+                0x000000000000cd44       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
  .rodata.zeroes.8714
-                0x000000000000cd34       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
+                0x000000000000cd54       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
  .rodata._dtoa_r.str1.4
-                0x000000000000cd44       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-dtoa.o)
+                0x000000000000cd64       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-dtoa.o)
                                          0xa4 (size before relaxing)
  .rodata.__multadd.str1.4
-                0x000000000000cde4       0x7d /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x000000000000ce04       0x7d /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
                                          0x91 (size before relaxing)
- *fill*         0x000000000000ce61        0x7 
+ *fill*         0x000000000000ce81        0x7 
  .rodata.__mprec_bigtens
-                0x000000000000ce68       0x28 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x000000000000ce68                __mprec_bigtens
+                0x000000000000ce88       0x28 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x000000000000ce88                __mprec_bigtens
  .rodata.__mprec_tens
-                0x000000000000ce90       0xc8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x000000000000ce90                __mprec_tens
+                0x000000000000ceb0       0xc8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x000000000000ceb0                __mprec_tens
  .rodata.p05.7485
-                0x000000000000cf58        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x000000000000cf78        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
  .rodata._vfiprintf_r.str1.4
-                0x000000000000cf64       0x2f /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
+                0x000000000000cf84       0x2f /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
  .rodata.blanks.8691
-                0x000000000000cf64       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
+                0x000000000000cf84       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
  .rodata.zeroes.8692
-                0x000000000000cf74       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
+                0x000000000000cf94       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
  .rodata.__assert_func.str1.4
-                0x000000000000cf84       0x3f /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-assert.o)
+                0x000000000000cfa4       0x3f /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-assert.o)
                                          0x43 (size before relaxing)
- *fill*         0x000000000000cfc3        0x1 
+ *fill*         0x000000000000cfe3        0x1 
  .rodata._setlocale_r.str1.4
-                0x000000000000cfc4        0xa /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-locale.o)
+                0x000000000000cfe4        0xa /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-locale.o)
                                           0xd (size before relaxing)
- *fill*         0x000000000000cfce        0x2 
+ *fill*         0x000000000000cfee        0x2 
  .rodata.str1.4
-                0x000000000000cfd0        0x2 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-locale.o)
+                0x000000000000cff0        0x2 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-locale.o)
  *(.eh_frame*)
- *fill*         0x000000000000cfd2        0x2 
- .eh_frame      0x000000000000cfd4        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- .eh_frame      0x000000000000cfd4        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtend.o
+ *fill*         0x000000000000cff2        0x2 
+ .eh_frame      0x000000000000cff4        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x000000000000cff4        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtend.o
 
-.glue_7         0x000000000000cfd8        0x0
- .glue_7        0x000000000000cfd8        0x0 linker stubs
+.glue_7         0x000000000000cff8        0x0
+ .glue_7        0x000000000000cff8        0x0 linker stubs
 
-.glue_7t        0x000000000000cfd8        0x0
- .glue_7t       0x000000000000cfd8        0x0 linker stubs
+.glue_7t        0x000000000000cff8        0x0
+ .glue_7t       0x000000000000cff8        0x0 linker stubs
 
-.vfp11_veneer   0x000000000000cfd8        0x0
- .vfp11_veneer  0x000000000000cfd8        0x0 linker stubs
+.vfp11_veneer   0x000000000000cff8        0x0
+ .vfp11_veneer  0x000000000000cff8        0x0 linker stubs
 
-.v4_bx          0x000000000000cfd8        0x0
- .v4_bx         0x000000000000cfd8        0x0 linker stubs
+.v4_bx          0x000000000000cff8        0x0
+ .v4_bx         0x000000000000cff8        0x0 linker stubs
 
-.iplt           0x000000000000cfd8        0x0
- .iplt          0x000000000000cfd8        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x000000000000cff8        0x0
+ .iplt          0x000000000000cff8        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.pwr_mgmt_data  0x000000000000cfd8        0x0
-                0x000000000000cfd8                PROVIDE (__start_pwr_mgmt_data = .)
+.pwr_mgmt_data  0x000000000000cff8        0x0
+                0x000000000000cff8                PROVIDE (__start_pwr_mgmt_data = .)
  *(SORT_BY_NAME(.pwr_mgmt_data*))
-                0x000000000000cfd8                PROVIDE (__stop_pwr_mgmt_data = .)
+                0x000000000000cff8                PROVIDE (__stop_pwr_mgmt_data = .)
 
 .log_const_data
-                0x000000000000cfd8       0x68
-                0x000000000000cfd8                PROVIDE (__start_log_const_data = .)
+                0x000000000000cff8       0x68
+                0x000000000000cff8                PROVIDE (__start_log_const_data = .)
  *(SORT_BY_NAME(.log_const_data*))
  .log_const_data_CLOCK
-                0x000000000000cfd8        0x8 _build/nrfx_clock.o
-                0x000000000000cfd8                m_nrf_log_CLOCK_logs_data_const
+                0x000000000000cff8        0x8 _build/nrfx_clock.o
+                0x000000000000cff8                m_nrf_log_CLOCK_logs_data_const
  .log_const_data_GPIOTE
-                0x000000000000cfe0        0x8 _build/nrfx_gpiote.o
-                0x000000000000cfe0                m_nrf_log_GPIOTE_logs_data_const
+                0x000000000000d000        0x8 _build/nrfx_gpiote.o
+                0x000000000000d000                m_nrf_log_GPIOTE_logs_data_const
  .log_const_data_PRS
-                0x000000000000cfe8        0x8 _build/nrfx_prs.o
-                0x000000000000cfe8                m_nrf_log_PRS_logs_data_const
+                0x000000000000d008        0x8 _build/nrfx_prs.o
+                0x000000000000d008                m_nrf_log_PRS_logs_data_const
  .log_const_data_PWM
-                0x000000000000cff0        0x8 _build/nrfx_pwm.o
-                0x000000000000cff0                m_nrf_log_PWM_logs_data_const
+                0x000000000000d010        0x8 _build/nrfx_pwm.o
+                0x000000000000d010                m_nrf_log_PWM_logs_data_const
  .log_const_data_SAADC
-                0x000000000000cff8        0x8 _build/nrfx_saadc.o
-                0x000000000000cff8                m_nrf_log_SAADC_logs_data_const
+                0x000000000000d018        0x8 _build/nrfx_saadc.o
+                0x000000000000d018                m_nrf_log_SAADC_logs_data_const
  .log_const_data_TIMER
-                0x000000000000d000        0x8 _build/nrfx_timer.o
-                0x000000000000d000                m_nrf_log_TIMER_logs_data_const
+                0x000000000000d020        0x8 _build/nrfx_timer.o
+                0x000000000000d020                m_nrf_log_TIMER_logs_data_const
  .log_const_data_TWIM
-                0x000000000000d008        0x8 _build/nrfx_twim.o
-                0x000000000000d008                m_nrf_log_TWIM_logs_data_const
+                0x000000000000d028        0x8 _build/nrfx_twim.o
+                0x000000000000d028                m_nrf_log_TWIM_logs_data_const
  .log_const_data_UART
-                0x000000000000d010        0x8 _build/nrfx_uart.o
-                0x000000000000d010                m_nrf_log_UART_logs_data_const
+                0x000000000000d030        0x8 _build/nrfx_uart.o
+                0x000000000000d030                m_nrf_log_UART_logs_data_const
  .log_const_data_UARTE
-                0x000000000000d018        0x8 _build/nrfx_uarte.o
-                0x000000000000d018                m_nrf_log_UARTE_logs_data_const
+                0x000000000000d038        0x8 _build/nrfx_uarte.o
+                0x000000000000d038                m_nrf_log_UARTE_logs_data_const
  .log_const_data_app
-                0x000000000000d020        0x8 _build/nrf_log_frontend.o
-                0x000000000000d020                m_nrf_log_app_logs_data_const
+                0x000000000000d040        0x8 _build/nrf_log_frontend.o
+                0x000000000000d040                m_nrf_log_app_logs_data_const
  .log_const_data_clock
-                0x000000000000d028        0x8 _build/nrf_drv_clock.o
-                0x000000000000d028                m_nrf_log_clock_logs_data_const
+                0x000000000000d048        0x8 _build/nrf_drv_clock.o
+                0x000000000000d048                m_nrf_log_clock_logs_data_const
  .log_const_data_hardfault
-                0x000000000000d030        0x8 _build/hardfault_implementation.o
-                0x000000000000d030                m_nrf_log_hardfault_logs_data_const
+                0x000000000000d050        0x8 _build/hardfault_implementation.o
+                0x000000000000d050                m_nrf_log_hardfault_logs_data_const
  .log_const_data_pwr_mgmt
-                0x000000000000d038        0x8 _build/nrf_pwr_mgmt.o
-                0x000000000000d038                m_nrf_log_pwr_mgmt_logs_data_const
-                0x000000000000d040                PROVIDE (__stop_log_const_data = .)
+                0x000000000000d058        0x8 _build/nrf_pwr_mgmt.o
+                0x000000000000d058                m_nrf_log_pwr_mgmt_logs_data_const
+                0x000000000000d060                PROVIDE (__stop_log_const_data = .)
 
-.nrf_balloc     0x000000000000d040       0x14
+.nrf_balloc     0x000000000000d060       0x14
                 [!provide]                        PROVIDE (__start_nrf_balloc = .)
  *(.nrf_balloc)
- .nrf_balloc    0x000000000000d040       0x14 _build/nrf_log_frontend.o
-                0x000000000000d040                log_mempool
+ .nrf_balloc    0x000000000000d060       0x14 _build/nrf_log_frontend.o
+                0x000000000000d060                log_mempool
                 [!provide]                        PROVIDE (__stop_nrf_balloc = .)
 
-.nrf_queue      0x000000000000d054       0x14
+.nrf_queue      0x000000000000d074       0x14
                 [!provide]                        PROVIDE (__start_nrf_queue = .)
  *(.nrf_queue)
- .nrf_queue     0x000000000000d054       0x14 _build/main.o
-                0x000000000000d054                twi_mngr_instance_queue
+ .nrf_queue     0x000000000000d074       0x14 _build/main.o
+                0x000000000000d074                twi_mngr_instance_queue
                 [!provide]                        PROVIDE (__stop_nrf_queue = .)
 
-.log_backends   0x000000000000d068       0x10
- .log_backends  0x000000000000d068       0x10 _build/nrf_log_default_backends.o
+.log_backends   0x000000000000d088       0x10
+ .log_backends  0x000000000000d088       0x10 _build/nrf_log_default_backends.o
 
-.cli_command    0x000000000000d078        0x0
+.cli_command    0x000000000000d098        0x0
                 [!provide]                        PROVIDE (__start_cli_command = .)
  *(.cli_command)
                 [!provide]                        PROVIDE (__stop_cli_command = .)
 
 .sdh_stack_observers
-                0x000000000000d078        0x0
+                0x000000000000d098        0x0
                 [!provide]                        PROVIDE (__start_sdh_stack_observers = .)
  *(SORT_BY_NAME(.sdh_stack_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_stack_observers = .)
 
 .sdh_req_observers
-                0x000000000000d078        0x0
+                0x000000000000d098        0x0
                 [!provide]                        PROVIDE (__start_sdh_req_observers = .)
  *(SORT_BY_NAME(.sdh_req_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_req_observers = .)
 
 .sdh_state_observers
-                0x000000000000d078        0x0
+                0x000000000000d098        0x0
                 [!provide]                        PROVIDE (__start_sdh_state_observers = .)
  *(SORT_BY_NAME(.sdh_state_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_state_observers = .)
 
 .sdh_ant_observers
-                0x000000000000d078        0x0
+                0x000000000000d098        0x0
                 [!provide]                        PROVIDE (__start_sdh_ant_observers = .)
  *(SORT_BY_NAME(.sdh_ant_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_ant_observers = .)
 
 .sdh_ble_observers
-                0x000000000000d078        0x0
+                0x000000000000d098        0x0
                 [!provide]                        PROVIDE (__start_sdh_ble_observers = .)
  *(SORT_BY_NAME(.sdh_ble_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_ble_observers = .)
 
 .sdh_soc_observers
-                0x000000000000d078        0x0
+                0x000000000000d098        0x0
                 [!provide]                        PROVIDE (__start_sdh_soc_observers = .)
  *(SORT_BY_NAME(.sdh_soc_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_soc_observers = .)
 
-.crypto_data    0x000000000000d078        0x0
+.crypto_data    0x000000000000d098        0x0
                 [!provide]                        PROVIDE (__start_crypto_data = .)
  *(SORT_BY_NAME(.crypto_data*))
                 [!provide]                        PROVIDE (__stop_crypto_data = .)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000000000d078                __exidx_start = .
+                0x000000000000d098                __exidx_start = .
 
-.ARM.exidx      0x000000000000d078        0x8
+.ARM.exidx      0x000000000000d098        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x000000000000d078        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .ARM.exidx     0x000000000000d098        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
                                          0x10 (size before relaxing)
- .ARM.exidx     0x000000000000d080        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x000000000000d0a0        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
                                           0x8 (size before relaxing)
-                0x000000000000d080                __exidx_end = .
-                0x000000000000d080                __etext = .
+                0x000000000000d0a0                __exidx_end = .
+                0x000000000000d0a0                __etext = .
 
-.rel.dyn        0x000000000000d080        0x0
- .rel.iplt      0x000000000000d080        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x000000000000d0a0        0x0
+ .rel.iplt      0x000000000000d0a0        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x0000000020000000      0x9e0 load address 0x000000000000d080
+.data           0x0000000020000000      0x9e0 load address 0x000000000000d0a0
                 0x0000000020000000                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -2540,7 +2540,7 @@ END GROUP
                 0x0000000000001000                FLASH_PAGE_SIZE = 0x1000
                 0x0000000000000004                FLASH_DATA_PAGES_USED = 0x4
 
-.igot.plt       0x00000000200009e0        0x0 load address 0x000000000000da60
+.igot.plt       0x00000000200009e0        0x0 load address 0x000000000000da80
  .igot.plt      0x00000000200009e0        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x00000000200009e0                . = ALIGN (0x4)
 
@@ -2566,7 +2566,7 @@ END GROUP
  *(.cli_sorted_cmd_ptrs)
                 [!provide]                        PROVIDE (__stop_cli_sorted_cmd_ptrs = .)
 
-.bss            0x00000000200009e0      0x91c load address 0x000000000000da60
+.bss            0x00000000200009e0      0x91c load address 0x000000000000da80
                 0x00000000200009e0                . = ALIGN (0x4)
                 0x00000000200009e0                __bss_start__ = .
  *(.bss*)
@@ -2689,8 +2689,8 @@ END GROUP
                 0x0000000020020000                PROVIDE (__stack = __StackTop)
                 0x0000000000000001                ASSERT ((__StackLimit >= __HeapLimit), region RAM overflowed with stack)
                 0x00000000000009e0                DataInitFlashUsed = (__bss_start__ - __data_start__)
-                0x000000000000d080                CodeFlashUsed = (__etext - ORIGIN (FLASH))
-                0x000000000000da60                TotalFlashUsed = (CodeFlashUsed + DataInitFlashUsed)
+                0x000000000000d0a0                CodeFlashUsed = (__etext - ORIGIN (FLASH))
+                0x000000000000da80                TotalFlashUsed = (CodeFlashUsed + DataInitFlashUsed)
                 0x0000000000000001                ASSERT ((TotalFlashUsed <= LENGTH (FLASH)), region FLASH overflowed with .data and user data)
 OUTPUT(_build/Elf-Bot_sdk16_blank.elf elf32-littlearm)
 LOAD linker stubs

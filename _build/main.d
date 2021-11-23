@@ -35,7 +35,7 @@ _build/main.o: main.c \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/math.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/timer/app_timer.h \
  nrf52x-base//make/config/nrf52833/config/sdk_config.h \
- /home/ce346/Elf-Bot/boards/microbit_v2/./app_config.h \
+ /home/caelan/Documents/Elf-Bot/boards/microbit_v2/./app_config.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/util/app_error.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/mdk/nrf.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/mdk/nrf52833.h \
@@ -91,7 +91,7 @@ _build/main.o: main.c \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries//log/nrf_log_instance.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/experimental_section_vars/nrf_section.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries//log/nrf_log_types.h \
- /home/ce346/Elf-Bot/boards/microbit_v2/./microbit_v2.h \
+ /home/caelan/Documents/Elf-Bot/boards/microbit_v2/./microbit_v2.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/hal/nrf_gpio.h \
  Motor_driver.h Sonic_sensor_driver.h Thermal_sensor_driver.h \
  Thermal_sensing_driver.h

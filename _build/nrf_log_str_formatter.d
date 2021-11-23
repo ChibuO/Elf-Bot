@@ -25,7 +25,7 @@ _build/nrf_log_str_formatter.o: \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/strings.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/string.h \
  nrf52x-base//make/config/nrf52833/config/sdk_config.h \
- /home/ce346/Elf-Bot/boards/microbit_v2/./app_config.h \
+ /home/caelan/Documents/Elf-Bot/boards/microbit_v2/./app_config.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/util/nordic_common.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/mdk/compiler_abstraction.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/util/sdk_os.h \

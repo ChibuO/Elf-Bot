@@ -26,7 +26,7 @@ _build/nrf_memobj.o: \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/drivers_nrf/nrf_soc_nosd/nrf_error.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/balloc/nrf_balloc.h \
  nrf52x-base//make/config/nrf52833/config/sdk_config.h \
- /home/ce346/Elf-Bot/boards/microbit_v2/./app_config.h \
+ /home/caelan/Documents/Elf-Bot/boards/microbit_v2/./app_config.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/util/app_util_platform.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/mdk/compiler_abstraction.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/mdk/nrf.h \

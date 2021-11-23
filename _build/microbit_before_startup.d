@@ -1,5 +1,5 @@
 _build/microbit_before_startup.o: \
- /home/ce346/Elf-Bot/boards/microbit_v2/./microbit_before_startup.c \
+ /home/caelan/Documents/Elf-Bot/boards/microbit_v2/./microbit_before_startup.c \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdio.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/_ansi.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/newlib.h \
@@ -33,7 +33,7 @@ _build/microbit_before_startup.o: \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/nrfx.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/integration/nrfx/nrfx_config.h \
  nrf52x-base//make/config/nrf52833/config/sdk_config.h \
- /home/ce346/Elf-Bot/boards/microbit_v2/./app_config.h \
+ /home/caelan/Documents/Elf-Bot/boards/microbit_v2/./app_config.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/drivers/nrfx_common.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdint.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h \
