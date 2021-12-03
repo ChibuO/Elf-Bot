@@ -94,7 +94,7 @@ void temp_averages(float averages[8], float pixel_table[8][8]){
         }
         float avg = holder/8.0;
         averages[i] = avg;
-        printf("%.1f  ", avg);
+        // printf("%.1f  ", avg);
         holder = 0;
     } 
     printf("\n");

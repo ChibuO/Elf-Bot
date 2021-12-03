@@ -1,4 +1,4 @@
-_build/main.o: main.c \
+_build/capacitive_touch.o: capacitive_touch.c \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdbool.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdint.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h \
@@ -32,7 +32,6 @@ _build/main.o: main.c \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/sched.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/types.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/stdio.h \
- /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/math.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/timer/app_timer.h \
  nrf52x-base//make/config/nrf52833/config/sdk_config.h \
  /home/ce346/Elf-Bot/boards/microbit_v2/./app_config.h \
@@ -76,25 +75,11 @@ _build/main.o: main.c \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/util/sdk_errors.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/util/sdk_resources.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/drivers/nrfx_errors.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/twi_mngr/nrf_twi_mngr.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/integration/nrfx/legacy/nrf_drv_twi.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/drivers/include/nrfx_twim.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/drivers/include/nrfx_twi_twim.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/hal/nrf_twim.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/drivers/include/nrfx_twi.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/hal/nrf_twi.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/queue/nrf_queue.h \
- /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h \
- /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_locale.h \
- /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/strings.h \
- /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/string.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries//log/nrf_log_instance.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries/experimental_section_vars/nrf_section.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/components/libraries//log/nrf_log_types.h \
+ nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/hal/nrf_gpio.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/drivers/include/nrfx_gpiote.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/hal/nrf_gpiote.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/hal/nrf_gpio.h \
+ nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/drivers/include/nrfx_timer.h \
+ nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/hal/nrf_timer.h \
  /home/ce346/Elf-Bot/boards/microbit_v2/./microbit_v2.h \
- nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/hal/nrf_gpio.h \
- Motor_driver.h Sonic_sensor_driver.h Thermal_sensor_driver.h \
- Thermal_sensing_driver.h gpio_buttons.h capacitive_touch.h
+ capacitive_touch.h

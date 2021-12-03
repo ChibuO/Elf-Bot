@@ -38,17 +38,14 @@ void actuate_servos(int l_speed, int r_speed, bool l_forward, bool r_forward) {
   uint16_t l_dir = l_pwr | mc_fwd;
   uint16_t r_dir = r_pwr | mc_fwd;
   
-  printf("57e\n");
   i2c_reg_write(mc_i2c_addr, mc_inv_left, !l_forward, i2c_manager); // left = 0 forwards, 1 backwards
   i2c_reg_write(mc_i2c_addr, mc_inv_right, r_forward, i2c_manager); // right = 0 backwards, 1 forwards
 
   i2c_reg_write(mc_i2c_addr, mc_left, l_dir, i2c_manager); //make left motor move forward
   i2c_reg_write(mc_i2c_addr, mc_right,r_dir, i2c_manager); //make right motor move forward
-  printf("actuated!\n");
 }
 
 void activate_servos(){
-  printf("sert\n");
   i2c_reg_write(mc_i2c_addr, mc_pwr_on, 1, i2c_manager);
 }
 
@@ -60,7 +57,6 @@ void deactivate_servos(){
 //
 // i2c - pointer to already initialized and enabled twim instance
 void motor_init(const nrf_twi_mngr_t* i2c) {
-  printf("bhyibjibui\n");
   i2c_manager = i2c;
   // printf("tyze\n");
   // activate_servos();

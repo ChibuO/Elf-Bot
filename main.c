@@ -17,6 +17,8 @@
 #include "Thermal_sensor_driver.h"
 #include "Thermal_sensing_driver.h"
 
+#include "gpio_buttons.h"
+
 // Global variables
 NRF_TWI_MNGR_DEF(twi_mngr_instance, 1, 0);
 
@@ -32,10 +34,14 @@ int main(void) {
   i2c_config.frequency = NRF_TWIM_FREQ_100K;
   i2c_config.interrupt_priority = 0;
   nrf_twi_mngr_init(&twi_mngr_instance, &i2c_config);
+
+  gpio_config(14, 0); //button A
+  gpio_config(23, 0); //button B
+
   // Initialize drivers
-  sonic_init(&twi_mngr_instance);
-  // thermal_init(&twi_mngr_instance);
-  // motor_init(&twi_mngr_instance);
+  //sonic_init(&twi_mngr_instance);
+  thermal_init(&twi_mngr_instance);
+  motor_init(&twi_mngr_instance);
   
   // app_timer_init();
   // app_timer_create(&APP_TIM, APP_TIMER_MODE_REPEATED, deactivate_servos);
@@ -43,13 +49,25 @@ int main(void) {
   
 
   // Intialize arrays used by thermal sensing driver
-  // float heat_grid[8][8];
-  // float average_vals[8];
+  float heat_grid[8][8];
+  float average_vals[8];
+
+  bool ignition = false;
 
   // Loop forever
   while (1) {
-    // follow_heat(heat_grid, average_vals, &twi_mngr_instance);
-    // nrf_delay_ms(25);
+    if(gpio_read(14) == 0) {
+      printf("Button A read, turning car off\n");
+      ignition = false;
+      deactivate_servos();
+    } else if (gpio_read(23) == 0) {
+      printf("Buton B read, turning car on\n");
+      ignition = true;
+      activate_servos();
+    }
+
+    if(ignition) follow_heat(heat_grid, average_vals, &twi_mngr_instance);
+    nrf_delay_ms(25);
     // nrf_delay_ms(1000);
   }
 }

@@ -24,7 +24,7 @@ void follow_heat(float heat_grid[8][8], float average_vals[8], const nrf_twi_mng
 
     // Find the averages of the columns
     // The average array will consist of 8 values, each corresponding to the average of each column from the GridEye
-    printf("Temp averages:\n");
+    // printf("Temp averages:\n");
     temp_averages(average_vals, heat_grid);
 
     // Two conditions:
@@ -40,26 +40,19 @@ void follow_heat(float heat_grid[8][8], float average_vals[8], const nrf_twi_mng
     uint8_t max_index = find_max_index(average_vals);
     if (max_index == 0 || max_index == 1) {     
         // Target is to the left    
-        activate_servos();
-        printf("Turning left...\n");        
+        // activate_servos();     
         actuate_servos(25, 25, false, true);
-        printf("Thermal sensing servos actuated\n");
     }
     else if (max_index == 6 || max_index == 7) {    
         // Target is to the right    
-        activate_servos();    
-        printf("Turning right...\n");
+        // activate_servos();    
         actuate_servos(25, 25, true, false);
-        printf("Thermal sensing servos actuated\n");
         }
     else {                                                  
         // Target is in the center
         //deactivate_servos();
-        printf("Going forward...\n");
         actuate_servos(38, 40, true, true);
-        printf("Thermal sensing servos actuated\n");
     }
-    printf("done moving!\n");
 }
 
     // if (max_index == 0 || max_index == 1) {     
