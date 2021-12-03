@@ -11,7 +11,7 @@ uint8_t find_max_index(float average_array[8]) {
             max = average_array[i];
         }
     }
-    printf("Holder value: %u\n", holder);
+    // printf("Holder value: %u\n", holder);
     return holder;
 }
 void follow_heat(float heat_grid[8][8], float average_vals[8], const nrf_twi_mngr_t* i2c) {
@@ -41,46 +41,14 @@ void follow_heat(float heat_grid[8][8], float average_vals[8], const nrf_twi_mng
     if (max_index == 0 || max_index == 1) {     
         // Target is to the left    
         // activate_servos();     
-        actuate_servos(25, 25, false, true);
-    }
-    else if (max_index == 6 || max_index == 7) {    
+        actuate_servos(30, 30, false, true);
+    } else if (max_index == 6 || max_index == 7) {    
         // Target is to the right    
-        // activate_servos();    
-        actuate_servos(25, 25, true, false);
-        }
-    else {                                                  
+        // activate_servos();
+        actuate_servos(30, 30, true, false);
+    } else {                                                  
         // Target is in the center
         //deactivate_servos();
-        actuate_servos(38, 40, true, true);
+        actuate_servos(60, 60, true, true);
     }
 }
-
-    // if (max_index == 0 || max_index == 1) {     
-    //     // Target is to the left    
-    //     printf("Turning left...\n");        
-    //     actuate_servos(30-5, 30-5, true, true);
-    //     nrf_delay_ms(2000);
-    // }
-    // else if (max_index == 6 || max_index == 7) {    
-    //     // Target is to the right        
-    //     printf("Turning right...\n");
-    //     actuate_servos(30+5, 30+5, true, true);
-    //     nrf_delay_ms(2000);
-    // }
-    // else {                                                  
-    //     // Target is in the center
-    //     printf("Going forward...\n");
-    //     actuate_servos(30, 30, true, true);
-    //     nrf_delay_ms(2000);
-    // }
-
-//     actuate_servos(30, 30, false, false);
-//     nrf_delay_ms(500);
-//     actuate_servos(30, 30, true, true);
-//     nrf_delay_ms(500);
-//     actuate_servos(30, 30, true, false);
-//     nrf_delay_ms(500);
-//     actuate_servos(30, 30, false, true);
-//     nrf_delay_ms(500);
-//     deactivate_servos();
-// }

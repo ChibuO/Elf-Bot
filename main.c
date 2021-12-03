@@ -18,6 +18,7 @@
 #include "Thermal_sensing_driver.h"
 
 #include "gpio_buttons.h"
+#include "virtual_timer.h"
 
 // Global variables
 NRF_TWI_MNGR_DEF(twi_mngr_instance, 1, 0);
@@ -39,35 +40,48 @@ int main(void) {
   gpio_config(23, 0); //button B
 
   // Initialize drivers
-  //sonic_init(&twi_mngr_instance);
+  sonic_init();
   thermal_init(&twi_mngr_instance);
   motor_init(&twi_mngr_instance);
   
   // app_timer_init();
   // app_timer_create(&APP_TIM, APP_TIMER_MODE_REPEATED, deactivate_servos);
   // app_timer_start(APP_TIM, 30000, NULL);
-  
 
   // Intialize arrays used by thermal sensing driver
   float heat_grid[8][8];
   float average_vals[8];
 
-  bool ignition = false;
+  bool ignition = true;
+  bool is_off = false;
+  uint32_t stop_distance = 30;
 
   // Loop forever
   while (1) {
     if(gpio_read(14) == 0) {
-      printf("Button A read, turning car off\n");
+      // printf("Button A read, turning car off\n");
+      is_off = true;
       ignition = false;
       deactivate_servos();
     } else if (gpio_read(23) == 0) {
-      printf("Buton B read, turning car on\n");
+      // printf("Buton B read, turning car on\n");
+      is_off = false;
+    }
+
+    if(getPulse() <= stop_distance && !is_off) {
+      ignition = false;
+      // actuate_servos(20, 20, false, false);
+      // nrf_delay_ms(100);
+      // actuate_servos(30, 30, true, false);
+      deactivate_servos();
+    } else if (getPulse() > stop_distance && !is_off) {
       ignition = true;
       activate_servos();
     }
 
     if(ignition) follow_heat(heat_grid, average_vals, &twi_mngr_instance);
-    nrf_delay_ms(25);
+    printf("%lu cm\n", getPulse());
+    //nrf_delay_ms(25);
     // nrf_delay_ms(1000);
   }
 }

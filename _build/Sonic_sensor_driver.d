@@ -92,4 +92,5 @@ _build/Sonic_sensor_driver.o: Sonic_sensor_driver.c I2C_functions.h \
  nrf52x-base//sdk/nrf5_sdk_16.0.0/modules/nrfx/hal/nrf_gpio.h \
  /home/ce346/Elf-Bot/boards/microbit_v2/./microbit_v2.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/time.h \
- /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/time.h
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/time.h \
+ virtual_timer.h
