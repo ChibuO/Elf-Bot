@@ -2,8 +2,7 @@
 #include "stdio.h"
 
 typedef struct{
-  // Step 3:
-  // Add register definitions here
+  // Register definitions 
   uint32_t _unused_A[64 + 64 + 64 + 64 + 64 + 1];
   uint32_t OUT;
   uint32_t OUTSET;
@@ -37,8 +36,6 @@ void gpio_print() {
 //  gpio_num - gpio number 0-31 OR (32 + gpio number)
 //  dir - gpio direction (INPUT, OUTPUT)
 void gpio_config(uint8_t gpio_num, gpio_direction_t dir) {
-  // Implement me
-  // Hint: Use proper PIN_CNF instead of DIR
   something->PIN_CNF[gpio_num] = dir;
 
 }
@@ -65,12 +62,10 @@ bool gpio_read(uint8_t gpio_num) {
   uint32_t binary_pin_num = 1 << gpio_num;
   if(((something->IN) & binary_pin_num) > 0)
   {
-    // printf("Pin high, returning true\n");
     return true;
   }
   else
     {
-    //   printf("Pin low, returning false\n");
       return false;
     }
       

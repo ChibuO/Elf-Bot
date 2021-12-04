@@ -153,11 +153,9 @@ Archive member included to satisfy reference by file (symbol)
 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_truncdfsf2.o)
                               _build/Thermal_sensor_driver.o (__aeabi_d2f)
 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
-                              _build/Sonic_sensor_driver.o (__aeabi_ldivmod)
+                              _build/nrf_serial.o (__aeabi_ldivmod)
 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
-                              _build/Sonic_sensor_driver.o (__aeabi_uldivmod)
-/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunssfdi.o)
-                              _build/Sonic_sensor_driver.o (__aeabi_f2ulz)
+                              _build/nrf_serial.o (__aeabi_uldivmod)
 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
                               /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o) (__udivmoddi4)
 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
@@ -217,15 +215,12 @@ Discarded input sections
  .text.temp_maxes
                 0x0000000000000000       0x40 _build/Thermal_sensor_driver.o
  .rodata.print_temp_grid.str1.1
-                0x0000000000000000        0x7 _build/Thermal_sensor_driver.o
+                0x0000000000000000        0x9 _build/Thermal_sensor_driver.o
  .text.print_temp_grid
                 0x0000000000000000       0x4c _build/Thermal_sensor_driver.o
  .text          0x0000000000000000        0x0 _build/Sonic_sensor_driver.o
  .data          0x0000000000000000        0x0 _build/Sonic_sensor_driver.o
  .bss           0x0000000000000000        0x0 _build/Sonic_sensor_driver.o
- .text.getCm    0x0000000000000000       0x12 _build/Sonic_sensor_driver.o
- .text.getInch  0x0000000000000000       0x2c _build/Sonic_sensor_driver.o
- .data.timeout  0x0000000000000000        0x4 _build/Sonic_sensor_driver.o
  .text          0x0000000000000000        0x0 _build/main.o
  .data          0x0000000000000000        0x0 _build/main.o
  .bss           0x0000000000000000        0x0 _build/main.o
@@ -238,12 +233,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 _build/I2C_functions.o
  .data          0x0000000000000000        0x0 _build/I2C_functions.o
  .bss           0x0000000000000000        0x0 _build/I2C_functions.o
- .text.experimental_write
-                0x0000000000000000       0x32 _build/I2C_functions.o
- .text.experimental_read
-                0x0000000000000000       0x74 _build/I2C_functions.o
- .rodata.delay_machine_code.8590
-                0x0000000000000000        0x6 _build/I2C_functions.o
  .text          0x0000000000000000        0x0 _build/Motor_driver.o
  .data          0x0000000000000000        0x0 _build/Motor_driver.o
  .bss           0x0000000000000000        0x0 _build/Motor_driver.o
@@ -1239,12 +1228,6 @@ Discarded input sections
                 0x0000000000000000       0x1e /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_ldivmod.o)
  .data          0x0000000000000000        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
  .bss           0x0000000000000000        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
- .text          0x0000000000000000       0x40 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunssfdi.o)
- .data          0x0000000000000000        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunssfdi.o)
- .bss           0x0000000000000000        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunssfdi.o)
- .debug_frame   0x0000000000000000       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunssfdi.o)
- .ARM.attributes
-                0x0000000000000000       0x34 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunssfdi.o)
  .data          0x0000000000000000        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
  .bss           0x0000000000000000        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
  .ARM.extab     0x0000000000000000        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
@@ -1270,7 +1253,7 @@ Linker script and memory map
                 0x000000000007b000                __start_ot_flash_data = (__stop_ot_flash_data - (FLASH_PAGE_SIZE * FLASH_DATA_PAGES_USED))
                 0x0000000000000001                ASSERT ((__start_ot_flash_data >= (__etext + SIZEOF (.data))), Error: Code overlaps flash data area.)
 
-.text           0x0000000000000000     0xd078
+.text           0x0000000000000000     0xd0f8
  *(.isr_vector)
  .isr_vector    0x0000000000000000      0x200 _build/gcc_startup_nrf52833.os
                 0x0000000000000000                __isr_vector
@@ -1295,800 +1278,803 @@ Linker script and memory map
                 0x0000000000000374                grid_eye
  *fill*         0x000000000000039e        0x2 
  .text.temp_averages
-                0x00000000000003a0       0x48 _build/Thermal_sensor_driver.o
+                0x00000000000003a0       0x3c _build/Thermal_sensor_driver.o
                 0x00000000000003a0                temp_averages
  .text.thermal_init
-                0x00000000000003e8        0xc _build/Thermal_sensor_driver.o
-                0x00000000000003e8                thermal_init
+                0x00000000000003dc        0xc _build/Thermal_sensor_driver.o
+                0x00000000000003dc                thermal_init
  .text.nrf_gpio_pin_port_decode
-                0x00000000000003f4       0x30 _build/Sonic_sensor_driver.o
+                0x00000000000003e8       0x30 _build/Sonic_sensor_driver.o
  .text.setupUltrasonicPins
-                0x0000000000000424       0x32 _build/Sonic_sensor_driver.o
-                0x0000000000000424                setupUltrasonicPins
- *fill*         0x0000000000000456        0x2 
+                0x0000000000000418       0x32 _build/Sonic_sensor_driver.o
+                0x0000000000000418                setupUltrasonicPins
+ *fill*         0x000000000000044a        0x2 
  .text.getPulse
-                0x0000000000000458       0x90 _build/Sonic_sensor_driver.o
-                0x0000000000000458                getPulse
+                0x000000000000044c       0x90 _build/Sonic_sensor_driver.o
+                0x000000000000044c                getPulse
  .text.sonic_init
-                0x00000000000004e8       0x12 _build/Sonic_sensor_driver.o
-                0x00000000000004e8                sonic_init
- *fill*         0x00000000000004fa        0x2 
+                0x00000000000004dc       0x12 _build/Sonic_sensor_driver.o
+                0x00000000000004dc                sonic_init
+ *fill*         0x00000000000004ee        0x2 
+ .text.turn_around
+                0x00000000000004f0       0x3c _build/main.o
+                0x00000000000004f0                turn_around
  .text.startup.main
-                0x00000000000004fc       0xc8 _build/main.o
-                0x00000000000004fc                main
+                0x000000000000052c      0x10c _build/main.o
+                0x000000000000052c                main
  .text.read_timer
-                0x00000000000005c4       0x10 _build/virtual_timer.o
-                0x00000000000005c4                read_timer
+                0x0000000000000638       0x10 _build/virtual_timer.o
+                0x0000000000000638                read_timer
  .text.virtual_timer_init
-                0x00000000000005d4       0x34 _build/virtual_timer.o
-                0x00000000000005d4                virtual_timer_init
+                0x0000000000000648       0x34 _build/virtual_timer.o
+                0x0000000000000648                virtual_timer_init
  .text.find_max_index
-                0x0000000000000608       0x30 _build/Thermal_sensing_driver.o
-                0x0000000000000608                find_max_index
+                0x000000000000067c       0x30 _build/Thermal_sensing_driver.o
+                0x000000000000067c                find_max_index
  .text.follow_heat
-                0x0000000000000638       0x42 _build/Thermal_sensing_driver.o
-                0x0000000000000638                follow_heat
+                0x00000000000006ac       0x42 _build/Thermal_sensing_driver.o
+                0x00000000000006ac                follow_heat
  .text.i2c_reg_read
-                0x000000000000067a       0x4e _build/I2C_functions.o
-                0x000000000000067a                i2c_reg_read
+                0x00000000000006ee       0x4e _build/I2C_functions.o
+                0x00000000000006ee                i2c_reg_read
  .text.i2c_reg_write
-                0x00000000000006c8       0x34 _build/I2C_functions.o
-                0x00000000000006c8                i2c_reg_write
+                0x000000000000073c       0x34 _build/I2C_functions.o
+                0x000000000000073c                i2c_reg_write
  .text.actuate_servos
-                0x00000000000006fc       0x94 _build/Motor_driver.o
-                0x00000000000006fc                actuate_servos
+                0x0000000000000770       0x94 _build/Motor_driver.o
+                0x0000000000000770                actuate_servos
  .text.activate_servos
-                0x0000000000000790       0x14 _build/Motor_driver.o
-                0x0000000000000790                activate_servos
+                0x0000000000000804       0x14 _build/Motor_driver.o
+                0x0000000000000804                activate_servos
  .text.deactivate_servos
-                0x00000000000007a4       0x14 _build/Motor_driver.o
-                0x00000000000007a4                deactivate_servos
+                0x0000000000000818       0x14 _build/Motor_driver.o
+                0x0000000000000818                deactivate_servos
  .text.motor_init
-                0x00000000000007b8        0xc _build/Motor_driver.o
-                0x00000000000007b8                motor_init
+                0x000000000000082c        0xc _build/Motor_driver.o
+                0x000000000000082c                motor_init
  .text.nrf_gpio_pin_port_decode
-                0x00000000000007c4       0x30 _build/better_error_handling.o
+                0x0000000000000838       0x30 _build/better_error_handling.o
  .text.nrf_gpio_pin_clear
-                0x00000000000007f4       0x1a _build/better_error_handling.o
+                0x0000000000000868       0x1a _build/better_error_handling.o
  .text.nrf_gpio_pin_set
-                0x000000000000080e       0x1a _build/better_error_handling.o
+                0x0000000000000882       0x1a _build/better_error_handling.o
  .text.nrf_delay_ms.part.0
-                0x0000000000000828       0x1c _build/better_error_handling.o
+                0x000000000000089c       0x1c _build/better_error_handling.o
  .text.error_blink_pattern
-                0x0000000000000844      0x104 _build/better_error_handling.o
+                0x00000000000008b8      0x104 _build/better_error_handling.o
  .text.app_error_fault_handler
-                0x0000000000000948       0x74 _build/better_error_handling.o
-                0x0000000000000948                app_error_fault_handler
+                0x00000000000009bc       0x74 _build/better_error_handling.o
+                0x00000000000009bc                app_error_fault_handler
  .text.HardFault_process
-                0x00000000000009bc        0x6 _build/better_error_handling.o
-                0x00000000000009bc                HardFault_process
+                0x0000000000000a30        0x6 _build/better_error_handling.o
+                0x0000000000000a30                HardFault_process
  .text.nrf_log_backend_uart_flush
-                0x00000000000009c2        0x2 _build/microbit_nrf_log_backend_uart.o
+                0x0000000000000a36        0x2 _build/microbit_nrf_log_backend_uart.o
  .text.nrf_log_backend_uart_put
-                0x00000000000009c4       0x1c _build/microbit_nrf_log_backend_uart.o
+                0x0000000000000a38       0x1c _build/microbit_nrf_log_backend_uart.o
  .text.uart_init.constprop.0
-                0x00000000000009e0       0x5c _build/microbit_nrf_log_backend_uart.o
+                0x0000000000000a54       0x5c _build/microbit_nrf_log_backend_uart.o
  .text.serial_tx
-                0x0000000000000a3c       0x50 _build/microbit_nrf_log_backend_uart.o
+                0x0000000000000ab0       0x50 _build/microbit_nrf_log_backend_uart.o
  .text.nrf_log_backend_uart_panic_set
-                0x0000000000000a8c       0x2c _build/microbit_nrf_log_backend_uart.o
+                0x0000000000000b00       0x2c _build/microbit_nrf_log_backend_uart.o
  .text.nrf_log_backend_uart_init
-                0x0000000000000ab8        0x4 _build/microbit_nrf_log_backend_uart.o
-                0x0000000000000ab8                nrf_log_backend_uart_init
- .text._write   0x0000000000000abc       0x2c _build/microbit_retarget.o
-                0x0000000000000abc                _write
- .text._read    0x0000000000000ae8       0x30 _build/microbit_retarget.o
-                0x0000000000000ae8                _read
+                0x0000000000000b2c        0x4 _build/microbit_nrf_log_backend_uart.o
+                0x0000000000000b2c                nrf_log_backend_uart_init
+ .text._write   0x0000000000000b30       0x2c _build/microbit_retarget.o
+                0x0000000000000b30                _write
+ .text._read    0x0000000000000b5c       0x30 _build/microbit_retarget.o
+                0x0000000000000b5c                _read
  .text.startup.called_first
-                0x0000000000000b18       0x48 _build/microbit_before_startup.o
-                0x0000000000000b18                called_first
+                0x0000000000000b8c       0x48 _build/microbit_before_startup.o
+                0x0000000000000b8c                called_first
  .text.app_error_handler
-                0x0000000000000b60       0x1a _build/app_error_handler_gcc.o
-                0x0000000000000b60                app_error_handler
- *fill*         0x0000000000000b7a        0x2 
+                0x0000000000000bd4       0x1a _build/app_error_handler_gcc.o
+                0x0000000000000bd4                app_error_handler
+ *fill*         0x0000000000000bee        0x2 
  .text.nrfx_coredep_delay_us.part.0.constprop.0
-                0x0000000000000b7c       0x10 _build/app_timer.o
+                0x0000000000000bf0       0x10 _build/app_timer.o
  .text.RTC1_IRQHandler
-                0x0000000000000b8c       0x9c _build/app_timer.o
-                0x0000000000000b8c                RTC1_IRQHandler
+                0x0000000000000c00       0x9c _build/app_timer.o
+                0x0000000000000c00                RTC1_IRQHandler
  .text.SWI0_EGU0_IRQHandler
-                0x0000000000000c28      0x2b8 _build/app_timer.o
-                0x0000000000000c28                SWI0_EGU0_IRQHandler
+                0x0000000000000c9c      0x2b8 _build/app_timer.o
+                0x0000000000000c9c                SWI0_EGU0_IRQHandler
  .text.app_util_disable_irq
-                0x0000000000000ee0       0x10 _build/app_util_platform.o
-                0x0000000000000ee0                app_util_disable_irq
+                0x0000000000000f54       0x10 _build/app_util_platform.o
+                0x0000000000000f54                app_util_disable_irq
  .text.app_util_enable_irq
-                0x0000000000000ef0       0x14 _build/app_util_platform.o
-                0x0000000000000ef0                app_util_enable_irq
+                0x0000000000000f64       0x14 _build/app_util_platform.o
+                0x0000000000000f64                app_util_enable_irq
  .text.privilege_level_get
-                0x0000000000000f04       0x1a _build/app_util_platform.o
-                0x0000000000000f04                privilege_level_get
- *fill*         0x0000000000000f1e        0x2 
+                0x0000000000000f78       0x1a _build/app_util_platform.o
+                0x0000000000000f78                privilege_level_get
+ *fill*         0x0000000000000f92        0x2 
  .text.app_util_critical_region_enter
-                0x0000000000000f20       0x20 _build/app_util_platform.o
-                0x0000000000000f20                app_util_critical_region_enter
+                0x0000000000000f94       0x20 _build/app_util_platform.o
+                0x0000000000000f94                app_util_critical_region_enter
  .text.app_util_critical_region_exit
-                0x0000000000000f40       0x20 _build/app_util_platform.o
-                0x0000000000000f40                app_util_critical_region_exit
+                0x0000000000000fb4       0x20 _build/app_util_platform.o
+                0x0000000000000fb4                app_util_critical_region_exit
  .text.HardFault_Handler
-                0x0000000000000f60       0x34 _build/hardfault_handler_gcc.o
-                0x0000000000000f60                HardFault_Handler
+                0x0000000000000fd4       0x34 _build/hardfault_handler_gcc.o
+                0x0000000000000fd4                HardFault_Handler
  .text.HardFault_c_handler
-                0x0000000000000f94      0x104 _build/hardfault_implementation.o
-                0x0000000000000f94                HardFault_c_handler
+                0x0000000000001008      0x104 _build/hardfault_implementation.o
+                0x0000000000001008                HardFault_c_handler
  .text.assert_nrf_callback
-                0x0000000000001098       0x1a _build/nrf_assert.o
-                0x0000000000001098                assert_nrf_callback
+                0x000000000000110c       0x1a _build/nrf_assert.o
+                0x000000000000110c                assert_nrf_callback
  .text.nrf_atomic_u32_fetch_store
-                0x00000000000010b2       0x16 _build/nrf_atomic.o
-                0x00000000000010b2                nrf_atomic_u32_fetch_store
+                0x0000000000001126       0x16 _build/nrf_atomic.o
+                0x0000000000001126                nrf_atomic_u32_fetch_store
  .text.nrf_atomic_u32_or
-                0x00000000000010c8       0x18 _build/nrf_atomic.o
-                0x00000000000010c8                nrf_atomic_u32_or
+                0x000000000000113c       0x18 _build/nrf_atomic.o
+                0x000000000000113c                nrf_atomic_u32_or
  .text.nrf_atomic_u32_fetch_and
-                0x00000000000010e0       0x18 _build/nrf_atomic.o
-                0x00000000000010e0                nrf_atomic_u32_fetch_and
+                0x0000000000001154       0x18 _build/nrf_atomic.o
+                0x0000000000001154                nrf_atomic_u32_fetch_and
  .text.nrf_atomic_u32_add
-                0x00000000000010f8       0x18 _build/nrf_atomic.o
-                0x00000000000010f8                nrf_atomic_u32_add
+                0x000000000000116c       0x18 _build/nrf_atomic.o
+                0x000000000000116c                nrf_atomic_u32_add
  .text.nrf_atomic_u32_sub
-                0x0000000000001110       0x18 _build/nrf_atomic.o
-                0x0000000000001110                nrf_atomic_u32_sub
+                0x0000000000001184       0x18 _build/nrf_atomic.o
+                0x0000000000001184                nrf_atomic_u32_sub
  .text.nrf_atomic_flag_set
-                0x0000000000001128        0x6 _build/nrf_atomic.o
-                0x0000000000001128                nrf_atomic_flag_set
+                0x000000000000119c        0x6 _build/nrf_atomic.o
+                0x000000000000119c                nrf_atomic_flag_set
  .text.nrf_atomic_flag_clear_fetch
-                0x000000000000112e        0x6 _build/nrf_atomic.o
-                0x000000000000112e                nrf_atomic_flag_clear_fetch
+                0x00000000000011a2        0x6 _build/nrf_atomic.o
+                0x00000000000011a2                nrf_atomic_flag_clear_fetch
  .text.nrf_balloc_init
-                0x0000000000001134       0x7c _build/nrf_balloc.o
-                0x0000000000001134                nrf_balloc_init
+                0x00000000000011a8       0x7c _build/nrf_balloc.o
+                0x00000000000011a8                nrf_balloc_init
  .text.nrf_balloc_alloc
-                0x00000000000011b0       0x54 _build/nrf_balloc.o
-                0x00000000000011b0                nrf_balloc_alloc
+                0x0000000000001224       0x54 _build/nrf_balloc.o
+                0x0000000000001224                nrf_balloc_alloc
  .text.nrf_balloc_free
-                0x0000000000001204       0x48 _build/nrf_balloc.o
-                0x0000000000001204                nrf_balloc_free
+                0x0000000000001278       0x48 _build/nrf_balloc.o
+                0x0000000000001278                nrf_balloc_free
  .text.twim_evt_handler
-                0x000000000000124c       0x40 _build/nrf_drv_twi.o
+                0x00000000000012c0       0x40 _build/nrf_drv_twi.o
  .text.nrf_gpio_pin_port_decode
-                0x000000000000128c       0x30 _build/nrf_drv_twi.o
+                0x0000000000001300       0x30 _build/nrf_drv_twi.o
  .text.nrf_gpio_pin_set
-                0x00000000000012bc       0x1a _build/nrf_drv_twi.o
- *fill*         0x00000000000012d6        0x2 
+                0x0000000000001330       0x1a _build/nrf_drv_twi.o
+ *fill*         0x000000000000134a        0x2 
  .text.nrfx_coredep_delay_us.part.0.constprop.0
-                0x00000000000012d8       0x10 _build/nrf_drv_twi.o
+                0x000000000000134c       0x10 _build/nrf_drv_twi.o
  .text.nrf_drv_twi_init
-                0x00000000000012e8       0xec _build/nrf_drv_twi.o
-                0x00000000000012e8                nrf_drv_twi_init
+                0x000000000000135c       0xec _build/nrf_drv_twi.o
+                0x000000000000135c                nrf_drv_twi_init
  .text.uarte_evt_handler
-                0x00000000000013d4       0x34 _build/nrf_drv_uart.o
+                0x0000000000001448       0x34 _build/nrf_drv_uart.o
  .text.uart_evt_handler
-                0x0000000000001408       0x34 _build/nrf_drv_uart.o
+                0x000000000000147c       0x34 _build/nrf_drv_uart.o
  .text.nrf_drv_uart_init
-                0x000000000000143c       0x7c _build/nrf_drv_uart.o
-                0x000000000000143c                nrf_drv_uart_init
+                0x00000000000014b0       0x7c _build/nrf_drv_uart.o
+                0x00000000000014b0                nrf_drv_uart_init
  .text.nrf_fprintf_buffer_flush
-                0x00000000000014b8       0x24 _build/nrf_fprintf.o
-                0x00000000000014b8                nrf_fprintf_buffer_flush
+                0x000000000000152c       0x24 _build/nrf_fprintf.o
+                0x000000000000152c                nrf_fprintf_buffer_flush
  .text.nrf_fprintf
-                0x00000000000014dc       0x54 _build/nrf_fprintf.o
-                0x00000000000014dc                nrf_fprintf
+                0x0000000000001550       0x54 _build/nrf_fprintf.o
+                0x0000000000001550                nrf_fprintf
  .text.buffer_add
-                0x0000000000001530       0x1e _build/nrf_fprintf_format.o
- *fill*         0x000000000000154e        0x2 
+                0x00000000000015a4       0x1e _build/nrf_fprintf_format.o
+ *fill*         0x00000000000015c2        0x2 
  .text.unsigned_print
-                0x0000000000001550       0xb4 _build/nrf_fprintf_format.o
+                0x00000000000015c4       0xb4 _build/nrf_fprintf_format.o
  .text.nrf_fprintf_fmt
-                0x0000000000001604      0x2d8 _build/nrf_fprintf_format.o
-                0x0000000000001604                nrf_fprintf_fmt
+                0x0000000000001678      0x2d8 _build/nrf_fprintf_format.o
+                0x0000000000001678                nrf_fprintf_fmt
  .text.nrf_log_backend_serial_put
-                0x00000000000018dc       0xc2 _build/nrf_log_backend_serial.o
-                0x00000000000018dc                nrf_log_backend_serial_put
- *fill*         0x000000000000199e        0x2 
+                0x0000000000001950       0xc2 _build/nrf_log_backend_serial.o
+                0x0000000000001950                nrf_log_backend_serial_put
+ *fill*         0x0000000000001a12        0x2 
  .text.nrf_log_default_backends_init
-                0x00000000000019a0       0x30 _build/nrf_log_default_backends.o
-                0x00000000000019a0                nrf_log_default_backends_init
+                0x0000000000001a14       0x30 _build/nrf_log_default_backends.o
+                0x0000000000001a14                nrf_log_default_backends_init
  .text.invalid_packets_omit
-                0x00000000000019d0       0x3a _build/nrf_log_frontend.o
- *fill*         0x0000000000001a0a        0x2 
+                0x0000000000001a44       0x3a _build/nrf_log_frontend.o
+ *fill*         0x0000000000001a7e        0x2 
  .text.buf_prealloc
-                0x0000000000001a0c      0x144 _build/nrf_log_frontend.o
+                0x0000000000001a80      0x144 _build/nrf_log_frontend.o
  .text.nrf_log_init
-                0x0000000000001b50       0x3c _build/nrf_log_frontend.o
-                0x0000000000001b50                nrf_log_init
+                0x0000000000001bc4       0x3c _build/nrf_log_frontend.o
+                0x0000000000001bc4                nrf_log_init
  .text.nrf_log_module_name_get
-                0x0000000000001b8c       0x38 _build/nrf_log_frontend.o
-                0x0000000000001b8c                nrf_log_module_name_get
+                0x0000000000001c00       0x38 _build/nrf_log_frontend.o
+                0x0000000000001c00                nrf_log_module_name_get
  .text.nrf_log_color_id_get
-                0x0000000000001bc4       0x2c _build/nrf_log_frontend.o
-                0x0000000000001bc4                nrf_log_color_id_get
+                0x0000000000001c38       0x2c _build/nrf_log_frontend.o
+                0x0000000000001c38                nrf_log_color_id_get
  .text.buffer_is_empty
-                0x0000000000001bf0       0x14 _build/nrf_log_frontend.o
-                0x0000000000001bf0                buffer_is_empty
+                0x0000000000001c64       0x14 _build/nrf_log_frontend.o
+                0x0000000000001c64                buffer_is_empty
  .text.nrf_log_frontend_dequeue
-                0x0000000000001c04      0x218 _build/nrf_log_frontend.o
-                0x0000000000001c04                nrf_log_frontend_dequeue
- .text.std_n    0x0000000000001e1c       0xb8 _build/nrf_log_frontend.o
+                0x0000000000001c78      0x218 _build/nrf_log_frontend.o
+                0x0000000000001c78                nrf_log_frontend_dequeue
+ .text.std_n    0x0000000000001e90       0xb8 _build/nrf_log_frontend.o
  .text.nrf_log_frontend_std_0
-                0x0000000000001ed4        0x8 _build/nrf_log_frontend.o
-                0x0000000000001ed4                nrf_log_frontend_std_0
+                0x0000000000001f48        0x8 _build/nrf_log_frontend.o
+                0x0000000000001f48                nrf_log_frontend_std_0
  .text.nrf_log_frontend_std_1
-                0x0000000000001edc       0x12 _build/nrf_log_frontend.o
-                0x0000000000001edc                nrf_log_frontend_std_1
+                0x0000000000001f50       0x12 _build/nrf_log_frontend.o
+                0x0000000000001f50                nrf_log_frontend_std_1
  .text.nrf_log_frontend_std_3
-                0x0000000000001eee       0x18 _build/nrf_log_frontend.o
-                0x0000000000001eee                nrf_log_frontend_std_3
+                0x0000000000001f62       0x18 _build/nrf_log_frontend.o
+                0x0000000000001f62                nrf_log_frontend_std_3
  .text.nrf_log_frontend_std_4
-                0x0000000000001f06       0x1c _build/nrf_log_frontend.o
-                0x0000000000001f06                nrf_log_frontend_std_4
- *fill*         0x0000000000001f22        0x2 
+                0x0000000000001f7a       0x1c _build/nrf_log_frontend.o
+                0x0000000000001f7a                nrf_log_frontend_std_4
+ *fill*         0x0000000000001f96        0x2 
  .text.nrf_log_backend_add
-                0x0000000000001f24       0x54 _build/nrf_log_frontend.o
-                0x0000000000001f24                nrf_log_backend_add
+                0x0000000000001f98       0x54 _build/nrf_log_frontend.o
+                0x0000000000001f98                nrf_log_backend_add
  .text.nrf_log_panic
-                0x0000000000001f78       0x2c _build/nrf_log_frontend.o
-                0x0000000000001f78                nrf_log_panic
+                0x0000000000001fec       0x2c _build/nrf_log_frontend.o
+                0x0000000000001fec                nrf_log_panic
  .text.postfix_process
-                0x0000000000001fa4       0x44 _build/nrf_log_str_formatter.o
+                0x0000000000002018       0x44 _build/nrf_log_str_formatter.o
  .text.prefix_process
-                0x0000000000001fe8       0x7c _build/nrf_log_str_formatter.o
+                0x000000000000205c       0x7c _build/nrf_log_str_formatter.o
  .text.nrf_log_std_entry_process
-                0x0000000000002064       0xc8 _build/nrf_log_str_formatter.o
-                0x0000000000002064                nrf_log_std_entry_process
+                0x00000000000020d8       0xc8 _build/nrf_log_str_formatter.o
+                0x00000000000020d8                nrf_log_std_entry_process
  .text.nrf_log_hexdump_entry_process
-                0x000000000000212c       0xbc _build/nrf_log_str_formatter.o
-                0x000000000000212c                nrf_log_hexdump_entry_process
+                0x00000000000021a0       0xbc _build/nrf_log_str_formatter.o
+                0x00000000000021a0                nrf_log_hexdump_entry_process
  .text.memobj_op
-                0x00000000000021e8       0xa8 _build/nrf_memobj.o
+                0x000000000000225c       0xa8 _build/nrf_memobj.o
  .text.nrf_memobj_pool_init
-                0x0000000000002290        0x4 _build/nrf_memobj.o
-                0x0000000000002290                nrf_memobj_pool_init
+                0x0000000000002304        0x4 _build/nrf_memobj.o
+                0x0000000000002304                nrf_memobj_pool_init
  .text.nrf_memobj_free
-                0x0000000000002294       0x2c _build/nrf_memobj.o
-                0x0000000000002294                nrf_memobj_free
+                0x0000000000002308       0x2c _build/nrf_memobj.o
+                0x0000000000002308                nrf_memobj_free
  .text.nrf_memobj_alloc
-                0x00000000000022c0       0x5e _build/nrf_memobj.o
-                0x00000000000022c0                nrf_memobj_alloc
+                0x0000000000002334       0x5e _build/nrf_memobj.o
+                0x0000000000002334                nrf_memobj_alloc
  .text.nrf_memobj_get
-                0x000000000000231e        0x8 _build/nrf_memobj.o
-                0x000000000000231e                nrf_memobj_get
+                0x0000000000002392        0x8 _build/nrf_memobj.o
+                0x0000000000002392                nrf_memobj_get
  .text.nrf_memobj_put
-                0x0000000000002326       0x1e _build/nrf_memobj.o
-                0x0000000000002326                nrf_memobj_put
+                0x000000000000239a       0x1e _build/nrf_memobj.o
+                0x000000000000239a                nrf_memobj_put
  .text.nrf_memobj_write
-                0x0000000000002344       0x28 _build/nrf_memobj.o
-                0x0000000000002344                nrf_memobj_write
+                0x00000000000023b8       0x28 _build/nrf_memobj.o
+                0x00000000000023b8                nrf_memobj_write
  .text.nrf_memobj_read
-                0x000000000000236c       0x28 _build/nrf_memobj.o
-                0x000000000000236c                nrf_memobj_read
+                0x00000000000023e0       0x28 _build/nrf_memobj.o
+                0x00000000000023e0                nrf_memobj_read
  .text.nrf_ringbuf_init
-                0x0000000000002394       0x1c _build/nrf_ringbuf.o
-                0x0000000000002394                nrf_ringbuf_init
+                0x0000000000002408       0x1c _build/nrf_ringbuf.o
+                0x0000000000002408                nrf_ringbuf_init
  .text.nrf_strerror_find
-                0x00000000000023b0       0x3c _build/nrf_strerror.o
-                0x00000000000023b0                nrf_strerror_find
+                0x0000000000002424       0x3c _build/nrf_strerror.o
+                0x0000000000002424                nrf_strerror_find
  .text.nrf_strerror_get
-                0x00000000000023ec       0x14 _build/nrf_strerror.o
-                0x00000000000023ec                nrf_strerror_get
+                0x0000000000002460       0x14 _build/nrf_strerror.o
+                0x0000000000002460                nrf_strerror_get
  .text.queue_utilization_get
-                0x0000000000002400       0x18 _build/nrf_queue.o
+                0x0000000000002474       0x18 _build/nrf_queue.o
  .text.nrf_queue_next_idx
-                0x0000000000002418       0x20 _build/nrf_queue.o
+                0x000000000000248c       0x20 _build/nrf_queue.o
  .text.nrf_queue_is_full
-                0x0000000000002438       0x28 _build/nrf_queue.o
-                0x0000000000002438                nrf_queue_is_full
+                0x00000000000024ac       0x28 _build/nrf_queue.o
+                0x00000000000024ac                nrf_queue_is_full
  .text.nrf_queue_push
-                0x0000000000002460       0xc0 _build/nrf_queue.o
-                0x0000000000002460                nrf_queue_push
+                0x00000000000024d4       0xc0 _build/nrf_queue.o
+                0x00000000000024d4                nrf_queue_push
  .text.nrf_queue_is_empty
-                0x0000000000002520       0x24 _build/nrf_queue.o
-                0x0000000000002520                nrf_queue_is_empty
+                0x0000000000002594       0x24 _build/nrf_queue.o
+                0x0000000000002594                nrf_queue_is_empty
  .text.nrf_queue_generic_pop
-                0x0000000000002544       0x9c _build/nrf_queue.o
-                0x0000000000002544                nrf_queue_generic_pop
+                0x00000000000025b8       0x9c _build/nrf_queue.o
+                0x00000000000025b8                nrf_queue_generic_pop
  .text.nrf_gpiote_event_clear
-                0x00000000000025e0       0x18 _build/nrfx_gpiote.o
+                0x0000000000002654       0x18 _build/nrfx_gpiote.o
  .text.nrf_gpio_pin_port_decode
-                0x00000000000025f8       0x30 _build/nrfx_gpiote.o
+                0x000000000000266c       0x30 _build/nrfx_gpiote.o
  .text.nrf_gpio_cfg_sense_set
-                0x0000000000002628       0x2e _build/nrfx_gpiote.o
- *fill*         0x0000000000002656        0x2 
+                0x000000000000269c       0x2e _build/nrfx_gpiote.o
+ *fill*         0x00000000000026ca        0x2 
  .text.nrf_gpio_ports_read.constprop.0
-                0x0000000000002658       0x18 _build/nrfx_gpiote.o
+                0x00000000000026cc       0x18 _build/nrfx_gpiote.o
  .text.GPIOTE_IRQHandler
-                0x0000000000002670      0x1a8 _build/nrfx_gpiote.o
-                0x0000000000002670                GPIOTE_IRQHandler
+                0x00000000000026e4      0x1a8 _build/nrfx_gpiote.o
+                0x00000000000026e4                GPIOTE_IRQHandler
  .text.UARTE0_UART0_IRQHandler
-                0x0000000000002818       0x20 _build/nrfx_prs.o
-                0x0000000000002818                UARTE0_UART0_IRQHandler
+                0x000000000000288c       0x20 _build/nrfx_prs.o
+                0x000000000000288c                UARTE0_UART0_IRQHandler
  .text.nrfx_prs_acquire
-                0x0000000000002838       0x44 _build/nrfx_prs.o
-                0x0000000000002838                nrfx_prs_acquire
+                0x00000000000028ac       0x44 _build/nrfx_prs.o
+                0x00000000000028ac                nrfx_prs_acquire
  .text.nrfx_prs_release
-                0x000000000000287c       0x28 _build/nrfx_prs.o
-                0x000000000000287c                nrfx_prs_release
+                0x00000000000028f0       0x28 _build/nrfx_prs.o
+                0x00000000000028f0                nrfx_prs_release
  .text.nrf_saadc_event_clear
-                0x00000000000028a4       0x18 _build/nrfx_saadc.o
+                0x0000000000002918       0x18 _build/nrfx_saadc.o
  .text.SAADC_IRQHandler
-                0x00000000000028bc      0x160 _build/nrfx_saadc.o
-                0x00000000000028bc                SAADC_IRQHandler
+                0x0000000000002930      0x160 _build/nrfx_saadc.o
+                0x0000000000002930                SAADC_IRQHandler
  .text.irq_handler.constprop.0
-                0x0000000000002a1c       0x4c _build/nrfx_timer.o
+                0x0000000000002a90       0x4c _build/nrfx_timer.o
  .text.TIMER0_IRQHandler
-                0x0000000000002a68       0x10 _build/nrfx_timer.o
-                0x0000000000002a68                TIMER0_IRQHandler
+                0x0000000000002adc       0x10 _build/nrfx_timer.o
+                0x0000000000002adc                TIMER0_IRQHandler
  .text.TIMER1_IRQHandler
-                0x0000000000002a78       0x10 _build/nrfx_timer.o
-                0x0000000000002a78                TIMER1_IRQHandler
+                0x0000000000002aec       0x10 _build/nrfx_timer.o
+                0x0000000000002aec                TIMER1_IRQHandler
  .text.nrf_twim_event_clear
-                0x0000000000002a88       0x10 _build/nrfx_twim.o
+                0x0000000000002afc       0x10 _build/nrfx_twim.o
  .text.xfer_completeness_check
-                0x0000000000002a98       0x6c _build/nrfx_twim.o
+                0x0000000000002b0c       0x6c _build/nrfx_twim.o
  .text.nrf_gpio_pin_port_decode
-                0x0000000000002b04       0x30 _build/nrfx_twim.o
+                0x0000000000002b78       0x30 _build/nrfx_twim.o
  .text.SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
-                0x0000000000002b34      0x158 _build/nrfx_twim.o
-                0x0000000000002b34                SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+                0x0000000000002ba8      0x158 _build/nrfx_twim.o
+                0x0000000000002ba8                SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
  .text.nrfx_twim_init
-                0x0000000000002c8c      0x140 _build/nrfx_twim.o
-                0x0000000000002c8c                nrfx_twim_init
+                0x0000000000002d00      0x140 _build/nrfx_twim.o
+                0x0000000000002d00                nrfx_twim_init
  .text.nrfx_twim_enable
-                0x0000000000002dcc       0x40 _build/nrfx_twim.o
-                0x0000000000002dcc                nrfx_twim_enable
+                0x0000000000002e40       0x40 _build/nrfx_twim.o
+                0x0000000000002e40                nrfx_twim_enable
  .text.nrfx_twim_disable
-                0x0000000000002e0c       0x54 _build/nrfx_twim.o
-                0x0000000000002e0c                nrfx_twim_disable
+                0x0000000000002e80       0x54 _build/nrfx_twim.o
+                0x0000000000002e80                nrfx_twim_disable
  .text.nrfx_twim_uninit
-                0x0000000000002e60       0xb4 _build/nrfx_twim.o
-                0x0000000000002e60                nrfx_twim_uninit
+                0x0000000000002ed4       0xb4 _build/nrfx_twim.o
+                0x0000000000002ed4                nrfx_twim_uninit
  .text.nrfx_twim_xfer
-                0x0000000000002f14      0x330 _build/nrfx_twim.o
-                0x0000000000002f14                nrfx_twim_xfer
+                0x0000000000002f88      0x330 _build/nrfx_twim.o
+                0x0000000000002f88                nrfx_twim_xfer
  .text.POWER_CLOCK_IRQHandler
-                0x0000000000003244       0x5c _build/nrfx_clock.o
-                0x0000000000003244                POWER_CLOCK_IRQHandler
+                0x00000000000032b8       0x5c _build/nrfx_clock.o
+                0x00000000000032b8                POWER_CLOCK_IRQHandler
  .text.nrf_uart_event_clear
-                0x00000000000032a0       0x10 _build/nrfx_uart.o
- .text.tx_byte  0x00000000000032b0       0x1e _build/nrfx_uart.o
- *fill*         0x00000000000032ce        0x2 
+                0x0000000000003314       0x10 _build/nrfx_uart.o
+ .text.tx_byte  0x0000000000003324       0x1e _build/nrfx_uart.o
+ *fill*         0x0000000000003342        0x2 
  .text.nrf_gpio_pin_port_decode
-                0x00000000000032d0       0x30 _build/nrfx_uart.o
+                0x0000000000003344       0x30 _build/nrfx_uart.o
  .text.nrf_gpio_cfg_default
-                0x0000000000003300       0x1c _build/nrfx_uart.o
+                0x0000000000003374       0x1c _build/nrfx_uart.o
  .text.rx_enable.isra.0
-                0x000000000000331c       0x20 _build/nrfx_uart.o
- .text.rx_byte  0x000000000000333c       0x2c _build/nrfx_uart.o
+                0x0000000000003390       0x20 _build/nrfx_uart.o
+ .text.rx_byte  0x00000000000033b0       0x2c _build/nrfx_uart.o
  .text.rx_done_event.constprop.0
-                0x0000000000003368       0x20 _build/nrfx_uart.o
+                0x00000000000033dc       0x20 _build/nrfx_uart.o
  .text.nrfx_uart_0_irq_handler
-                0x0000000000003388      0x13c _build/nrfx_uart.o
-                0x0000000000003388                nrfx_uart_0_irq_handler
+                0x00000000000033fc      0x13c _build/nrfx_uart.o
+                0x00000000000033fc                nrfx_uart_0_irq_handler
  .text.nrfx_uart_init
-                0x00000000000034c4      0x1e4 _build/nrfx_uart.o
-                0x00000000000034c4                nrfx_uart_init
+                0x0000000000003538      0x1e4 _build/nrfx_uart.o
+                0x0000000000003538                nrfx_uart_init
  .text.nrfx_uart_uninit
-                0x00000000000036a8       0xc0 _build/nrfx_uart.o
-                0x00000000000036a8                nrfx_uart_uninit
+                0x000000000000371c       0xc0 _build/nrfx_uart.o
+                0x000000000000371c                nrfx_uart_uninit
  .text.nrfx_uart_tx
-                0x0000000000003768       0xe0 _build/nrfx_uart.o
-                0x0000000000003768                nrfx_uart_tx
+                0x00000000000037dc       0xe0 _build/nrfx_uart.o
+                0x00000000000037dc                nrfx_uart_tx
  .text.nrfx_uart_rx
-                0x0000000000003848      0x130 _build/nrfx_uart.o
-                0x0000000000003848                nrfx_uart_rx
+                0x00000000000038bc      0x130 _build/nrfx_uart.o
+                0x00000000000038bc                nrfx_uart_rx
  .text.nrf_uarte_event_clear
-                0x0000000000003978       0x10 _build/nrfx_uarte.o
+                0x00000000000039ec       0x10 _build/nrfx_uarte.o
  .text.nrf_gpio_pin_port_decode
-                0x0000000000003988       0x30 _build/nrfx_uarte.o
+                0x00000000000039fc       0x30 _build/nrfx_uarte.o
  .text.nrf_gpio_cfg_default
-                0x00000000000039b8       0x1c _build/nrfx_uarte.o
+                0x0000000000003a2c       0x1c _build/nrfx_uarte.o
  .text.rx_done_event.constprop.0
-                0x00000000000039d4       0x20 _build/nrfx_uarte.o
+                0x0000000000003a48       0x20 _build/nrfx_uarte.o
  .text.nrfx_uarte_0_irq_handler
-                0x00000000000039f4      0x118 _build/nrfx_uarte.o
-                0x00000000000039f4                nrfx_uarte_0_irq_handler
+                0x0000000000003a68      0x118 _build/nrfx_uarte.o
+                0x0000000000003a68                nrfx_uarte_0_irq_handler
  .text.nrfx_uarte_init
-                0x0000000000003b0c      0x1f8 _build/nrfx_uarte.o
-                0x0000000000003b0c                nrfx_uarte_init
+                0x0000000000003b80      0x1f8 _build/nrfx_uarte.o
+                0x0000000000003b80                nrfx_uarte_init
  .text.nrfx_uarte_uninit
-                0x0000000000003d04       0xec _build/nrfx_uarte.o
-                0x0000000000003d04                nrfx_uarte_uninit
+                0x0000000000003d78       0xec _build/nrfx_uarte.o
+                0x0000000000003d78                nrfx_uarte_uninit
  .text.nrfx_uarte_tx
-                0x0000000000003df0       0xf4 _build/nrfx_uarte.o
-                0x0000000000003df0                nrfx_uarte_tx
+                0x0000000000003e64       0xf4 _build/nrfx_uarte.o
+                0x0000000000003e64                nrfx_uarte_tx
  .text.nrfx_uarte_rx
-                0x0000000000003ee4      0x130 _build/nrfx_uarte.o
-                0x0000000000003ee4                nrfx_uarte_rx
+                0x0000000000003f58      0x130 _build/nrfx_uarte.o
+                0x0000000000003f58                nrfx_uarte_rx
  .text.internal_transaction_cb
-                0x0000000000004014        0xa _build/nrf_twi_mngr.o
- *fill*         0x000000000000401e        0x2 
+                0x0000000000004088        0xa _build/nrf_twi_mngr.o
+ *fill*         0x0000000000004092        0x2 
  .text.transaction_end_signal
-                0x0000000000004020       0x30 _build/nrf_twi_mngr.o
+                0x0000000000004094       0x30 _build/nrf_twi_mngr.o
  .text.start_transfer
-                0x0000000000004050       0xc4 _build/nrf_twi_mngr.o
+                0x00000000000040c4       0xc4 _build/nrf_twi_mngr.o
  .text.start_pending_transaction
-                0x0000000000004114       0xb0 _build/nrf_twi_mngr.o
+                0x0000000000004188       0xb0 _build/nrf_twi_mngr.o
  .text.twi_event_handler
-                0x00000000000041c4       0x58 _build/nrf_twi_mngr.o
+                0x0000000000004238       0x58 _build/nrf_twi_mngr.o
  .text.nrf_twi_mngr_init
-                0x000000000000421c       0x78 _build/nrf_twi_mngr.o
-                0x000000000000421c                nrf_twi_mngr_init
+                0x0000000000004290       0x78 _build/nrf_twi_mngr.o
+                0x0000000000004290                nrf_twi_mngr_init
  .text.nrf_twi_mngr_schedule
-                0x0000000000004294       0x60 _build/nrf_twi_mngr.o
-                0x0000000000004294                nrf_twi_mngr_schedule
+                0x0000000000004308       0x60 _build/nrf_twi_mngr.o
+                0x0000000000004308                nrf_twi_mngr_schedule
  .text.nrf_twi_mngr_perform
-                0x00000000000042f4       0x84 _build/nrf_twi_mngr.o
-                0x00000000000042f4                nrf_twi_mngr_perform
+                0x0000000000004368       0x84 _build/nrf_twi_mngr.o
+                0x0000000000004368                nrf_twi_mngr_perform
  .text.nrf_pwm_event_clear
-                0x0000000000004378       0x10 _build/nrfx_pwm.o
+                0x00000000000043ec       0x10 _build/nrfx_pwm.o
  .text.PWM0_IRQHandler
-                0x0000000000004388       0x90 _build/nrfx_pwm.o
-                0x0000000000004388                PWM0_IRQHandler
+                0x00000000000043fc       0x90 _build/nrfx_pwm.o
+                0x00000000000043fc                PWM0_IRQHandler
  .text.__NVIC_SystemReset
-                0x0000000000004418       0x24 _build/system_nrf52833.o
+                0x000000000000448c       0x24 _build/system_nrf52833.o
  .text.errata_36
-                0x000000000000443c       0x20 _build/system_nrf52833.o
+                0x00000000000044b0       0x20 _build/system_nrf52833.o
  .text.SystemInit
-                0x000000000000445c      0x1a0 _build/system_nrf52833.o
-                0x000000000000445c                SystemInit
- .text          0x00000000000045fc       0x3c _build/gcc_startup_nrf52833.os
-                0x00000000000045fc                Reset_Handler
-                0x0000000000004624                NMI_Handler
-                0x0000000000004628                MemoryManagement_Handler
-                0x000000000000462a                BusFault_Handler
-                0x000000000000462c                UsageFault_Handler
-                0x000000000000462e                SVC_Handler
-                0x0000000000004630                DebugMon_Handler
-                0x0000000000004632                PendSV_Handler
-                0x0000000000004634                SysTick_Handler
-                0x0000000000004636                TIMER2_IRQHandler
-                0x0000000000004636                RTC0_IRQHandler
-                0x0000000000004636                SWI2_EGU2_IRQHandler
-                0x0000000000004636                PWM1_IRQHandler
-                0x0000000000004636                RADIO_IRQHandler
-                0x0000000000004636                PDM_IRQHandler
-                0x0000000000004636                TEMP_IRQHandler
-                0x0000000000004636                QDEC_IRQHandler
-                0x0000000000004636                TIMER3_IRQHandler
-                0x0000000000004636                PWM3_IRQHandler
-                0x0000000000004636                FPU_IRQHandler
-                0x0000000000004636                USBD_IRQHandler
-                0x0000000000004636                TIMER4_IRQHandler
-                0x0000000000004636                I2S_IRQHandler
-                0x0000000000004636                SWI4_EGU4_IRQHandler
-                0x0000000000004636                UARTE1_IRQHandler
-                0x0000000000004636                SPIM3_IRQHandler
-                0x0000000000004636                PWM2_IRQHandler
-                0x0000000000004636                ECB_IRQHandler
-                0x0000000000004636                SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
-                0x0000000000004636                Default_Handler
-                0x0000000000004636                CCM_AAR_IRQHandler
-                0x0000000000004636                WDT_IRQHandler
-                0x0000000000004636                SWI5_EGU5_IRQHandler
-                0x0000000000004636                RNG_IRQHandler
-                0x0000000000004636                RTC2_IRQHandler
-                0x0000000000004636                SWI3_EGU3_IRQHandler
-                0x0000000000004636                SWI1_EGU1_IRQHandler
-                0x0000000000004636                SPIM2_SPIS2_SPI2_IRQHandler
-                0x0000000000004636                NFCT_IRQHandler
-                0x0000000000004636                MWU_IRQHandler
-                0x0000000000004636                COMP_LPCOMP_IRQHandler
- .text.exit     0x0000000000004638       0x20 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-exit.o)
-                0x0000000000004638                exit
+                0x00000000000044d0      0x1a0 _build/system_nrf52833.o
+                0x00000000000044d0                SystemInit
+ .text          0x0000000000004670       0x3c _build/gcc_startup_nrf52833.os
+                0x0000000000004670                Reset_Handler
+                0x0000000000004698                NMI_Handler
+                0x000000000000469c                MemoryManagement_Handler
+                0x000000000000469e                BusFault_Handler
+                0x00000000000046a0                UsageFault_Handler
+                0x00000000000046a2                SVC_Handler
+                0x00000000000046a4                DebugMon_Handler
+                0x00000000000046a6                PendSV_Handler
+                0x00000000000046a8                SysTick_Handler
+                0x00000000000046aa                TIMER2_IRQHandler
+                0x00000000000046aa                RTC0_IRQHandler
+                0x00000000000046aa                SWI2_EGU2_IRQHandler
+                0x00000000000046aa                PWM1_IRQHandler
+                0x00000000000046aa                RADIO_IRQHandler
+                0x00000000000046aa                PDM_IRQHandler
+                0x00000000000046aa                TEMP_IRQHandler
+                0x00000000000046aa                QDEC_IRQHandler
+                0x00000000000046aa                TIMER3_IRQHandler
+                0x00000000000046aa                PWM3_IRQHandler
+                0x00000000000046aa                FPU_IRQHandler
+                0x00000000000046aa                USBD_IRQHandler
+                0x00000000000046aa                TIMER4_IRQHandler
+                0x00000000000046aa                I2S_IRQHandler
+                0x00000000000046aa                SWI4_EGU4_IRQHandler
+                0x00000000000046aa                UARTE1_IRQHandler
+                0x00000000000046aa                SPIM3_IRQHandler
+                0x00000000000046aa                PWM2_IRQHandler
+                0x00000000000046aa                ECB_IRQHandler
+                0x00000000000046aa                SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+                0x00000000000046aa                Default_Handler
+                0x00000000000046aa                CCM_AAR_IRQHandler
+                0x00000000000046aa                WDT_IRQHandler
+                0x00000000000046aa                SWI5_EGU5_IRQHandler
+                0x00000000000046aa                RNG_IRQHandler
+                0x00000000000046aa                RTC2_IRQHandler
+                0x00000000000046aa                SWI3_EGU3_IRQHandler
+                0x00000000000046aa                SWI1_EGU1_IRQHandler
+                0x00000000000046aa                SPIM2_SPIS2_SPI2_IRQHandler
+                0x00000000000046aa                NFCT_IRQHandler
+                0x00000000000046aa                MWU_IRQHandler
+                0x00000000000046aa                COMP_LPCOMP_IRQHandler
+ .text.exit     0x00000000000046ac       0x20 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-exit.o)
+                0x00000000000046ac                exit
  .text.__libc_init_array
-                0x0000000000004658       0x48 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-init.o)
-                0x0000000000004658                __libc_init_array
- .text.memcmp   0x00000000000046a0       0x60 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memcmp.o)
-                0x00000000000046a0                memcmp
- .text          0x0000000000004700      0x134 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memcpy.o)
-                0x0000000000004700                memcpy
- .text.memset   0x0000000000004834       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memset.o)
-                0x0000000000004834                memset
- .text.printf   0x00000000000048d4       0x28 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-printf.o)
-                0x00000000000048d4                printf
- .text.setbuf   0x00000000000048fc       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-setbuf.o)
-                0x00000000000048fc                setbuf
- .text.setvbuf  0x000000000000490c      0x1a0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-setvbuf.o)
-                0x000000000000490c                setvbuf
- *fill*         0x0000000000004aac       0x14 
- .text          0x0000000000004ac0       0xdc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-strlen.o)
-                0x0000000000004ac0                strlen
- *fill*         0x0000000000004b9c        0x4 
+                0x00000000000046cc       0x48 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-init.o)
+                0x00000000000046cc                __libc_init_array
+ .text.memcmp   0x0000000000004714       0x60 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memcmp.o)
+                0x0000000000004714                memcmp
+ .text          0x0000000000004774      0x134 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memcpy.o)
+                0x0000000000004774                memcpy
+ .text.memset   0x00000000000048a8       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memset.o)
+                0x00000000000048a8                memset
+ .text.printf   0x0000000000004948       0x28 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-printf.o)
+                0x0000000000004948                printf
+ .text.setbuf   0x0000000000004970       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-setbuf.o)
+                0x0000000000004970                setbuf
+ .text.setvbuf  0x0000000000004980      0x1a0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-setvbuf.o)
+                0x0000000000004980                setvbuf
+ *fill*         0x0000000000004b20       0x20 
+ .text          0x0000000000004b40       0xdc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-strlen.o)
+                0x0000000000004b40                strlen
+ *fill*         0x0000000000004c1c        0x4 
  .text._vfprintf_r
-                0x0000000000004ba0     0x1be0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
-                0x0000000000004ba0                _vfprintf_r
+                0x0000000000004c20     0x1be0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
+                0x0000000000004c20                _vfprintf_r
  .text.__sbprintf
-                0x0000000000006780       0x84 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
+                0x0000000000006800       0x84 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
  .text.__swsetup_r
-                0x0000000000006804       0xd0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-wsetup.o)
-                0x0000000000006804                __swsetup_r
+                0x0000000000006884       0xd0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-wsetup.o)
+                0x0000000000006884                __swsetup_r
  .text.startup.register_fini
-                0x00000000000068d4       0x14 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-__call_atexit.o)
+                0x0000000000006954       0x14 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-__call_atexit.o)
  .text.__call_exitprocs
-                0x00000000000068e8       0xcc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-__call_atexit.o)
-                0x00000000000068e8                __call_exitprocs
- .text.atexit   0x00000000000069b4        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-atexit.o)
-                0x00000000000069b4                atexit
- .text.quorem   0x00000000000069c0      0x11c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-dtoa.o)
- *fill*         0x0000000000006adc        0x4 
- .text._dtoa_r  0x0000000000006ae0      0xf44 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-dtoa.o)
-                0x0000000000006ae0                _dtoa_r
+                0x0000000000006968       0xcc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-__call_atexit.o)
+                0x0000000000006968                __call_exitprocs
+ .text.atexit   0x0000000000006a34        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-atexit.o)
+                0x0000000000006a34                atexit
+ .text.quorem   0x0000000000006a40      0x11c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-dtoa.o)
+ *fill*         0x0000000000006b5c        0x4 
+ .text._dtoa_r  0x0000000000006b60      0xf44 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-dtoa.o)
+                0x0000000000006b60                _dtoa_r
  .text.__sflush_r
-                0x0000000000007a24      0x130 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fflush.o)
-                0x0000000000007a24                __sflush_r
+                0x0000000000007aa4      0x130 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fflush.o)
+                0x0000000000007aa4                __sflush_r
  .text._fflush_r
-                0x0000000000007b54       0x5c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fflush.o)
-                0x0000000000007b54                _fflush_r
- .text.std      0x0000000000007bb0       0x50 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-findfp.o)
+                0x0000000000007bd4       0x5c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fflush.o)
+                0x0000000000007bd4                _fflush_r
+ .text.std      0x0000000000007c30       0x50 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-findfp.o)
  .text._cleanup_r
-                0x0000000000007c00        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-findfp.o)
-                0x0000000000007c00                _cleanup_r
- .text.__sinit  0x0000000000007c0c       0x54 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-findfp.o)
-                0x0000000000007c0c                __sinit
+                0x0000000000007c80        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-findfp.o)
+                0x0000000000007c80                _cleanup_r
+ .text.__sinit  0x0000000000007c8c       0x54 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-findfp.o)
+                0x0000000000007c8c                __sinit
  .text.__sfp_lock_acquire
-                0x0000000000007c60        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-findfp.o)
-                0x0000000000007c60                __sfp_lock_acquire
+                0x0000000000007ce0        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-findfp.o)
+                0x0000000000007ce0                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x0000000000007c6c        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-findfp.o)
-                0x0000000000007c6c                __sfp_lock_release
+                0x0000000000007cec        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-findfp.o)
+                0x0000000000007cec                __sfp_lock_release
  .text.__libc_fini_array
-                0x0000000000007c78       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fini.o)
-                0x0000000000007c78                __libc_fini_array
+                0x0000000000007cf8       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fini.o)
+                0x0000000000007cf8                __libc_fini_array
  .text._malloc_trim_r
-                0x0000000000007ca4       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-freer.o)
-                0x0000000000007ca4                _malloc_trim_r
- .text._free_r  0x0000000000007d44      0x208 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-freer.o)
-                0x0000000000007d44                _free_r
+                0x0000000000007d24       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-freer.o)
+                0x0000000000007d24                _malloc_trim_r
+ .text._free_r  0x0000000000007dc4      0x208 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-freer.o)
+                0x0000000000007dc4                _free_r
  .text._fwalk_reent
-                0x0000000000007f4c       0x48 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fwalk.o)
-                0x0000000000007f4c                _fwalk_reent
+                0x0000000000007fcc       0x48 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fwalk.o)
+                0x0000000000007fcc                _fwalk_reent
  .text._localeconv_r
-                0x0000000000007f94        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-localeconv.o)
-                0x0000000000007f94                _localeconv_r
+                0x0000000000008014        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-localeconv.o)
+                0x0000000000008014                _localeconv_r
  .text.__retarget_lock_init_recursive
-                0x0000000000007f9c        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-lock.o)
-                0x0000000000007f9c                __retarget_lock_init_recursive
+                0x000000000000801c        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-lock.o)
+                0x000000000000801c                __retarget_lock_init_recursive
  .text.__retarget_lock_close_recursive
-                0x0000000000007fa0        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-lock.o)
-                0x0000000000007fa0                __retarget_lock_close_recursive
+                0x0000000000008020        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-lock.o)
+                0x0000000000008020                __retarget_lock_close_recursive
  .text.__retarget_lock_acquire_recursive
-                0x0000000000007fa4        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-lock.o)
-                0x0000000000007fa4                __retarget_lock_acquire_recursive
+                0x0000000000008024        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-lock.o)
+                0x0000000000008024                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x0000000000007fa8        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-lock.o)
-                0x0000000000007fa8                __retarget_lock_release_recursive
+                0x0000000000008028        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-lock.o)
+                0x0000000000008028                __retarget_lock_release_recursive
  .text.__swhatbuf_r
-                0x0000000000007fac       0x5c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-makebuf.o)
-                0x0000000000007fac                __swhatbuf_r
+                0x000000000000802c       0x5c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-makebuf.o)
+                0x000000000000802c                __swhatbuf_r
  .text.__smakebuf_r
-                0x0000000000008008       0x98 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-makebuf.o)
-                0x0000000000008008                __smakebuf_r
- .text.malloc   0x00000000000080a0       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-malloc.o)
-                0x00000000000080a0                malloc
+                0x0000000000008088       0x98 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-makebuf.o)
+                0x0000000000008088                __smakebuf_r
+ .text.malloc   0x0000000000008120       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-malloc.o)
+                0x0000000000008120                malloc
  .text._malloc_r
-                0x00000000000080b0      0x574 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mallocr.o)
-                0x00000000000080b0                _malloc_r
- *fill*         0x0000000000008624        0xc 
- .text          0x0000000000008630       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memchr.o)
-                0x0000000000008630                memchr
+                0x0000000000008130      0x574 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mallocr.o)
+                0x0000000000008130                _malloc_r
+ *fill*         0x00000000000086a4        0xc 
+ .text          0x00000000000086b0       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memchr.o)
+                0x00000000000086b0                memchr
  .text.__malloc_lock
-                0x00000000000086d0        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mlock.o)
-                0x00000000000086d0                __malloc_lock
+                0x0000000000008750        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mlock.o)
+                0x0000000000008750                __malloc_lock
  .text.__malloc_unlock
-                0x00000000000086dc        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mlock.o)
-                0x00000000000086dc                __malloc_unlock
- .text._Balloc  0x00000000000086e8       0x4c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x00000000000086e8                _Balloc
- .text._Bfree   0x0000000000008734       0x14 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x0000000000008734                _Bfree
+                0x000000000000875c        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mlock.o)
+                0x000000000000875c                __malloc_unlock
+ .text._Balloc  0x0000000000008768       0x4c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x0000000000008768                _Balloc
+ .text._Bfree   0x00000000000087b4       0x14 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x00000000000087b4                _Bfree
  .text.__multadd
-                0x0000000000008748       0xac /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x0000000000008748                __multadd
+                0x00000000000087c8       0xac /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x00000000000087c8                __multadd
  .text.__hi0bits
-                0x00000000000087f4       0x40 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x00000000000087f4                __hi0bits
+                0x0000000000008874       0x40 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x0000000000008874                __hi0bits
  .text.__lo0bits
-                0x0000000000008834       0x60 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x0000000000008834                __lo0bits
- .text.__i2b    0x0000000000008894       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x0000000000008894                __i2b
+                0x00000000000088b4       0x60 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x00000000000088b4                __lo0bits
+ .text.__i2b    0x0000000000008914       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x0000000000008914                __i2b
  .text.__multiply
-                0x00000000000088c0      0x160 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x00000000000088c0                __multiply
+                0x0000000000008940      0x160 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x0000000000008940                __multiply
  .text.__pow5mult
-                0x0000000000008a20       0x98 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x0000000000008a20                __pow5mult
+                0x0000000000008aa0       0x98 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x0000000000008aa0                __pow5mult
  .text.__lshift
-                0x0000000000008ab8       0xe8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x0000000000008ab8                __lshift
- .text.__mcmp   0x0000000000008ba0       0x3c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x0000000000008ba0                __mcmp
- .text.__mdiff  0x0000000000008bdc      0x148 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x0000000000008bdc                __mdiff
- .text.__d2b    0x0000000000008d24       0xd0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x0000000000008d24                __d2b
- .text.frexp    0x0000000000008df4       0x6c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-s_frexp.o)
-                0x0000000000008df4                frexp
- .text._sbrk_r  0x0000000000008e60       0x24 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-sbrkr.o)
-                0x0000000000008e60                _sbrk_r
- .text.__sread  0x0000000000008e84       0x24 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-stdio.o)
-                0x0000000000008e84                __sread
+                0x0000000000008b38       0xe8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x0000000000008b38                __lshift
+ .text.__mcmp   0x0000000000008c20       0x3c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x0000000000008c20                __mcmp
+ .text.__mdiff  0x0000000000008c5c      0x148 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x0000000000008c5c                __mdiff
+ .text.__d2b    0x0000000000008da4       0xd0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x0000000000008da4                __d2b
+ .text.frexp    0x0000000000008e74       0x6c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-s_frexp.o)
+                0x0000000000008e74                frexp
+ .text._sbrk_r  0x0000000000008ee0       0x24 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-sbrkr.o)
+                0x0000000000008ee0                _sbrk_r
+ .text.__sread  0x0000000000008f04       0x24 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-stdio.o)
+                0x0000000000008f04                __sread
  .text.__swrite
-                0x0000000000008ea8       0x40 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-stdio.o)
-                0x0000000000008ea8                __swrite
- .text.__sseek  0x0000000000008ee8       0x20 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-stdio.o)
-                0x0000000000008ee8                __sseek
+                0x0000000000008f28       0x40 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-stdio.o)
+                0x0000000000008f28                __swrite
+ .text.__sseek  0x0000000000008f68       0x20 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-stdio.o)
+                0x0000000000008f68                __sseek
  .text.__sclose
-                0x0000000000008f08        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-stdio.o)
-                0x0000000000008f08                __sclose
- .text.strncpy  0x0000000000008f10       0x68 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-strncpy.o)
-                0x0000000000008f10                strncpy
+                0x0000000000008f88        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-stdio.o)
+                0x0000000000008f88                __sclose
+ .text.strncpy  0x0000000000008f90       0x68 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-strncpy.o)
+                0x0000000000008f90                strncpy
  .text.__sprint_r.part.0
-                0x0000000000008f78       0x78 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
+                0x0000000000008ff8       0x78 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
  .text.__sprint_r
-                0x0000000000008ff0       0x18 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
-                0x0000000000008ff0                __sprint_r
+                0x0000000000009070       0x18 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
+                0x0000000000009070                __sprint_r
  .text._vfiprintf_r
-                0x0000000000009008      0xd4c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
-                0x0000000000009008                _vfiprintf_r
+                0x0000000000009088      0xd4c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
+                0x0000000000009088                _vfiprintf_r
  .text.__sbprintf
-                0x0000000000009d54       0x84 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
+                0x0000000000009dd4       0x84 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
  .text._write_r
-                0x0000000000009dd8       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-writer.o)
-                0x0000000000009dd8                _write_r
+                0x0000000000009e58       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-writer.o)
+                0x0000000000009e58                _write_r
  .text.__register_exitproc
-                0x0000000000009e04       0x8c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-__atexit.o)
-                0x0000000000009e04                __register_exitproc
+                0x0000000000009e84       0x8c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-__atexit.o)
+                0x0000000000009e84                __register_exitproc
  .text.__assert_func
-                0x0000000000009e90       0x3c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-assert.o)
-                0x0000000000009e90                __assert_func
+                0x0000000000009f10       0x3c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-assert.o)
+                0x0000000000009f10                __assert_func
  .text._calloc_r
-                0x0000000000009ecc       0x60 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-callocr.o)
-                0x0000000000009ecc                _calloc_r
+                0x0000000000009f4c       0x60 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-callocr.o)
+                0x0000000000009f4c                _calloc_r
  .text._close_r
-                0x0000000000009f2c       0x24 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-closer.o)
-                0x0000000000009f2c                _close_r
+                0x0000000000009fac       0x24 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-closer.o)
+                0x0000000000009fac                _close_r
  .text._fclose_r
-                0x0000000000009f50       0xcc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fclose.o)
-                0x0000000000009f50                _fclose_r
+                0x0000000000009fd0       0xcc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fclose.o)
+                0x0000000000009fd0                _fclose_r
  .text.fiprintf
-                0x000000000000a01c       0x28 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fiprintf.o)
-                0x000000000000a01c                fiprintf
+                0x000000000000a09c       0x28 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fiprintf.o)
+                0x000000000000a09c                fiprintf
  .text.__fputwc
-                0x000000000000a044       0xa8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fputwc.o)
-                0x000000000000a044                __fputwc
+                0x000000000000a0c4       0xa8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fputwc.o)
+                0x000000000000a0c4                __fputwc
  .text._fputwc_r
-                0x000000000000a0ec       0x68 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fputwc.o)
-                0x000000000000a0ec                _fputwc_r
+                0x000000000000a16c       0x68 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fputwc.o)
+                0x000000000000a16c                _fputwc_r
  .text._fstat_r
-                0x000000000000a154       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fstatr.o)
-                0x000000000000a154                _fstat_r
+                0x000000000000a1d4       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fstatr.o)
+                0x000000000000a1d4                _fstat_r
  .text.__sfvwrite_r
-                0x000000000000a180      0x2e0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fvwrite.o)
-                0x000000000000a180                __sfvwrite_r
+                0x000000000000a200      0x2e0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-fvwrite.o)
+                0x000000000000a200                __sfvwrite_r
  .text._isatty_r
-                0x000000000000a460       0x24 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-isattyr.o)
-                0x000000000000a460                _isatty_r
+                0x000000000000a4e0       0x24 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-isattyr.o)
+                0x000000000000a4e0                _isatty_r
  .text.__locale_mb_cur_max
-                0x000000000000a484        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-locale.o)
-                0x000000000000a484                __locale_mb_cur_max
+                0x000000000000a504        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-locale.o)
+                0x000000000000a504                __locale_mb_cur_max
  .text._lseek_r
-                0x000000000000a490       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-lseekr.o)
-                0x000000000000a490                _lseek_r
+                0x000000000000a510       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-lseekr.o)
+                0x000000000000a510                _lseek_r
  .text.__ascii_mbtowc
-                0x000000000000a4bc       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mbtowc_r.o)
-                0x000000000000a4bc                __ascii_mbtowc
- .text.memmove  0x000000000000a4e8       0xd8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memmove.o)
-                0x000000000000a4e8                memmove
- .text._read_r  0x000000000000a5c0       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-readr.o)
-                0x000000000000a5c0                _read_r
+                0x000000000000a53c       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mbtowc_r.o)
+                0x000000000000a53c                __ascii_mbtowc
+ .text.memmove  0x000000000000a568       0xd8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memmove.o)
+                0x000000000000a568                memmove
+ .text._read_r  0x000000000000a640       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-readr.o)
+                0x000000000000a640                _read_r
  .text._realloc_r
-                0x000000000000a5ec      0x3e0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-reallocr.o)
-                0x000000000000a5ec                _realloc_r
+                0x000000000000a66c      0x3e0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-reallocr.o)
+                0x000000000000a66c                _realloc_r
  .text.__swbuf_r
-                0x000000000000a9cc       0xb0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-wbuf.o)
-                0x000000000000a9cc                __swbuf_r
+                0x000000000000aa4c       0xb0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-wbuf.o)
+                0x000000000000aa4c                __swbuf_r
  .text._wcrtomb_r
-                0x000000000000aa7c       0x3c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-wcrtomb.o)
-                0x000000000000aa7c                _wcrtomb_r
+                0x000000000000aafc       0x3c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-wcrtomb.o)
+                0x000000000000aafc                _wcrtomb_r
  .text.__ascii_wctomb
-                0x000000000000aab8       0x1c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-wctomb_r.o)
-                0x000000000000aab8                __ascii_wctomb
- .text.abort    0x000000000000aad4       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-abort.o)
-                0x000000000000aad4                abort
+                0x000000000000ab38       0x1c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-wctomb_r.o)
+                0x000000000000ab38                __ascii_wctomb
+ .text.abort    0x000000000000ab54       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-abort.o)
+                0x000000000000ab54                abort
  .text._raise_r
-                0x000000000000aae4       0x58 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-signal.o)
-                0x000000000000aae4                _raise_r
- .text.raise    0x000000000000ab3c       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-signal.o)
-                0x000000000000ab3c                raise
- .text._kill_r  0x000000000000ab4c       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-signalr.o)
-                0x000000000000ab4c                _kill_r
+                0x000000000000ab64       0x58 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-signal.o)
+                0x000000000000ab64                _raise_r
+ .text.raise    0x000000000000abbc       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-signal.o)
+                0x000000000000abbc                raise
+ .text._kill_r  0x000000000000abcc       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-signalr.o)
+                0x000000000000abcc                _kill_r
  .text._getpid_r
-                0x000000000000ab78        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-signalr.o)
-                0x000000000000ab78                _getpid_r
- .text._close   0x000000000000ab7c       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
-                0x000000000000ab7c                _close
- .text._fstat   0x000000000000ab8c       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(fstat.o)
-                0x000000000000ab8c                _fstat
- .text._getpid  0x000000000000ab9c       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(getpid.o)
-                0x000000000000ab9c                _getpid
- .text._isatty  0x000000000000abac       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(isatty.o)
-                0x000000000000abac                _isatty
- .text._kill    0x000000000000abbc       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(kill.o)
-                0x000000000000abbc                _kill
- .text._lseek   0x000000000000abcc       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
-                0x000000000000abcc                _lseek
- .text._sbrk    0x000000000000abdc       0x1c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
-                0x000000000000abdc                _sbrk
- .text._exit    0x000000000000abf8        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
-                0x000000000000abf8                _exit
- *fill*         0x000000000000abfc        0x4 
- .text.floor    0x000000000000ac00      0x108 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(lib_a-s_floor.o)
-                0x000000000000ac00                floor
- .text          0x000000000000ad08      0x378 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_addsubdf3.o)
-                0x000000000000ad08                __aeabi_drsub
-                0x000000000000ad10                __aeabi_dsub
-                0x000000000000ad10                __subdf3
-                0x000000000000ad14                __adddf3
-                0x000000000000ad14                __aeabi_dadd
-                0x000000000000af8c                __aeabi_ui2d
-                0x000000000000af8c                __floatunsidf
-                0x000000000000afac                __floatsidf
-                0x000000000000afac                __aeabi_i2d
-                0x000000000000afd0                __extendsfdf2
-                0x000000000000afd0                __aeabi_f2d
-                0x000000000000b014                __aeabi_ul2d
-                0x000000000000b014                __floatundidf
-                0x000000000000b024                __floatdidf
-                0x000000000000b024                __aeabi_l2d
- .text          0x000000000000b080      0x424 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_muldivdf3.o)
-                0x000000000000b080                __aeabi_dmul
-                0x000000000000b080                __muldf3
-                0x000000000000b2d4                __aeabi_ddiv
-                0x000000000000b2d4                __divdf3
- .text          0x000000000000b4a4      0x110 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_cmpdf2.o)
-                0x000000000000b4a4                __gtdf2
-                0x000000000000b4a4                __gedf2
-                0x000000000000b4ac                __ltdf2
-                0x000000000000b4ac                __ledf2
-                0x000000000000b4b4                __cmpdf2
-                0x000000000000b4b4                __eqdf2
-                0x000000000000b4b4                __nedf2
-                0x000000000000b530                __aeabi_cdrcmple
-                0x000000000000b540                __aeabi_cdcmple
-                0x000000000000b540                __aeabi_cdcmpeq
-                0x000000000000b550                __aeabi_dcmpeq
-                0x000000000000b564                __aeabi_dcmplt
-                0x000000000000b578                __aeabi_dcmple
-                0x000000000000b58c                __aeabi_dcmpge
-                0x000000000000b5a0                __aeabi_dcmpgt
- .text          0x000000000000b5b4       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_unorddf2.o)
-                0x000000000000b5b4                __aeabi_dcmpun
-                0x000000000000b5b4                __unorddf2
- .text          0x000000000000b5e0       0x50 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixdfsi.o)
-                0x000000000000b5e0                __fixdfsi
-                0x000000000000b5e0                __aeabi_d2iz
- .text          0x000000000000b630       0x40 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixunsdfsi.o)
-                0x000000000000b630                __fixunsdfsi
-                0x000000000000b630                __aeabi_d2uiz
- .text          0x000000000000b670       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_truncdfsf2.o)
-                0x000000000000b670                __aeabi_d2f
-                0x000000000000b670                __truncdfsf2
- .text          0x000000000000b710       0x30 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
-                0x000000000000b710                __aeabi_uldivmod
- .text          0x000000000000b740      0x2c4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x000000000000b740                __udivmoddi4
- .text          0x000000000000ba04        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
-                0x000000000000ba04                __aeabi_ldiv0
-                0x000000000000ba04                __aeabi_idiv0
+                0x000000000000abf8        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-signalr.o)
+                0x000000000000abf8                _getpid_r
+ .text._close   0x000000000000abfc       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
+                0x000000000000abfc                _close
+ .text._fstat   0x000000000000ac0c       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(fstat.o)
+                0x000000000000ac0c                _fstat
+ .text._getpid  0x000000000000ac1c       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(getpid.o)
+                0x000000000000ac1c                _getpid
+ .text._isatty  0x000000000000ac2c       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(isatty.o)
+                0x000000000000ac2c                _isatty
+ .text._kill    0x000000000000ac3c       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(kill.o)
+                0x000000000000ac3c                _kill
+ .text._lseek   0x000000000000ac4c       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+                0x000000000000ac4c                _lseek
+ .text._sbrk    0x000000000000ac5c       0x1c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+                0x000000000000ac5c                _sbrk
+ .text._exit    0x000000000000ac78        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+                0x000000000000ac78                _exit
+ *fill*         0x000000000000ac7c        0x4 
+ .text.floor    0x000000000000ac80      0x108 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(lib_a-s_floor.o)
+                0x000000000000ac80                floor
+ .text          0x000000000000ad88      0x378 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_addsubdf3.o)
+                0x000000000000ad88                __aeabi_drsub
+                0x000000000000ad90                __aeabi_dsub
+                0x000000000000ad90                __subdf3
+                0x000000000000ad94                __adddf3
+                0x000000000000ad94                __aeabi_dadd
+                0x000000000000b00c                __aeabi_ui2d
+                0x000000000000b00c                __floatunsidf
+                0x000000000000b02c                __floatsidf
+                0x000000000000b02c                __aeabi_i2d
+                0x000000000000b050                __extendsfdf2
+                0x000000000000b050                __aeabi_f2d
+                0x000000000000b094                __aeabi_ul2d
+                0x000000000000b094                __floatundidf
+                0x000000000000b0a4                __floatdidf
+                0x000000000000b0a4                __aeabi_l2d
+ .text          0x000000000000b100      0x424 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_muldivdf3.o)
+                0x000000000000b100                __aeabi_dmul
+                0x000000000000b100                __muldf3
+                0x000000000000b354                __aeabi_ddiv
+                0x000000000000b354                __divdf3
+ .text          0x000000000000b524      0x110 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_cmpdf2.o)
+                0x000000000000b524                __gtdf2
+                0x000000000000b524                __gedf2
+                0x000000000000b52c                __ltdf2
+                0x000000000000b52c                __ledf2
+                0x000000000000b534                __cmpdf2
+                0x000000000000b534                __eqdf2
+                0x000000000000b534                __nedf2
+                0x000000000000b5b0                __aeabi_cdrcmple
+                0x000000000000b5c0                __aeabi_cdcmple
+                0x000000000000b5c0                __aeabi_cdcmpeq
+                0x000000000000b5d0                __aeabi_dcmpeq
+                0x000000000000b5e4                __aeabi_dcmplt
+                0x000000000000b5f8                __aeabi_dcmple
+                0x000000000000b60c                __aeabi_dcmpge
+                0x000000000000b620                __aeabi_dcmpgt
+ .text          0x000000000000b634       0x2c /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_unorddf2.o)
+                0x000000000000b634                __aeabi_dcmpun
+                0x000000000000b634                __unorddf2
+ .text          0x000000000000b660       0x50 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixdfsi.o)
+                0x000000000000b660                __fixdfsi
+                0x000000000000b660                __aeabi_d2iz
+ .text          0x000000000000b6b0       0x40 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixunsdfsi.o)
+                0x000000000000b6b0                __fixunsdfsi
+                0x000000000000b6b0                __aeabi_d2uiz
+ .text          0x000000000000b6f0       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_truncdfsf2.o)
+                0x000000000000b6f0                __aeabi_d2f
+                0x000000000000b6f0                __truncdfsf2
+ .text          0x000000000000b790       0x30 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                0x000000000000b790                __aeabi_uldivmod
+ .text          0x000000000000b7c0      0x2c4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000000000b7c0                __udivmoddi4
+ .text          0x000000000000ba84        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                0x000000000000ba84                __aeabi_ldiv0
+                0x000000000000ba84                __aeabi_idiv0
  *(.init)
- .init          0x000000000000ba08        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x000000000000ba08                _init
- .init          0x000000000000ba0c        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x000000000000ba88        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x000000000000ba88                _init
+ .init          0x000000000000ba8c        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x000000000000ba14        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x000000000000ba14                _fini
- .fini          0x000000000000ba18        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .fini          0x000000000000ba94        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x000000000000ba94                _fini
+ .fini          0x000000000000ba98        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -2100,347 +2086,347 @@ Linker script and memory map
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata.temp_averages.str1.1
-                0x000000000000ba20        0x0 _build/Thermal_sensor_driver.o
-                                          0x2 (size before relaxing)
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000ba20       0x3d _build/Sonic_sensor_driver.o
- *fill*         0x000000000000ba5d        0x3 
+                0x000000000000baa0       0x3d _build/Sonic_sensor_driver.o
+ *fill*         0x000000000000badd        0x3 
  .rodata.delay_machine_code.8590
-                0x000000000000ba60        0x6 _build/Sonic_sensor_driver.o
+                0x000000000000bae0        0x6 _build/Sonic_sensor_driver.o
  .rodata.main.str1.1
-                0x000000000000ba66       0x19 _build/main.o
- *fill*         0x000000000000ba7f        0x1 
- .rodata        0x000000000000ba80       0x10 _build/main.o
+                0x000000000000bae6        0x9 _build/main.o
+ *fill*         0x000000000000baef        0x1 
+ .rodata        0x000000000000baf0       0x10 _build/main.o
+ .rodata.delay_machine_code.9123
+                0x000000000000bb00        0x6 _build/main.o
+ *fill*         0x000000000000bb06        0x2 
  .rodata.twi_mngr_instance
-                0x000000000000ba90       0x18 _build/main.o
+                0x000000000000bb08       0x18 _build/main.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000baa8       0x3d _build/better_error_handling.o
+                0x000000000000bb20       0x3d _build/better_error_handling.o
  .rodata.app_error_fault_handler.str1.1
-                0x000000000000baa8       0x78 _build/better_error_handling.o
+                0x000000000000bb20       0x78 _build/better_error_handling.o
  .rodata.LED_COLS
-                0x000000000000bb20        0x5 _build/better_error_handling.o
+                0x000000000000bb98        0x5 _build/better_error_handling.o
  .rodata.LED_ROWS
-                0x000000000000bb25        0x5 _build/better_error_handling.o
- *fill*         0x000000000000bb2a        0x6 
+                0x000000000000bb9d        0x5 _build/better_error_handling.o
+ *fill*         0x000000000000bba2        0xe 
  .rodata.delay_machine_code.8602
-                0x000000000000bb30        0x6 _build/better_error_handling.o
+                0x000000000000bbb0        0x6 _build/better_error_handling.o
  .rodata.uart_init.constprop.0.str1.1
-                0x000000000000bb36       0x49 _build/microbit_nrf_log_backend_uart.o
- *fill*         0x000000000000bb7f        0x1 
- .rodata        0x000000000000bb80       0x20 _build/microbit_nrf_log_backend_uart.o
+                0x000000000000bbb6       0x49 _build/microbit_nrf_log_backend_uart.o
+ *fill*         0x000000000000bbff        0x1 
+ .rodata        0x000000000000bc00       0x20 _build/microbit_nrf_log_backend_uart.o
  .rodata.nrf_log_backend_uart_api
-                0x000000000000bba0        0xc _build/microbit_nrf_log_backend_uart.o
-                0x000000000000bba0                nrf_log_backend_uart_api
+                0x000000000000bc20        0xc _build/microbit_nrf_log_backend_uart.o
+                0x000000000000bc20                nrf_log_backend_uart_api
  .rodata.called_first.str1.1
-                0x000000000000bbac       0x43 _build/microbit_before_startup.o
- *fill*         0x000000000000bbef        0x1 
+                0x000000000000bc2c       0x43 _build/microbit_before_startup.o
+ *fill*         0x000000000000bc6f        0x1 
  .rodata.delay_machine_code.8590
-                0x000000000000bbf0        0x6 _build/microbit_before_startup.o
- *fill*         0x000000000000bbf6        0xa 
+                0x000000000000bc70        0x6 _build/microbit_before_startup.o
+ *fill*         0x000000000000bc76        0xa 
  .rodata.delay_machine_code.9248
-                0x000000000000bc00        0x6 _build/app_timer.o
+                0x000000000000bc80        0x6 _build/app_timer.o
  .rodata.app_util_critical_region_enter.str1.1
-                0x000000000000bc06       0x4f _build/app_util_platform.o
+                0x000000000000bc86       0x4f _build/app_util_platform.o
  .rodata.HardFault_c_handler.str1.1
-                0x000000000000bc55      0x12e _build/hardfault_implementation.o
+                0x000000000000bcd5      0x12e _build/hardfault_implementation.o
  .rodata.str1.1
-                0x000000000000bd83      0x4c0 _build/hardfault_implementation.o
- *fill*         0x000000000000c243        0x1 
+                0x000000000000be03      0x4c0 _build/hardfault_implementation.o
+ *fill*         0x000000000000c2c3        0x1 
  .rodata.cfsr_msgs.9441
-                0x000000000000c244       0x68 _build/hardfault_implementation.o
+                0x000000000000c2c4       0x68 _build/hardfault_implementation.o
  .rodata.nrf_balloc_init.str1.1
-                0x000000000000c2ac       0x4a _build/nrf_balloc.o
+                0x000000000000c32c       0x4a _build/nrf_balloc.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000c2f6       0x3d _build/nrf_drv_twi.o
- *fill*         0x000000000000c2f6        0xa 
+                0x000000000000c376       0x3d _build/nrf_drv_twi.o
+ *fill*         0x000000000000c376        0xa 
  .rodata.delay_machine_code.8590
-                0x000000000000c300        0x6 _build/nrf_drv_twi.o
+                0x000000000000c380        0x6 _build/nrf_drv_twi.o
  .rodata.nrf_fprintf_buffer_flush.str1.1
-                0x000000000000c306       0x40 _build/nrf_fprintf.o
+                0x000000000000c386       0x40 _build/nrf_fprintf.o
  .rodata.nrf_fprintf_fmt.str1.1
-                0x000000000000c346       0x47 _build/nrf_fprintf_format.o
+                0x000000000000c3c6       0x47 _build/nrf_fprintf_format.o
  .rodata._aV2C.7922
-                0x000000000000c38d       0x10 _build/nrf_fprintf_format.o
+                0x000000000000c40d       0x10 _build/nrf_fprintf_format.o
  .rodata.nrf_log_default_backends_init.str1.1
-                0x000000000000c39d       0x59 _build/nrf_log_default_backends.o
+                0x000000000000c41d       0x59 _build/nrf_log_default_backends.o
  .rodata.str1.1
-                0x000000000000c3f6       0x11 _build/nrf_log_default_backends.o
+                0x000000000000c476       0x11 _build/nrf_log_default_backends.o
  .rodata.buf_prealloc.str1.1
-                0x000000000000c407       0x51 _build/nrf_log_frontend.o
+                0x000000000000c487       0x51 _build/nrf_log_frontend.o
  .rodata.nrf_log_frontend_dequeue.str1.1
-                0x000000000000c458       0x11 _build/nrf_log_frontend.o
+                0x000000000000c4d8       0x11 _build/nrf_log_frontend.o
  .rodata.str1.1
-                0x000000000000c469        0x4 _build/nrf_log_frontend.o
- *fill*         0x000000000000c46d        0x3 
+                0x000000000000c4e9        0x4 _build/nrf_log_frontend.o
+ *fill*         0x000000000000c4ed        0x3 
  .rodata.m_log_push_ringbuf
-                0x000000000000c470        0xc _build/nrf_log_frontend.o
+                0x000000000000c4f0        0xc _build/nrf_log_frontend.o
  .rodata.postfix_process.str1.1
-                0x000000000000c47c        0x8 _build/nrf_log_str_formatter.o
+                0x000000000000c4fc        0x8 _build/nrf_log_str_formatter.o
                                           0xb (size before relaxing)
  .rodata.prefix_process.str1.1
-                0x000000000000c484       0x2a _build/nrf_log_str_formatter.o
+                0x000000000000c504       0x2a _build/nrf_log_str_formatter.o
  .rodata.nrf_log_hexdump_entry_process.str1.1
-                0x000000000000c4ae        0xf _build/nrf_log_str_formatter.o
+                0x000000000000c52e        0xf _build/nrf_log_str_formatter.o
                                          0x11 (size before relaxing)
  .rodata.str1.1
-                0x000000000000c4bd       0x4b _build/nrf_log_str_formatter.o
+                0x000000000000c53d       0x4b _build/nrf_log_str_formatter.o
                                          0x51 (size before relaxing)
  .rodata.m_colors
-                0x000000000000c508       0x24 _build/nrf_log_str_formatter.o
+                0x000000000000c588       0x24 _build/nrf_log_str_formatter.o
  .rodata.severity_names
-                0x000000000000c52c       0x14 _build/nrf_log_str_formatter.o
+                0x000000000000c5ac       0x14 _build/nrf_log_str_formatter.o
  .rodata.str1.1
-                0x000000000000c540        0x9 _build/nrf_pwr_mgmt.o
+                0x000000000000c5c0        0x9 _build/nrf_pwr_mgmt.o
  .rodata.memobj_op.str1.1
-                0x000000000000c549       0x4a _build/nrf_memobj.o
+                0x000000000000c5c9       0x4a _build/nrf_memobj.o
  .rodata.str1.1
-                0x000000000000c593      0x391 _build/nrf_strerror.o
+                0x000000000000c613      0x391 _build/nrf_strerror.o
  .rodata.m_unknown_str
-                0x000000000000c924       0x13 _build/nrf_strerror.o
- *fill*         0x000000000000c937        0x1 
+                0x000000000000c9a4       0x13 _build/nrf_strerror.o
+ *fill*         0x000000000000c9b7        0x1 
  .rodata.nrf_strerror_array
-                0x000000000000c938      0x118 _build/nrf_strerror.o
+                0x000000000000c9b8      0x118 _build/nrf_strerror.o
  .rodata.nrf_queue_next_idx.str1.1
-                0x000000000000ca50       0x48 _build/nrf_queue.o
+                0x000000000000cad0       0x48 _build/nrf_queue.o
  .rodata.str1.1
-                0x000000000000ca98        0x6 _build/nrf_drv_clock.o
+                0x000000000000cb18        0x6 _build/nrf_drv_clock.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000ca9e       0x3d _build/nrfx_gpiote.o
+                0x000000000000cb1e       0x3d _build/nrfx_gpiote.o
  .rodata.str1.1
-                0x000000000000ca9e        0x7 _build/nrfx_gpiote.o
+                0x000000000000cb1e        0x7 _build/nrfx_gpiote.o
  .rodata.UARTE0_UART0_IRQHandler.str1.1
-                0x000000000000caa5       0x49 _build/nrfx_prs.o
+                0x000000000000cb25       0x49 _build/nrfx_prs.o
  .rodata.str1.1
-                0x000000000000caee        0x4 _build/nrfx_prs.o
+                0x000000000000cb6e        0x4 _build/nrfx_prs.o
  .rodata.str1.1
-                0x000000000000caf2        0x6 _build/nrfx_saadc.o
+                0x000000000000cb72        0x6 _build/nrfx_saadc.o
  .rodata.str1.1
-                0x000000000000caf8        0x6 _build/nrfx_timer.o
+                0x000000000000cb78        0x6 _build/nrfx_timer.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000cafe       0x3d _build/nrfx_twim.o
+                0x000000000000cb7e       0x3d _build/nrfx_twim.o
  .rodata.SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler.str1.1
-                0x000000000000cafe       0x46 _build/nrfx_twim.o
+                0x000000000000cb7e       0x46 _build/nrfx_twim.o
  .rodata.nrfx_twim_init.str1.1
-                0x000000000000cb44       0x3e _build/nrfx_twim.o
+                0x000000000000cbc4       0x3e _build/nrfx_twim.o
  .rodata.str1.1
-                0x000000000000cb82        0x5 _build/nrfx_twim.o
+                0x000000000000cc02        0x5 _build/nrfx_twim.o
  .rodata.str1.1
-                0x000000000000cb87        0x6 _build/nrfx_clock.o
+                0x000000000000cc07        0x6 _build/nrfx_clock.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000cb8d       0x3d _build/nrfx_uart.o
+                0x000000000000cc0d       0x3d _build/nrfx_uart.o
  .rodata.nrfx_uart_init.str1.1
-                0x000000000000cb8d       0x46 _build/nrfx_uart.o
+                0x000000000000cc0d       0x46 _build/nrfx_uart.o
                                          0x84 (size before relaxing)
  .rodata.str1.1
-                0x000000000000cbd3        0x5 _build/nrfx_uart.o
+                0x000000000000cc53        0x5 _build/nrfx_uart.o
  .rodata.nrf_gpio_pin_port_decode.str1.1
-                0x000000000000cbd8       0x3d _build/nrfx_uarte.o
+                0x000000000000cc58       0x3d _build/nrfx_uarte.o
  .rodata.nrfx_uarte_init.str1.1
-                0x000000000000cbd8       0x47 _build/nrfx_uarte.o
+                0x000000000000cc58       0x47 _build/nrfx_uarte.o
                                          0x85 (size before relaxing)
  .rodata.str1.1
-                0x000000000000cc1f        0x6 _build/nrfx_uarte.o
+                0x000000000000cc9f        0x6 _build/nrfx_uarte.o
  .rodata.transaction_end_signal.str1.1
-                0x000000000000cc25       0x4e _build/nrf_twi_mngr.o
+                0x000000000000cca5       0x4e _build/nrf_twi_mngr.o
  .rodata.str1.1
-                0x000000000000cc73        0x4 _build/nrfx_pwm.o
- *fill*         0x000000000000cc77        0x1 
+                0x000000000000ccf3        0x4 _build/nrfx_pwm.o
+ *fill*         0x000000000000ccf7        0x1 
  .rodata._ctype_
-                0x000000000000cc78      0x101 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-ctype_.o)
-                0x000000000000cc78                _ctype_
- *fill*         0x000000000000cd79        0x3 
+                0x000000000000ccf8      0x101 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-ctype_.o)
+                0x000000000000ccf8                _ctype_
+ *fill*         0x000000000000cdf9        0x3 
  .rodata._global_impure_ptr
-                0x000000000000cd7c        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-impure.o)
-                0x000000000000cd7c                _global_impure_ptr
+                0x000000000000cdfc        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-impure.o)
+                0x000000000000cdfc                _global_impure_ptr
  .rodata._vfprintf_r.str1.4
-                0x000000000000cd80       0x42 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
- *fill*         0x000000000000cdc2        0x2 
+                0x000000000000ce00       0x42 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
+ *fill*         0x000000000000ce42        0x2 
  .rodata.blanks.8713
-                0x000000000000cdc4       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
+                0x000000000000ce44       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
  .rodata.zeroes.8714
-                0x000000000000cdd4       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
+                0x000000000000ce54       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
  .rodata._dtoa_r.str1.4
-                0x000000000000cde4       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-dtoa.o)
+                0x000000000000ce64       0xa0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-dtoa.o)
                                          0xa4 (size before relaxing)
  .rodata.__multadd.str1.4
-                0x000000000000ce84       0x7d /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x000000000000cf04       0x7d /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
                                          0x91 (size before relaxing)
- *fill*         0x000000000000cf01        0x7 
+ *fill*         0x000000000000cf81        0x7 
  .rodata.__mprec_bigtens
-                0x000000000000cf08       0x28 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x000000000000cf08                __mprec_bigtens
+                0x000000000000cf88       0x28 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x000000000000cf88                __mprec_bigtens
  .rodata.__mprec_tens
-                0x000000000000cf30       0xc8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
-                0x000000000000cf30                __mprec_tens
+                0x000000000000cfb0       0xc8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x000000000000cfb0                __mprec_tens
  .rodata.p05.7485
-                0x000000000000cff8        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
+                0x000000000000d078        0xc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-mprec.o)
  .rodata._vfiprintf_r.str1.4
-                0x000000000000d004       0x2f /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
+                0x000000000000d084       0x2f /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
  .rodata.blanks.8691
-                0x000000000000d004       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
+                0x000000000000d084       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
  .rodata.zeroes.8692
-                0x000000000000d014       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
+                0x000000000000d094       0x10 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
  .rodata.__assert_func.str1.4
-                0x000000000000d024       0x3f /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-assert.o)
+                0x000000000000d0a4       0x3f /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-assert.o)
                                          0x43 (size before relaxing)
- *fill*         0x000000000000d063        0x1 
+ *fill*         0x000000000000d0e3        0x1 
  .rodata._setlocale_r.str1.4
-                0x000000000000d064        0xa /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-locale.o)
+                0x000000000000d0e4        0xa /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-locale.o)
                                           0xd (size before relaxing)
- *fill*         0x000000000000d06e        0x2 
+ *fill*         0x000000000000d0ee        0x2 
  .rodata.str1.4
-                0x000000000000d070        0x2 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-locale.o)
+                0x000000000000d0f0        0x2 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-locale.o)
  *(.eh_frame*)
- *fill*         0x000000000000d072        0x2 
- .eh_frame      0x000000000000d074        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- .eh_frame      0x000000000000d074        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtend.o
+ *fill*         0x000000000000d0f2        0x2 
+ .eh_frame      0x000000000000d0f4        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x000000000000d0f4        0x4 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtend.o
 
-.glue_7         0x000000000000d078        0x0
- .glue_7        0x000000000000d078        0x0 linker stubs
+.glue_7         0x000000000000d0f8        0x0
+ .glue_7        0x000000000000d0f8        0x0 linker stubs
 
-.glue_7t        0x000000000000d078        0x0
- .glue_7t       0x000000000000d078        0x0 linker stubs
+.glue_7t        0x000000000000d0f8        0x0
+ .glue_7t       0x000000000000d0f8        0x0 linker stubs
 
-.vfp11_veneer   0x000000000000d078        0x0
- .vfp11_veneer  0x000000000000d078        0x0 linker stubs
+.vfp11_veneer   0x000000000000d0f8        0x0
+ .vfp11_veneer  0x000000000000d0f8        0x0 linker stubs
 
-.v4_bx          0x000000000000d078        0x0
- .v4_bx         0x000000000000d078        0x0 linker stubs
+.v4_bx          0x000000000000d0f8        0x0
+ .v4_bx         0x000000000000d0f8        0x0 linker stubs
 
-.iplt           0x000000000000d078        0x0
- .iplt          0x000000000000d078        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x000000000000d0f8        0x0
+ .iplt          0x000000000000d0f8        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.pwr_mgmt_data  0x000000000000d078        0x0
-                0x000000000000d078                PROVIDE (__start_pwr_mgmt_data = .)
+.pwr_mgmt_data  0x000000000000d0f8        0x0
+                0x000000000000d0f8                PROVIDE (__start_pwr_mgmt_data = .)
  *(SORT_BY_NAME(.pwr_mgmt_data*))
-                0x000000000000d078                PROVIDE (__stop_pwr_mgmt_data = .)
+                0x000000000000d0f8                PROVIDE (__stop_pwr_mgmt_data = .)
 
 .log_const_data
-                0x000000000000d078       0x68
-                0x000000000000d078                PROVIDE (__start_log_const_data = .)
+                0x000000000000d0f8       0x68
+                0x000000000000d0f8                PROVIDE (__start_log_const_data = .)
  *(SORT_BY_NAME(.log_const_data*))
  .log_const_data_CLOCK
-                0x000000000000d078        0x8 _build/nrfx_clock.o
-                0x000000000000d078                m_nrf_log_CLOCK_logs_data_const
+                0x000000000000d0f8        0x8 _build/nrfx_clock.o
+                0x000000000000d0f8                m_nrf_log_CLOCK_logs_data_const
  .log_const_data_GPIOTE
-                0x000000000000d080        0x8 _build/nrfx_gpiote.o
-                0x000000000000d080                m_nrf_log_GPIOTE_logs_data_const
+                0x000000000000d100        0x8 _build/nrfx_gpiote.o
+                0x000000000000d100                m_nrf_log_GPIOTE_logs_data_const
  .log_const_data_PRS
-                0x000000000000d088        0x8 _build/nrfx_prs.o
-                0x000000000000d088                m_nrf_log_PRS_logs_data_const
+                0x000000000000d108        0x8 _build/nrfx_prs.o
+                0x000000000000d108                m_nrf_log_PRS_logs_data_const
  .log_const_data_PWM
-                0x000000000000d090        0x8 _build/nrfx_pwm.o
-                0x000000000000d090                m_nrf_log_PWM_logs_data_const
+                0x000000000000d110        0x8 _build/nrfx_pwm.o
+                0x000000000000d110                m_nrf_log_PWM_logs_data_const
  .log_const_data_SAADC
-                0x000000000000d098        0x8 _build/nrfx_saadc.o
-                0x000000000000d098                m_nrf_log_SAADC_logs_data_const
+                0x000000000000d118        0x8 _build/nrfx_saadc.o
+                0x000000000000d118                m_nrf_log_SAADC_logs_data_const
  .log_const_data_TIMER
-                0x000000000000d0a0        0x8 _build/nrfx_timer.o
-                0x000000000000d0a0                m_nrf_log_TIMER_logs_data_const
+                0x000000000000d120        0x8 _build/nrfx_timer.o
+                0x000000000000d120                m_nrf_log_TIMER_logs_data_const
  .log_const_data_TWIM
-                0x000000000000d0a8        0x8 _build/nrfx_twim.o
-                0x000000000000d0a8                m_nrf_log_TWIM_logs_data_const
+                0x000000000000d128        0x8 _build/nrfx_twim.o
+                0x000000000000d128                m_nrf_log_TWIM_logs_data_const
  .log_const_data_UART
-                0x000000000000d0b0        0x8 _build/nrfx_uart.o
-                0x000000000000d0b0                m_nrf_log_UART_logs_data_const
+                0x000000000000d130        0x8 _build/nrfx_uart.o
+                0x000000000000d130                m_nrf_log_UART_logs_data_const
  .log_const_data_UARTE
-                0x000000000000d0b8        0x8 _build/nrfx_uarte.o
-                0x000000000000d0b8                m_nrf_log_UARTE_logs_data_const
+                0x000000000000d138        0x8 _build/nrfx_uarte.o
+                0x000000000000d138                m_nrf_log_UARTE_logs_data_const
  .log_const_data_app
-                0x000000000000d0c0        0x8 _build/nrf_log_frontend.o
-                0x000000000000d0c0                m_nrf_log_app_logs_data_const
+                0x000000000000d140        0x8 _build/nrf_log_frontend.o
+                0x000000000000d140                m_nrf_log_app_logs_data_const
  .log_const_data_clock
-                0x000000000000d0c8        0x8 _build/nrf_drv_clock.o
-                0x000000000000d0c8                m_nrf_log_clock_logs_data_const
+                0x000000000000d148        0x8 _build/nrf_drv_clock.o
+                0x000000000000d148                m_nrf_log_clock_logs_data_const
  .log_const_data_hardfault
-                0x000000000000d0d0        0x8 _build/hardfault_implementation.o
-                0x000000000000d0d0                m_nrf_log_hardfault_logs_data_const
+                0x000000000000d150        0x8 _build/hardfault_implementation.o
+                0x000000000000d150                m_nrf_log_hardfault_logs_data_const
  .log_const_data_pwr_mgmt
-                0x000000000000d0d8        0x8 _build/nrf_pwr_mgmt.o
-                0x000000000000d0d8                m_nrf_log_pwr_mgmt_logs_data_const
-                0x000000000000d0e0                PROVIDE (__stop_log_const_data = .)
+                0x000000000000d158        0x8 _build/nrf_pwr_mgmt.o
+                0x000000000000d158                m_nrf_log_pwr_mgmt_logs_data_const
+                0x000000000000d160                PROVIDE (__stop_log_const_data = .)
 
-.nrf_balloc     0x000000000000d0e0       0x14
+.nrf_balloc     0x000000000000d160       0x14
                 [!provide]                        PROVIDE (__start_nrf_balloc = .)
  *(.nrf_balloc)
- .nrf_balloc    0x000000000000d0e0       0x14 _build/nrf_log_frontend.o
-                0x000000000000d0e0                log_mempool
+ .nrf_balloc    0x000000000000d160       0x14 _build/nrf_log_frontend.o
+                0x000000000000d160                log_mempool
                 [!provide]                        PROVIDE (__stop_nrf_balloc = .)
 
-.nrf_queue      0x000000000000d0f4       0x14
+.nrf_queue      0x000000000000d174       0x14
                 [!provide]                        PROVIDE (__start_nrf_queue = .)
  *(.nrf_queue)
- .nrf_queue     0x000000000000d0f4       0x14 _build/main.o
-                0x000000000000d0f4                twi_mngr_instance_queue
+ .nrf_queue     0x000000000000d174       0x14 _build/main.o
+                0x000000000000d174                twi_mngr_instance_queue
                 [!provide]                        PROVIDE (__stop_nrf_queue = .)
 
-.log_backends   0x000000000000d108       0x10
- .log_backends  0x000000000000d108       0x10 _build/nrf_log_default_backends.o
+.log_backends   0x000000000000d188       0x10
+ .log_backends  0x000000000000d188       0x10 _build/nrf_log_default_backends.o
 
-.cli_command    0x000000000000d118        0x0
+.cli_command    0x000000000000d198        0x0
                 [!provide]                        PROVIDE (__start_cli_command = .)
  *(.cli_command)
                 [!provide]                        PROVIDE (__stop_cli_command = .)
 
 .sdh_stack_observers
-                0x000000000000d118        0x0
+                0x000000000000d198        0x0
                 [!provide]                        PROVIDE (__start_sdh_stack_observers = .)
  *(SORT_BY_NAME(.sdh_stack_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_stack_observers = .)
 
 .sdh_req_observers
-                0x000000000000d118        0x0
+                0x000000000000d198        0x0
                 [!provide]                        PROVIDE (__start_sdh_req_observers = .)
  *(SORT_BY_NAME(.sdh_req_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_req_observers = .)
 
 .sdh_state_observers
-                0x000000000000d118        0x0
+                0x000000000000d198        0x0
                 [!provide]                        PROVIDE (__start_sdh_state_observers = .)
  *(SORT_BY_NAME(.sdh_state_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_state_observers = .)
 
 .sdh_ant_observers
-                0x000000000000d118        0x0
+                0x000000000000d198        0x0
                 [!provide]                        PROVIDE (__start_sdh_ant_observers = .)
  *(SORT_BY_NAME(.sdh_ant_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_ant_observers = .)
 
 .sdh_ble_observers
-                0x000000000000d118        0x0
+                0x000000000000d198        0x0
                 [!provide]                        PROVIDE (__start_sdh_ble_observers = .)
  *(SORT_BY_NAME(.sdh_ble_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_ble_observers = .)
 
 .sdh_soc_observers
-                0x000000000000d118        0x0
+                0x000000000000d198        0x0
                 [!provide]                        PROVIDE (__start_sdh_soc_observers = .)
  *(SORT_BY_NAME(.sdh_soc_observers*))
                 [!provide]                        PROVIDE (__stop_sdh_soc_observers = .)
 
-.crypto_data    0x000000000000d118        0x0
+.crypto_data    0x000000000000d198        0x0
                 [!provide]                        PROVIDE (__start_crypto_data = .)
  *(SORT_BY_NAME(.crypto_data*))
                 [!provide]                        PROVIDE (__stop_crypto_data = .)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000000000d118                __exidx_start = .
+                0x000000000000d198                __exidx_start = .
 
-.ARM.exidx      0x000000000000d118        0x8
+.ARM.exidx      0x000000000000d198        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x000000000000d118        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .ARM.exidx     0x000000000000d198        0x8 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
                                          0x10 (size before relaxing)
- .ARM.exidx     0x000000000000d120        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x000000000000d1a0        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
                                           0x8 (size before relaxing)
-                0x000000000000d120                __exidx_end = .
-                0x000000000000d120                __etext = .
+                0x000000000000d1a0                __exidx_end = .
+                0x000000000000d1a0                __etext = .
 
-.rel.dyn        0x000000000000d120        0x0
- .rel.iplt      0x000000000000d120        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x000000000000d1a0        0x0
+ .rel.iplt      0x000000000000d1a0        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x0000000020000000      0x9e0 load address 0x000000000000d120
+.data           0x0000000020000000      0x9e0 load address 0x000000000000d1a0
                 0x0000000020000000                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -2576,7 +2562,7 @@ END GROUP
                 0x0000000000001000                FLASH_PAGE_SIZE = 0x1000
                 0x0000000000000004                FLASH_DATA_PAGES_USED = 0x4
 
-.igot.plt       0x00000000200009e0        0x0 load address 0x000000000000db00
+.igot.plt       0x00000000200009e0        0x0 load address 0x000000000000db80
  .igot.plt      0x00000000200009e0        0x0 /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x00000000200009e0                . = ALIGN (0x4)
 
@@ -2602,7 +2588,7 @@ END GROUP
  *(.cli_sorted_cmd_ptrs)
                 [!provide]                        PROVIDE (__stop_cli_sorted_cmd_ptrs = .)
 
-.bss            0x00000000200009e0      0x91c load address 0x000000000000db00
+.bss            0x00000000200009e0      0x91c load address 0x000000000000db80
                 0x00000000200009e0                . = ALIGN (0x4)
                 0x00000000200009e0                __bss_start__ = .
  *(.bss*)
@@ -2725,8 +2711,8 @@ END GROUP
                 0x0000000020020000                PROVIDE (__stack = __StackTop)
                 0x0000000000000001                ASSERT ((__StackLimit >= __HeapLimit), region RAM overflowed with stack)
                 0x00000000000009e0                DataInitFlashUsed = (__bss_start__ - __data_start__)
-                0x000000000000d120                CodeFlashUsed = (__etext - ORIGIN (FLASH))
-                0x000000000000db00                TotalFlashUsed = (CodeFlashUsed + DataInitFlashUsed)
+                0x000000000000d1a0                CodeFlashUsed = (__etext - ORIGIN (FLASH))
+                0x000000000000db80                TotalFlashUsed = (CodeFlashUsed + DataInitFlashUsed)
                 0x0000000000000001                ASSERT ((TotalFlashUsed <= LENGTH (FLASH)), region FLASH overflowed with .data and user data)
 OUTPUT(_build/Elf-Bot_sdk16_blank.elf elf32-littlearm)
 LOAD linker stubs

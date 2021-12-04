@@ -11,15 +11,6 @@
 #include "nrf_delay.h"
 #include "math.h"
 
-  //left 8448 : 0x2100
-  //i2c address 89 : 0x59
-  //right: 8192 : 0x2000
-  //forward: 0: 0x8000
-  //reverse: 1 : 0x0000
-  //power on: 28673 : 0x70
-  //power off: 28672 
-  //left_invert: 0x13
-  //right_invert : 0x12
 #define mc_i2c_addr   0x59
 #define mc_left       0x21
 #define mc_right      0x20
@@ -58,15 +49,4 @@ void deactivate_servos(){
 // i2c - pointer to already initialized and enabled twim instance
 void motor_init(const nrf_twi_mngr_t* i2c) {
   i2c_manager = i2c;
-  // printf("tyze\n");
-  // activate_servos();
-  // actuate_servos(30, 30, false, false);
-  // nrf_delay_ms(500);
-  // actuate_servos(30, 30, true, true);
-  // nrf_delay_ms(500);
-  // actuate_servos(30, 30, true, false);
-  // nrf_delay_ms(500);
-  // actuate_servos(30, 30, false, true);
-  // nrf_delay_ms(500);
-  // deactivate_servos();
 }

@@ -24,8 +24,10 @@ float getDeviceTemp() {
         temp = temp * -1;
     }
 
-    //celsius
+    
+    //celsius (Uncomment if you want the temperature in celsius as opposed to farenheit)
     //float float_temp = (float)temp *.0625;
+
     //fahrenheit
     float float_temp = ((float)temp *.0625) * 1.8 + 32;
 
@@ -56,19 +58,15 @@ float get_pixel_temp(uint8_t pixelAddr) {
         temp = temp * -1;
     }
 
-    //celsius
+    //celsius (Uncomment if you want the temperature in celsius as opposed to farenheit)
     //float float_temp = (float)temp *.25;
+    
     //fahrenheit
     float float_temp = ((float)temp *.25) * 1.8 + 32;
 
     return float_temp;
 
 }
-
-// long map(long x, long in_min, long in_max, long out_min, long out_max) {
-//   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-// }
-
 
  void grid_eye(float pixel_table[8][8]) {
     // Update the global pixel grid with the latest temperatures
@@ -94,10 +92,8 @@ void temp_averages(float averages[8], float pixel_table[8][8]){
         }
         float avg = holder/8.0;
         averages[i] = avg;
-        // printf("%.1f  ", avg);
         holder = 0;
     } 
-    printf("\n");
 }
 
 void temp_maxes(float maxes[8], float pixel_table[8][8]){
@@ -111,10 +107,8 @@ void temp_maxes(float maxes[8], float pixel_table[8][8]){
             }
         }
         maxes[i] = max;
-        // printf("%.1f  ", max);
         max = 0;
     }
-    // printf("\n");
 }
 
 void print_temp_grid(float pixel_table[8][8]){
@@ -130,17 +124,5 @@ void print_temp_grid(float pixel_table[8][8]){
 
 void thermal_init(const nrf_twi_mngr_t* i2c){
     i2c_manager = i2c;
-    // float averages[8];
-    // float maxes[8];
-    // float pixel_table[8][8];
-    // while(1){
-    //     //printf("Temperature: %f\n", getDeviceTemp());
-    //     grid_eye(pixel_table);
-    //     temp_averages(averages, pixel_table);
-    //     // temp_maxes(maxes, pixel_table);
-    //     // print_temp_grid(pixel_table);
-    //     printf("\n");
-    //     nrf_delay_ms(1000);
-    // }
 }
 

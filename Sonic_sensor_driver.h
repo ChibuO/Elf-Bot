@@ -4,5 +4,4 @@
 
 // INSERT FUNCTION PROTOTYPES HERE
 void sonic_init();
-
 uint32_t getPulse();
