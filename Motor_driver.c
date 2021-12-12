@@ -44,8 +44,7 @@ void deactivate_servos(){
   i2c_reg_write(mc_i2c_addr, mc_pwr_on, 0, i2c_manager);
 }
 
-// Initialize and configure the LSM303AGR accelerometer/magnetometer
-//
+
 // i2c - pointer to already initialized and enabled twim instance
 void motor_init(const nrf_twi_mngr_t* i2c) {
   i2c_manager = i2c;
