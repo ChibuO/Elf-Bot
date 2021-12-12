@@ -1,4 +1,5 @@
 # Elf-Bot
+![Alt text](Media/IMG_1823.jpg?raw=true "Elf Bot!")
 
 The Elf-Bot is a Micro:Bit based robot that follows people using Grid-EYE Infrared sensors and has object detection using an HC-SR04 Ultrasonic Sensor.
 The NRF library from Nordic Semiconductors was used due to the project being Micro:Bit based (it is run on a nRF52 processor). As a result much of the code written utilizes functions from the library.
