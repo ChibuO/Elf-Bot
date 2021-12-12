@@ -56,6 +56,7 @@ We use a standard HC-SR04 sonic sensor for object detection (so the robot doesnâ
 
 #### Virtual timer and gpio buttons functions
 ![Alt text](Media/microbit.jpg?raw=true "Microbit buttons")
+
 Virtual timer is used to set up a global timer in the nrF52 and provides a function for reading what the value of the timer is. This timer value is used to help calculate distance for the sonic sensor file, and later on in the main script to determine when the robot should try to navigate around an object.
 
 Gpio buttons is used to set up the A and B buttons found on the LED side of the Micro:Bit. We use these buttons to start and stop the following mode of the robot
