@@ -6,6 +6,8 @@ The NRF library from Nordic Semiconductors was used due to the project being Mic
 
 This project was tackled by creating numerous driver files for each component then utilizing them in the main.c file, where the actual sensing is done. Here is an explanation on each file
 
+![Alt Text](Media/elf_bot_gif.gif "Elf Bot Gif!")
+
 ## Main following script
 The main script is responsible for performing all initializations and holds the following actions of the robots. A lot of initializations happen here, but some of note include what distance the robot should stop at for object detection (we set it to 30 cm), global arrays used for the pixel temperature arrays, I2C bus initialization, and all component initializations (motor, IR sensor, and sonic sensor). 
 
