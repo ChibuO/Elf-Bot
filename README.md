@@ -4,7 +4,7 @@
 The Elf-Bot is a Micro:Bit based robot that follows people using Grid-EYE Infrared sensors and has object detection using an HC-SR04 Ultrasonic Sensor.
 The NRF library from Nordic Semiconductors was used due to the project being Micro:Bit based (it is run on a nRF52 processor). As a result much of the code written utilizes functions from the library.
 
-This project was tackled by creating numerous driver files for each component then utilizing them in the main.c file, where the actual sensing is done. Here is an explanation on each file
+This project was tackled by creating numerous driver files for each component then utilizing them in the main.c file, where the actual sensing is done. Below is an explanation on each file.
 
 ![Alt Text](Media/elf_bot_gif.gif "Elf Bot Gif!")
 
@@ -14,8 +14,7 @@ The main script is responsible for performing all initializations and holds the 
 The basic logic of the main following script is as follows:
 Make sure we actually want the robot to run by checking what the last button on the Micro:Bit was pressed (the Micro:Bit features two buttons on it that can be mapped to any user defined function)
 Determine if there is anything in front of the robot using the sonic sensor (if there is anything is 30 cm or closer, the robot should stop)
-If the robot has been stopped for 5 seconds or more, reverse and try finding another heat source. Obviously if the object that stopped it was a human the robot would just go back to its original position, however if it is blocked by a non human object it will find another heat source and move away from the non human object.
-Scan the area in front of the robot, and move in the direction where the highest temperature is coming from
+If the robot has been stopped for 5 seconds or more, reverse and try finding another heat source. Obviously if the object that stopped it was a human the robot would just go back to its original position, however if it is blocked by a non human object it will find another heat source, move away from the non human object, scan the area in front of the robot, and move in the direction where the highest temperature is coming from.
 
 ## Driver files
 
